@@ -1,0 +1,22 @@
+/* <uniquifier>: Use a unique and descriptive class name */
+/* All these vary weight only, but can be set at any weight along the variable axis 
+varying component:   font-weight: <weight>;
+*/
+
+/* <weight>: Use a value from 1 to 1000 ("thin" at 100 to Black at 900) */
+/* .ysabeau-infant-<uniquifier> { */
+.ysabeau-infant-light {
+  font-family: "Ysabeau Infant", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1;
+  font-style: normal;
+}
+
+/* <weight>: Use a value from 1 to 1000 ("thin" at 100 to Black at 900) */
+/* .ysabeau-<uniquifier> { */
+.ysabeau-light {
+  font-family: "Ysabeau", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1;
+  font-style: normal;
+}
