@@ -3,8 +3,9 @@
     text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {font-family: "Belleza", sans-serif; font-weight: 600;}
+h1, h2, h3, h4, h5, h6, .logo-text {font-family: "Belleza", sans-serif; font-weight: 600;}
 
 p, button {font-family: "Gafata", sans-serif;}
 
 button {border-width: 0;}
+

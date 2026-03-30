@@ -1,0 +1,152 @@
+        :root {
+            /* COLORS */
+            --accentSoft: #c8d6d3;
+            --accentColor: hsl(180, 79%, 23%);
+            --accentColor-dark: hsl(180, 71%, 19%);
+            --accentBright: hsl(167, 75%, 50%);
+            --accentBright-xbright: hsl(167, 100%, 74%);
+            --accentBright-hsl: 167, 75%, 50%;
+            --accentBright-dark: hsl(167, 75%, 40%);
+            --apptInvertColor: #8a2be280;
+            --apptInvert-bright-Color: #000;
+            --mainBG: hsl(44, 100%, 96.5%);
+            --mainSoft: hsl(44, 100%, 98.5%);
+            --mainDark: hsl(44, 100%, 92%);
+            /* non-color variables */
+            --filterFilmNegative: invert() grayscale(80%) brightness(150%) contrast(80%);
+            /* --buttonEffectBackground: linear-gradient(-45deg, var(--accentBright-dark) 40%, var(--accentBright), var(--accentBright-dark) 60%); */
+            --buttonEffectScale: 500%;
+
+        }
+
+        *, .card-text {
+            font-family: "Mooli", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1rem;
+        }
+
+        body {
+            background-color: var(--mainBG);
+        }
+
+        .kaushan-script-regular {
+            font-family: "Kaushan Script", cursive;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .mooli-regular {
+        font-family: "Mooli", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        /* border as an ::after to allow animating without affecting contained image */
+        .image-border::after {
+            /* get the ::after to size & position intended */
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: calc(0 - 1rem/2);
+            left: calc(1rem);
+            width: calc(100% - 2rem);
+            aspect-ratio: 1;
+
+            /* style the border & animation */
+            border: 5px dashed var(--accentColor) !important;
+            border-style: dashed ;
+            border-radius: 50%;
+            animation: dashingBorders 20000ms linear infinite; /* animate border */
+        }
+
+        @keyframes dashingBorders {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
+
+
+    /* Card styling adjustments */
+        .card {
+            overflow-x: hidden; /* on smaller screens the button gradient can cause an x-scroll. This counters that. */
+            box-shadow: 0 1em 2em -1em #000000c0;
+            background-color: transparent; /* allow ::before to function as background */
+            border-color: var(--mainDark);
+        }
+
+        .btn {
+            background-color: var(--accentColor);
+            background-image: linear-gradient(-45deg, var(--accentColor) 40%, var(--accentBright), var(--accentBright-dark) 60%);
+            background-size: var(--buttonEffectScale) var(--buttonEffectScale);
+            background-position: right;
+            border-color: var(--accentColor-dark);
+            font-weight: 800;
+            letter-spacing: 0.08em
+        }
+
+        .card-text, .card-title {
+            background-color: transparent;
+        }
+
+        /* create the "film negative" hover effect. Done this way instad of appying to  
+        .card:hover to allow turning the filters off of the button on hover; 
+        inverting the values of the filters didn't work well with desaturate */
+            .card::before {
+                content: "";
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: var(--mainSoft);
+                z-index: -90;
+            }
+            
+            .card:hover::before, .card:hover::after, .card:hover img, 
+            .card:hover .card-title, .card:hover .card-text, .card:hover 
+            .btn, .card:hover .image-border::after  {
+                filter: var(--filterFilmNegative);
+            }
+
+            .card::before, .card::after, .card img, 
+            .card .card-title, .card .card-text, .card 
+            .btn, .card .image-border::after  {
+                transition: 0.5s ease-in-out; /* hover effect transition adjustments;*/
+            }
+
+            .btn.appointment:hover {
+                filter: none;
+                border-color: var(--accentBright-dark);
+                box-shadow: 0 0 0.8em 0.2em hsl( var(--accentBright-hsl), 80%); /* glow effect */
+                background-image: linear-gradient(-45deg, var(--accentBright) 40%, var(--accentBright-xbright), var(--accentBright) 60%);
+                background-size: var(--buttonEffectScale) var(--buttonEffectScale);
+                background-position: right;
+                animation: bump 700ms ease-in, bgToRight 3s infinite alternate;
+            }
+
+        /* appointment time validation message */
+        input:invalid + p.valid {
+            position: absolute;
+            content: "outside of appointment hours";
+        }
+
+        input:valid + p::after {
+            position: absolute;
+            content: "within appointment hours";
+        }
+
+        /* Used for wipe/side-to-side gradient effect */
+        @keyframes bgToRight {
+            to {background-position: left;}
+        }
+        
+        /* drop with bounce */
+        @keyframes bump {
+            0% {transform: translateY(0%);}
+            20% {transform: translateY(-20%);}
+            40% {transform: translateY(0%);}
+            60% {transform: translateY(-10%);}
+            75% {transform: translateY(0%);}
+            89% {transform: translateY(-5%);}
+            100% {transform: translateY(0%);}
+}

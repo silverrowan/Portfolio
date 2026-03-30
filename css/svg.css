@@ -1,0 +1,49 @@
+
+
+
+
+.svgStyle01{
+    fill:none;
+    stroke-miterlimit:10;
+
+    stroke:#00ADEE;
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+    /* Stroke-dasharray properties by segment */
+.M {
+    stroke-dasharray: 400; 
+    stroke-dashoffset: 400;
+    animation: move 2.5s ease-in-out ;
+    animation-fill-mode: forwards;   
+}
+
+.ariah {
+    stroke-dasharray: 500; 
+    stroke-dashoffset: 500;
+    animation: move 3s ease-in-out ;
+    animation-fill-mode: forwards;
+    animation-delay: 2.6s;  
+}
+
+.idot {
+    stroke-dasharray: 20; 
+    stroke-dashoffset: 20;
+    animation: move 0.5s ease-in-out ;
+    animation-fill-mode: forwards;
+    animation-delay: 5.2s;  
+}
+
+#mask02{  }
+
+@keyframes move {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+
