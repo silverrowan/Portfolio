@@ -66,15 +66,28 @@
 	.st0, .st1, .st2 { /* baseline svg line style */
 		fill:none;
 		stroke-miterlimit:10;
-		stroke:#00ADEE;
-		stroke-width:3;
 		stroke-linecap:round;
 		stroke-linejoin:round;
-		stroke-width:2;
 	}
+	
+	#topLine { /* baseline svg line style */
+		stroke:#00ADEE;
+		stroke-width: 3;
+	}
+
+	#radiusLine {
+    /* filter: blur(5px) ; */
+	backdrop-filter: blur(20px);
+		stroke: #154b5f20;
+		stroke-width: 30;
+		background-image: url("../images/noise.svg");
+	}
+
+
 
 	@keyframes move { 100% { stroke-dashoffset: 0; } } 
 	
+	/*Applied to the SYMBOL (which gets re-used as layers)*/
 	/*Mariah set*/
 	#Mline {
 		stroke-dasharray: 60; 
@@ -143,7 +156,7 @@
 		stroke-dashoffset: 570;
 		animation: move var(--animation-mtime-Mal) ease-in-out ;
 		animation-fill-mode: forwards;
-		animation-delay: var(--animation-delay-Mal);  }
+		animation-delay: var(--animation-delay-Mal);  
     }
 
     #czewska {

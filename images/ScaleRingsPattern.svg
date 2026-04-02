@@ -11,7 +11,7 @@
 	.st5{display:none;fill:#2E3192;}
 </style>
 <g>
-	<circle class="st0" cx="106.54" cy="-8.87" r="110"/>
+	<circle class="st0" cx="106.54" cy="-8.87" r="110" style="stroke:blue;"/>
 	<circle class="st1" cx="106.54" cy="-8.87" r="95"/>
 	<circle class="st0" cx="106.54" cy="-8.87" r="80"/>
 	<circle class="st2" cx="106.54" cy="-8.87" r="50"/>
@@ -19,7 +19,7 @@
 	<circle class="st4" cx="106.54" cy="-8.87" r="25"/>
 </g>
 <g>
-	<circle class="st0" cx="-13.46" cy="55.94" r="110"/>
+	<circle class="st0" cx="-13.46" cy="55.94" r="110" style="stroke:red;"/>
 	<circle class="st1" cx="-13.46" cy="55.94" r="95"/>
 	<circle class="st0" cx="-13.46" cy="55.94" r="80"/>
 	<circle class="st2" cx="-13.46" cy="55.94" r="50"/>
@@ -27,7 +27,7 @@
 	<circle class="st4" cx="-13.46" cy="55.94" r="25"/>
 </g>
 <g>
-	<circle class="st0" cx="226.54" cy="55.94" r="110"/>
+	<circle class="st0" cx="226.54" cy="55.94" r="110" style="stroke:orange;"/>
 	<circle class="st1" cx="226.54" cy="55.94" r="95"/>
 	<circle class="st0" cx="226.54" cy="55.94" r="80"/>
 	<circle class="st2" cx="226.54" cy="55.94" r="50"/>
@@ -35,7 +35,7 @@
 	<circle class="st4" cx="226.54" cy="55.94" r="25"/>
 </g>
 <g>
-	<circle class="st0" cx="106.54" cy="120" r="110"/>
+	<circle class="st0" cx="106.54" cy="120" r="110" style="stroke:yellow;"/>
 	<circle class="st1" cx="106.54" cy="120" r="95"/>
 	<circle class="st0" cx="106.54" cy="120" r="80"/>
 	<circle class="st2" cx="106.54" cy="120" r="50"/>
@@ -43,7 +43,7 @@
 	<circle class="st4" cx="106.54" cy="120" r="25"/>
 </g>
 <g>
-	<circle class="st0" cx="-13.46" cy="184.06" r="110"/>
+	<circle class="st0" cx="-13.46" cy="184.06" r="110" style="stroke:purple;"/>
 	<circle class="st1" cx="-13.46" cy="184.06" r="95"/>
 	<circle class="st0" cx="-13.46" cy="184.06" r="80"/>
 	<circle class="st2" cx="-13.46" cy="184.06" r="50"/>
@@ -51,7 +51,7 @@
 	<circle class="st4" cx="-13.46" cy="184.06" r="25"/>
 </g>
 <g>
-	<circle class="st0" cx="226.54" cy="184.06" r="110"/>
+	<circle class="st0" cx="226.54" cy="184.06" r="110" style="stroke:pink;"/>
 	<circle class="st1" cx="226.54" cy="184.06" r="95"/>
 	<circle class="st0" cx="226.54" cy="184.06" r="80"/>
 	<circle class="st2" cx="226.54" cy="184.06" r="50"/>
@@ -59,7 +59,7 @@
 	<circle class="st4" cx="226.54" cy="184.06" r="25"/>
 </g>
 <g>
-	<circle class="st0" cx="106.54" cy="248.87" r="110"/>
+	<circle class="st0" cx="106.54" cy="248.87" r="110"style="stroke:grey;"/>
 	<circle class="st1" cx="106.54" cy="248.87" r="95"/>
 	<circle class="st0" cx="106.54" cy="248.87" r="80"/>
 	<circle class="st2" cx="106.54" cy="248.87" r="50"/>

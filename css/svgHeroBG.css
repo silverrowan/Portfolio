@@ -1,0 +1,76 @@
+:root { /* Hero Animation timing calculation in variables */
+    --animation-speed-multiplier: 0.5;
+
+    --heroBGcolor: #6EBE44;
+    --heroBGcolor-dark: #000000;
+}
+
+<style type="text/css">
+.st0, .st1, .st2, .st3 {
+	fill:none;
+	stroke-miterlimit:10;	
+	stroke-linecap:round;
+    stroke-linejoin:round;
+
+	stroke:#6EBE44;
+	stroke-width:20;
+}
+
+.st1, .st2 { stroke:#000000; }
+
+.st0 { stroke-width:20; }
+.st1 { stroke-width:25; }
+.st2 { stroke-width:50; }
+.st3 { stroke-width:10; stroke-dasharray:0.9171,13.7571; }
+.st4 { stroke-width:0; fill:#6EBE44;}
+
+/* svg.heroBG {
+    width: 100%;
+    height: 100%;
+} */
+
+div.hero.row {
+    background: url("../images/ScaleRings.svg");
+}
+
+
+
+
+
+
+	@keyframes move { 100% { stroke-dashoffset: 0; } } 
+	
+	/*Mariah set*/
+	#Mline {
+		stroke-dasharray: 60; 
+        stroke-dashoffset:60;
+        animation: move var(--animation-mtime-Mline) ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-Mline); 
+	}
+
+
+	.fillCircle {stroke-width: 0;}
+	.centermostCircle{fill:#6EBE44;}
+	.backgroundCircle{fill:#F9F1DD;}
+
+	.ring {
+		fill:none;
+		stroke:#70BF44;
+		stroke-width:10;
+		stroke-linecap:round;
+		stroke-miterlimit:10;
+	}
+
+	.behindDotsRingOuter{fill:none;stroke:#000000;stroke-width:50;stroke-miterlimit:10;}
+	.dotRing{fill:none;stroke:#70BF44;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0.01,15;}
+
+	.middleThickRing{fill:none;stroke:pink;stroke-width:28;stroke-miterlimit:10;}
+	.thinOnMiddleThickRing{fill:none;stroke:purple;stroke-width:2;stroke-miterlimit:10;}
+
+	.medDividerRing{fill:none;stroke:blue;stroke-width:6;stroke-miterlimit:10;}
+	.outermostThickRing{fill:none;stroke:#00A651;stroke-width:12;stroke-miterlimit:10;}
+	.outermostThinRing{fill:none;stroke:#ED1C24;stroke-width:2;stroke-miterlimit:10;}
+
+
+	.clip{clip-path:url(#borderClip);}
