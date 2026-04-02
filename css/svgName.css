@@ -1,0 +1,163 @@
+
+
+
+
+/* #region SVG styles & animation style - Create moving line Hero SVG animation*/
+/* Stroke-animation : by segment, ordered by animation timing */
+
+	:root { /* Hero Animation timing calculation in variables */
+		--animation-speed-multiplier: 0.5;
+
+		/*rough manually determined timings*/
+		--animation-time-Mariah: 4s;
+		--animation-time-Mline: 0.2s;
+		--animation-time-dot: 0.5s;
+		--animation-time-Rline: 0.5s;
+		--animation-time-Rbody: 1.5s;
+		--animation-time-owan: 2s;
+		--animation-time-q: 0.1s;
+		--animation-time-Mal: 2.5s;
+		--animation-time-czewska: 3s;
+
+		--animation-gaps-Mariah-dot: 0.1s;
+		--animation-gaps-dot-Mline: -0.4s;	
+		--animation-gaps-Mline-Rline: 0s;
+		--animation-gaps-Rline-Rbody: -0.1s;
+		--animation-gaps-Rbody-owan: -0.05s;
+		--animation-gaps-owan-q1: 0.05s;
+		--animation-gaps-q-q: 0.1s;
+		--animation-gaps-q-M: 0s;
+		--animation-gaps-M-al: -0.1s;
+		--animation-gaps-Mal-czewska: 0.1s;
+
+		/*sped up animating time for indiv segments*/	
+		--animation-mtime-Mariah: calc( var(--animation-speed-multiplier) * var(--animation-time-Mariah) );
+		--animation-mtime-Mline: calc( var(--animation-speed-multiplier) * var(--animation-time-Mline) );
+		--animation-mtime-dot:      calc( var(--animation-speed-multiplier) * var(--animation-time-dot) );
+		--animation-mtime-Rline:    calc( var(--animation-speed-multiplier) * var(--animation-time-Rline) );
+		--animation-mtime-Rbody:    calc( var(--animation-speed-multiplier) * var(--animation-time-Rbody) );
+		--animation-mtime-owan:     calc( var(--animation-speed-multiplier) * var(--animation-time-owan) );
+		--animation-mtime-q:        calc( var(--animation-speed-multiplier) * var(--animation-time-q) );
+		--animation-mtime-czewska:  calc( var(--animation-speed-multiplier) * var(--animation-time-czewska) );
+		--animation-mtime-Mal:  calc( var(--animation-speed-multiplier) * var(--animation-time-Mal) );
+
+
+		/* Cumulative sum of animation time and gaps, sped up */
+		--animation-delay-M1: 0s;
+		--animation-delay-ariah:    calc( var(--animation-delay-M1)    + var(--animation-speed-multiplier) * ( var(--animation-time-M)       + var(--animation-gaps-M-ariah) ) );
+		--animation-delay-dot:      calc( var(--animation-delay-ariah) + var(--animation-speed-multiplier) * ( var(--animation-time-ariah)   + var(--animation-gaps-ariah-dot) ) );
+
+		--animation-delay-Mariah: 0s;
+		--animation-delay-dot: calc( var(--animation-delay-Mariah) + var(--animation-speed-multiplier) * ( var(--animation-time-Mariah)   + var(--animation-gaps-Mariah-dot) ) );
+		--animation-delay-Mline: calc( var(--animation-delay-dot) + var(--animation-speed-multiplier) * ( var(--animation-time-dot)   + var(--animation-gaps-dot-Mline) ) );
+		/* --animation-delay-Rline:    calc( var(--animation-delay-dot)   + var(--animation-speed-multiplier) * ( var(--animation-time-dot)     + var(--animation-gaps-dot-Rline) ) ); */
+		--animation-delay-Rline:    calc( var(--animation-delay-Mline)   + var(--animation-speed-multiplier) * ( var(--animation-time-Mline)     + var(--animation-gaps-Mline-Rline) ) );
+
+		--animation-delay-Rbody:    calc( var(--animation-delay-Rline) + var(--animation-speed-multiplier) * ( var(--animation-time-Rline)   + var(--animation-gaps-Rline-Rbody) ) );
+		--animation-delay-owan:     calc( var(--animation-delay-Rbody) + var(--animation-speed-multiplier) * ( var(--animation-time-Rbody)   + var(--animation-gaps-Rbody-owan) ) );
+		--animation-delay-qA:       calc( var(--animation-delay-owan)  + var(--animation-speed-multiplier) * ( var(--animation-time-owan)    + var(--animation-gaps-owan-q1) ) );
+		--animation-delay-qB:       calc( var(--animation-delay-qA)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-q) ) );
+		--animation-delay-qC:       calc( var(--animation-delay-qB)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-q) ) );
+		--animation-delay-qD:       calc( var(--animation-delay-qC)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-q) ) );
+		--animation-delay-Mal:       calc( var(--animation-delay-qD)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-M) ) );
+		--animation-delay-czewska:  calc( var(--animation-delay-Mal)    + var(--animation-speed-multiplier) * ( var(--animation-time-Mal)      + var(--animation-gaps-Mal-czewska) ) );
+	}
+
+	.st0, .st1, .st2 { /* baseline svg line style */
+		fill:none;
+		stroke-miterlimit:10;
+		stroke:#00ADEE;
+		stroke-width:3;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+		stroke-width:2;
+	}
+
+	@keyframes move { 100% { stroke-dashoffset: 0; } } 
+	
+	/*Mariah set*/
+	#Mline {
+		stroke-dasharray: 60; 
+        stroke-dashoffset:60;
+        animation: move var(--animation-mtime-Mline) ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-Mline); 
+	}
+
+    #Mariah {
+        stroke-dasharray: 850; 
+        stroke-dashoffset: 850;
+        animation: move var(--animation-mtime-Mariah) ease-in-out ;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-Mariah);  
+    }
+
+    #idot { 
+        stroke-dasharray: 15; 
+        stroke-dashoffset: 15;
+        animation: move var(--animation-mtime-dot) ease-in-out ;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-dot);
+    }
+
+/* "Rowan set */
+    #Rline {
+        stroke-dasharray: 100; 
+        stroke-dashoffset: 100;
+        animation: move var(--animation-mtime-Rline) ease-in-out ;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-Rline);
+    }
+
+    #Rbody {
+        stroke-dasharray: 320; 
+        stroke-dashoffset: 320;
+        animation: move var(--animation-mtime-Rbody) ease-in-out ;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-Rbody); 
+    }
+
+    #owan {
+        stroke-dasharray: 360; 
+        stroke-dashoffset: 360;
+        animation: move var(--animation-mtime-owan) ease-in-out ;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-owan);
+    }
+
+    #q1, #q2, #q3, #q4 {
+        stroke-dasharray: 5; 
+        stroke-dashoffset: -5;
+        animation: move var(--animation-mtime-q) ease-in-out ;
+        animation-fill-mode: forwards;
+    }
+
+    #q3 { animation-delay: var(--animation-delay-qA); }
+    #q4 { animation-delay: var(--animation-delay-qB); }
+    #q1 { animation-delay: var(--animation-delay-qC); }
+    #q2 { animation-delay: var(--animation-delay-qD); }
+
+/* "Malcz... set*/
+    #Mal { 
+		stroke-dasharray: 570; 
+		stroke-dashoffset: 570;
+		animation: move var(--animation-mtime-Mal) ease-in-out ;
+		animation-fill-mode: forwards;
+		animation-delay: var(--animation-delay-Mal);  }
+    }
+
+    #czewska {
+        stroke-dasharray: 900; 
+        stroke-dashoffset: 900;
+        animation: move var(--animation-mtime-czewska) ease-in-out ;
+        animation-fill-mode: forwards;
+        animation-delay: var(--animation-delay-czewska);
+    }
+/* #endregion */
+
+
+
+
+
+
+
