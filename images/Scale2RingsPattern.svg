@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 234 129" style="enable-background:new 0 0 234 129;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F9F1DD;}
+	.st1{fill:none;stroke:#000000;stroke-width:50;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#70BF44;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0.9171,13.7571;}
+	.st3{fill:none;stroke:#6EBE44;stroke-width:28;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#00A651;stroke-width:12;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st6{fill:#6EBE44;}
+	.st7{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#ED1C24;stroke-width:2;stroke-miterlimit:10;}
+	.st9{clip-path:url(#SVGID_2_);}
+</style>
+<symbol  id="circle" viewBox="-119 -119 238 238">
+	<path class="st0" d="M0,119c-65.62,0-119-53.38-119-119S-65.62-119,0-119S119-65.62,119,0S65.62,119,0,119z M0-25
+		c0.43,0,0.86,0.01,1.29,0.03C0.86-24.99,0.43-25,0-25c-0.43,0-0.86,0.01-1.29,0.03C-0.86-24.99-0.43-25,0-25z M24.95-1.48
+		C24.98-0.99,25-0.5,25,0c0,0.46-0.01,0.92-0.04,1.37C24.99,0.92,25,0.46,25,0C25-0.5,24.98-0.99,24.95-1.48z"/>
+	<path class="st1" d="M0-50c-27.61,0-50,22.39-50,50s22.39,50,50,50S50,27.61,50,0S27.61-50,0-50"/>
+	<path class="st2" d="M0-50c-27.61,0-50,22.39-50,50s22.39,50,50,50S50,27.61,50,0S27.61-50,0-50"/>
+	<path class="st3" d="M0-87.5c-48.32,0-87.5,39.18-87.5,87.5S-48.32,87.5,0,87.5S87.5,48.32,87.5,0S48.32-87.5,0-87.5"/>
+	<path class="st4" d="M0-111c-61.3,0-111,49.7-111,111S-61.3,111,0,111S111,61.3,111,0S61.3-111,0-111"/>
+	<path class="st5" d="M0-102.5c-56.61,0-102.5,45.89-102.5,102.5S-56.61,102.5,0,102.5S102.5,56.61,102.5,0S56.61-102.5,0-102.5"/>
+	<path class="st6" d="M0-25c-13.81,0-25,11.19-25,25s11.19,25,25,25S25,13.81,25,0S13.81-25,0-25"/>
+	<path class="st7" d="M0-97.5c-53.85,0-97.5,43.65-97.5,97.5S-53.85,97.5,0,97.5S97.5,53.85,97.5,0S53.85-97.5,0-97.5"/>
+	<path class="st8" d="M0-118c-65.17,0-118,52.83-118,118S-65.17,118,0,118S118,65.17,118,0S65.17-118,0-118"/>
+</symbol>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="234" height="129"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st9">
+		
+			<use xlink:href="#circle"  width="238" height="238" id="XMLID_2_" x="-119" y="-119" transform="matrix(1 0 0 -1 116.9999 7.9999)" style="overflow:visible;"/>
+	</g>
+	<g class="st9">
+		
+			<use xlink:href="#circle"  width="238" height="238" x="-119" y="-119" transform="matrix(1 0 0 -1 233.9999 71.9999)" style="overflow:visible;"/>
+		
+			<use xlink:href="#circle"  width="238" height="238" x="-119" y="-119" transform="matrix(1 0 0 -1 -1.027844e-04 71.9999)" style="overflow:visible;"/>
+	</g>
+	<g class="st9">
+		
+			<use xlink:href="#circle"  width="238" height="238" id="XMLID_1_" x="-119" y="-119" transform="matrix(1 0 0 -1 116.9999 135.9999)" style="overflow:visible;"/>
+	</g>
+	<g class="st9">
+		
+			<use xlink:href="#circle"  width="238" height="238" x="-119" y="-119" transform="matrix(1 0 0 -1 233.9999 200.9999)" style="overflow:visible;"/>
+		
+			<use xlink:href="#circle"  width="238" height="238" x="-119" y="-119" transform="matrix(1 0 0 -1 -1.027844e-04 200.9999)" style="overflow:visible;"/>
+	</g>
+</g>
+</svg>
