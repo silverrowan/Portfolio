@@ -1,7 +1,3 @@
-
-
-
-
 /* #region SVG styles & animation style - Create moving line Hero SVG animation*/
 /* Stroke-animation : by segment, ordered by animation timing */
 
@@ -76,7 +72,7 @@
 	}
 
 	#radiusLine {
-    /* filter: blur(5px) ; */
+    filter: blur(5px) ;
 	backdrop-filter: blur(20px);
 		stroke: #154b5f20;
 		stroke-width: 30;
