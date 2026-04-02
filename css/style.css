@@ -21,3 +21,7 @@ p, button {font-family: "Gafata", sans-serif;}
 
 button {border-width: 0;}
 
+#hero {
+    background: url("../images/ScaleRings.svg");
+}
+
