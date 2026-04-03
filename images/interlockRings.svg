@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 25.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 234 129" preserveAspectRatio="xMidYMid meet"
+	 viewBox="0 0 936 516" preserveAspectRatio="xMidYMid meet"
 	 style="enable-background:new 0 0 234 129;" xml:space="preserve">
 <style>
     :root {
@@ -123,6 +123,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			<!-- <circle id="trouble" cx="0" cy="0" r="10" fill="url(#circleFadeGrad)" /> -->
 		</g>
 </symbol>
+
+<pattern id="ringsInterlockPat" width="234" height="129" patternUnits="userSpaceOnUse">
+
 <g>
 	<!-- <defs>	<rect id="defineClip" width="234" height="129"/>	</defs> -->
 	<!-- <clipPath id="borderClip">	<use xlink:href="#defineClip"  style="overflow:visible;"/>	</clipPath> -->
@@ -166,6 +169,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				x="-119" y="-119" 
 				transform="matrix(1 0 0 -1 -1.027844e-04 200.9999)" 
 				style="overflow:visible;"/>
-
 </g>
+
+</pattern>
+	<rect width="100%" height="100%" fill="url(#ringsInterlockPat)"/>
+
 </svg>

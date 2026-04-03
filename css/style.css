@@ -21,6 +21,7 @@
     --color-focal: #00c6fd; /*bright cyan*/
     --color-focalDark: #008fc4; /*mid cyan*/
 
+    --BG-patternSize: 5%;
 }
 
 /*ALT THEMES*/
@@ -63,8 +64,10 @@ p, button {font-family: "Gafata", sans-serif;}
 button {border-width: 0;}
 
 .sharedBG {
+    background-color: var(--backgroundColor);
     background: url("../images/Scale2RingsPattern.svg");
-    background-size: 5%;}
+    background-size: var(--BG-patternSize);
+}
 
 #hero {
 
@@ -73,6 +76,14 @@ button {border-width: 0;}
 }
 
 #projects {
-    background-color: var(--color-accent-dull);
+    /* background-color: var(--color-accent-dull); */
 }
 
+.projectBG {
+    background: url("../images/interlockRings.svg");
+    background-color: var(--backgroundColor-med);
+    background-size: var(--BG-patternSize);
+}
+
+
+}
