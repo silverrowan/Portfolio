@@ -110,24 +110,24 @@
 	/*Applied to the SYMBOL (which gets re-used as layers)*/
 	/*Mariah set*/
 	#Mline {
-		stroke-dasharray: 1;
-        stroke-dashoffset: 1;
+		stroke-dasharray: 60;
+        stroke-dashoffset: 60;
         animation: move var(--animation-mtime-Mline) ease-in;
         animation-fill-mode: forwards;
         animation-delay: var(--animation-delay-Mline); 
 	}
 
     #Mariah {
-        stroke-dasharray: 1;
-        stroke-dashoffset: 1;
+        stroke-dasharray: 850;
+        stroke-dashoffset: 850;
         animation: move var(--animation-mtime-Mariah) ease-in-out ;
         animation-fill-mode: forwards;
         animation-delay: var(--animation-delay-Mariah);  
     }
 
     #idot { 
-        stroke-dasharray: 1; 
-        stroke-dashoffset: 1;
+        stroke-dasharray: 10; 
+        stroke-dashoffset: 10;
         animation: move var(--animation-mtime-dot) ease-in-out ;
         animation-fill-mode: forwards;
         animation-delay: var(--animation-delay-dot);

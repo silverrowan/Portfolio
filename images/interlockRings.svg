@@ -128,13 +128,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 
 <g>
 	<!-- <defs>	<rect id="defineClip" width="234" height="129"/>	</defs> -->
-	<!-- <clipPath id="borderClip">	<use xlink:href="#defineClip"  style="overflow:visible;"/>	</clipPath> -->
+	<!-- <clipPath id="borderClip">	<use xlink:href="#defineClip"  style="overflow:hidden;"/>	</clipPath> -->
 
 			<use xlink:href="#circle" width="238" height="238" 
 				class="centerFan upperMidFan"
 				x="-119" y="-119" 
 				transform="matrix(1 0 0 -1 116.9999 7.9999)" 
-				style="overflow:visible;"/>
+				style="overflow:hidden;"/>
 
 
 	
@@ -142,12 +142,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				class="cornerFan rightFan topFan"
  				x="-119" y="-119" 
 				transform="matrix(1 0 0 -1 233.9999 71.9999)" 
-				style="overflow:visible;"/>
+				style="overflow:hidden;"/>
 			<use xlink:href="#circle"  width="238" height="238" 
 				class="cornerFan leftFan topFan"
 				x="-119" y="-119" 
 				transform="matrix(1 0 0 -1 -1.027844e-04 71.9999)" 
-				style="overflow:visible;"/>
+				style="overflow:hidden;"/>
 
 
 
@@ -155,7 +155,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				class="centerFan lowerMidFan"
 				x="-119" y="-119" 
 				transform="matrix(1 0 0 -1 116.9999 135.9999)" 
-				style="overflow:visible;"/>
+				style="overflow:hidden;"/>
 
 	
 	
@@ -163,12 +163,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				class="cornerFan rightFan bottomFan"
 				x="-119" y="-119" 
 				transform="matrix(1 0 0 -1 233.9999 200.9999)" 
-				style="overflow:visible;"/>
+				style="overflow:hidden;"/>
 			<use xlink:href="#circle"  width="238" height="238" 
 				class="cornerFan leftFan bottomFan"
 				x="-119" y="-119" 
 				transform="matrix(1 0 0 -1 -1.027844e-04 200.9999)" 
-				style="overflow:visible;"/>
+				style="overflow:hidden;"/>
 </g>
 
 </pattern>
