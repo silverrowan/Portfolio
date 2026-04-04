@@ -103,30 +103,35 @@ unfortnuately it thoroughly messed up styling, so treating them
 as I would a ::before or ::after I intended to stack with parent*/
 /* #region Styling for svg name by use 'layer' - color, width, and filters */
 
-div#Row1Names {
+div#Row1Names, div#Row2Names, div#Row3Names {
 	position: relative;
 }
 
-#mainLine-fullName  { /* baseline svg line style */
-		stroke: var(--color-accent);
-		stroke-width: 3;
+#mainLine-fullName, #mainLine-fullName2, #mainLine-fullName3  { /* baseline svg line style */
+	position: relative;
+	stroke: var(--color-accent);
+	stroke-width: 3;
+	width: 100%;
+	height: auto;
+	inset: 0; /*replaces top/left/etc*/
 }
 
-#softLine-fullName, #darkLine-fullName {
+#softLine-fullName, #softLine-fullName2, #softLine-fullName3, 
+#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 {
 	position: absolute;
-	top:0;
-	left:0;
+	inset:0;
 	width: 100%;
+	height: auto;
 	z-index: -1;
 }
 
-#softLine-fullName {
+#softLine-fullName, #softLine-fullName2, #softLine-fullName3 {
 	stroke: var(--backgroundColor-light);
 	stroke-width: 4;
 	filter: blur(1px);
 }
 
-#darkLine-fullName {
+#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 {
 	stroke: var(--color-accent-dull);
 	stroke-width: 6;
 	filter: blur(1px);
@@ -138,31 +143,20 @@ div#Row1Names {
 
 /* "Narrow Screen" (baseline) display settings for svg name section */
 /* div#Row1Names { display: none; } */
-div#Row3Names {
-	display: flex;
-	flex-direction: column;
-}
-
-
-
-
-/* 
-                    <use href="#nameSVG" class="darkline"></use>
-                    <use href="#nameSVG" class="radiusline"></use>
-                    <use href="#nameSVG" class="mainline"></use>
-                    <use href="#nameSVG" class="leadline"></use> */
-
-/* Adjust spacing of names when in 3 rows */
-svg#RowanSVG { margin: -0.5rem 1rem 0; }
-svg#MariahSVG {	margin-right: 1rem; }
-svg#MalczewskaSVG {	margin-left: 1rem;}
-
+	/* div#Row3Names {	display: flex; }
+	div#Row2Names { display: none; }
+	div#Row1Names { display: none; } */
 
 /* adjust to names to 1 row when width above 525*/
-@media (min-width: 525px) {
+/* @media (min-width: 525px) {
 	div#Row3Names { display: none; }
+	div#Row2Names { display: none; }
 	div#Row1Names { display: flex; }
-}
+} */
+
+
+
+
 
 /*#endregion*/
 
@@ -171,15 +165,15 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
 /*#region Set up animation of svg name and it's prerequisites (stroke dash); Applied to paths IN symbol*/ 
 	/*Mariah set*/
 
-	/* #Mline, #Mariah, #idot, #Rline, #Rbody, #owan, #Mal, #czewska, #q1, #q2, #q3, #q4,
-	#Mline1, #Mariah1, #idot1, #Rline1, #Rbody1, #owan1, #Mal1, #czewska1, #q1-1, #q2-1, #q3-1, #q4-1
+	/* .Mline, .Mariah, .idot, .Rline, .Rbody, .owan, .Mal, .czewska, .q1, .q2, .q3, .q4,
+	.Mline1, .Mariah1, .idot1, .Rline1, .Rbody1, .owan1, .Mal1, .czewska1, .q1-1, .q2-1, .q3-1, .q4-1
 	{
 		stroke: var(--svgStrokeColor);
 		stroke-width: var(--svgStrokeWidth);
 		filter: var(svgFilter);
 	} */
 
-	#Mline, #Mline1 {
+	.Mline {
 		stroke-dasharray: 60;
         stroke-dashoffset: 60;
         animation: move var(--animation-mtime-Mline) ease-in;
@@ -187,17 +181,25 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
         animation-delay: var(--animation-delay-Mline); 
 	}
 
-    #Mariah, #Mariah1 {
+	#Row3Names .Mline{
+		stroke-dasharray: 80;
+        stroke-dashoffset: 80;
+	}
+
+    .Mariah {
         stroke-dasharray: 850;
         stroke-dashoffset: 850;
         animation: move var(--animation-mtime-Mariah) ease-in-out ;
         animation-fill-mode: forwards;
         animation-delay: var(--animation-delay-Mariah);  
-		/* stroke: red;
-		stroke-width: 1px; */
     }
 
-    #idot, #idot1 { 
+	#Row3Names .Mariah {
+        stroke-dasharray: 1100;
+        stroke-dashoffset: 1100;
+	}
+
+    .idot, .idot1 { 
         stroke-dasharray: 10; 
         stroke-dashoffset: 10;
         animation: move var(--animation-mtime-dot) ease-in-out ;
@@ -206,7 +208,7 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
     }
 
 	/* "Rowan set */
-    #Rline, #Rline1 {
+    .Rline, .Rline1 {
         stroke-dasharray: 100; 
         stroke-dashoffset: 100;
         animation: move var(--animation-mtime-Rline) ease-in-out ;
@@ -214,7 +216,7 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
         animation-delay: var(--animation-delay-Rline);
     }
 
-    #Rbody, #Rbody1 {
+    .Rbody, .Rbody1 {
         stroke-dasharray: 320; 
         stroke-dashoffset: 320;
         animation: move var(--animation-mtime-Rbody) ease-in-out ;
@@ -222,7 +224,7 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
         animation-delay: var(--animation-delay-Rbody); 
     }
 
-    #owan, #owan1 {
+    .owan, .owan1 {
         stroke-dasharray: 360; 
         stroke-dashoffset: 360;
         animation: move var(--animation-mtime-owan) ease-in-out ;
@@ -230,20 +232,20 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
         animation-delay: var(--animation-delay-owan);
     }
 
-    #q1, #q2, #q3, #q4, #q1-1, #q2-1, #q3-1, #q4-1 {
+    .q1, .q2, .q3, .q4, .q1-1, .q2-1, .q3-1, .q4-1 {
         stroke-dasharray: 5; 
         stroke-dashoffset: -5;
         animation: move var(--animation-mtime-q) ease-in-out ;
         animation-fill-mode: forwards;
     }
 
-    #q3, #q3-1 { animation-delay: var(--animation-delay-qA); }
-    #q4, #q4-1 { animation-delay: var(--animation-delay-qB); }
-    #q1, #q1-1 { animation-delay: var(--animation-delay-qC); }
-    #q2, #q2-1 { animation-delay: var(--animation-delay-qD); }
+    .q3, .q3-1 { animation-delay: var(--animation-delay-qA); }
+    .q4, .q4-1 { animation-delay: var(--animation-delay-qB); }
+    .q1, .q1-1 { animation-delay: var(--animation-delay-qC); }
+    .q2, .q2-1 { animation-delay: var(--animation-delay-qD); }
 
 /* "Malcz... set*/
-    #Mal, #Mal1 { 
+    .Mal, .Mal1 { 
 		stroke-dasharray: 570; 
 		stroke-dashoffset: 570;
 		animation: move var(--animation-mtime-Mal) ease-in-out ;
@@ -251,7 +253,7 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
 		animation-delay: var(--animation-delay-Mal);  
     }
 
-    #czewska, #czewska1 {
+    .czewska, .czewska1 {
         stroke-dasharray: 900; 
         stroke-dashoffset: 900;
         animation: move var(--animation-mtime-czewska) ease-in-out ;
