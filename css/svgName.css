@@ -141,18 +141,25 @@ div#Row1Names, div#Row2Names, div#Row3Names {
 
 /*#region svg name layout*/
 
-/* "Narrow Screen" (baseline) display settings for svg name section */
-/* div#Row1Names { display: none; } */
-	/* div#Row3Names {	display: flex; }
-	div#Row2Names { display: none; }
-	div#Row1Names { display: none; } */
+/* "Narrow Screen" (baseline) display settings for svg name section */ 
+div#Row1Names { display: none; }
+div#Row2Names { display: none; }
+div#Row3Names {	display: flex; }
 
-/* adjust to names to 1 row when width above 525*/
-/* @media (min-width: 525px) {
-	div#Row3Names { display: none; }
-	div#Row2Names { display: none; }
+/*adjust Hero script to alternate image at specific widths*/
+/*using the same svg code and adjusting its layout did not look good
+So I made different graphics for the three sizes */
+@media (min-width: 700px) {
+	div#Row1Names { display: none; }
+	div#Row2Names { display: flex; }
+	div#Row3Names {	display: none; }
+}
+
+@media (min-width: 1100px) {
 	div#Row1Names { display: flex; }
-} */
+	div#Row2Names { display: none; }
+	div#Row3Names { display: none; }
+}
 
 	#heroContent {
 		height: 90vh;
@@ -164,23 +171,6 @@ div#Row1Names, div#Row2Names, div#Row3Names {
 		/* overflow-x: hidden; */
 		/* height: 90%; */
 	}
-
-	#MariahGroup {
-		/* flex: 233px;
-		width: 233px; */
-		width: 100%;
-	}
-	#Rowan {
-		flex: 212px;
-		width: 212px;
-	}
-	#Malczewska {
-		flex: 310px;
-		width: 310px;
-	}
-
-
-
 
 /*#endregion*/
 
