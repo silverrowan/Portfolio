@@ -41,7 +41,7 @@
 
 		/* Cumulative sum of animation time and gaps, sped up */
 		--animation-delay-M1: 0s;
-		--animation-delay-ariah:    calc( var(--animation-delay-M1)    + var(--animation-speed-multiplier) * ( var(--animation-time-M)       + var(--animation-gaps-M-ariah) ) );
+		--animation-delasty-ariah:    calc( var(--animation-delay-M1)    + var(--animation-speed-multiplier) * ( var(--animation-time-M)       + var(--animation-gaps-M-ariah) ) );
 		--animation-delay-dot:      calc( var(--animation-delay-ariah) + var(--animation-speed-multiplier) * ( var(--animation-time-ariah)   + var(--animation-gaps-ariah-dot) ) );
 
 		--animation-delay-Mariah: 0s;
@@ -80,7 +80,7 @@
 		--stroke-dashLead-Mariah: var(--s);
 	}
 
-	.st0, .st1, .st2 { /* baseline svg line style */
+	.st0, .st1, .st2, .heroName { /* baseline svg line style */
 		fill:none;
 		stroke-miterlimit:10;
 		stroke-linecap:round;
