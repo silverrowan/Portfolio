@@ -243,7 +243,7 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
     #q2, #q2-1 { animation-delay: var(--animation-delay-qD); }
 
 /* "Malcz... set*/
-    #Mal, #Mal-1 { 
+    #Mal, #Mal1 { 
 		stroke-dasharray: 570; 
 		stroke-dashoffset: 570;
 		animation: move var(--animation-mtime-Mal) ease-in-out ;
@@ -251,7 +251,7 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
 		animation-delay: var(--animation-delay-Mal);  
     }
 
-    #czewska, #czewska-1 {
+    #czewska, #czewska1 {
         stroke-dasharray: 900; 
         stroke-dashoffset: 900;
         animation: move var(--animation-mtime-czewska) ease-in-out ;
