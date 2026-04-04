@@ -80,8 +80,10 @@
 		--stroke-dashLead-Mariah: var(--s);
 	}
 
-	.st0, .st1, .st2, .heroName { /* baseline svg line style */
+.st0, .st1, .st2, .heroName { /* baseline svg line style */
 		fill:none;
+		stroke:red;
+		stroke-width: 2px;
 		stroke-miterlimit:10;
 		stroke-linecap:round;
 		stroke-linejoin:round;
@@ -104,6 +106,30 @@
 		filter: blur(1px);
 	}
 
+	#heroContent {
+		height: 90vh;
+	}
+
+	#heroNameDiv {
+		/* justify-content: center;
+		align-items: start; */
+		/* overflow-x: hidden; */
+		/* height: 90%; */
+	}
+
+	#MariahGroup {
+		/* flex: 233px;
+		width: 233px; */
+		width: 100%;
+	}
+	#Rowan {
+		flex: 212px;
+		width: 212px;
+	}
+	#Malczewska {
+		flex: 310px;
+		width: 310px;
+	}
 
 	@keyframes move { 100% { stroke-dashoffset: 0; } } 
 	
