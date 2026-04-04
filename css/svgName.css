@@ -98,19 +98,35 @@ svg {
 	margin-left: 0;
 }
 
+/*tried using symbols in the SVG to reduce code duplication, but 
+unfortnuately it thoroughly messed up styling, so treating them
+as I would a ::before or ::after I intended to stack with parent*/
 /* #region Styling for svg name by use 'layer' - color, width, and filters */
-use.mainLine { /* baseline svg line style */
+
+div#Row1Names {
+	position: relative;
+}
+
+#mainLine-fullName  { /* baseline svg line style */
 		stroke: var(--color-accent);
 		stroke-width: 3;
 }
 
-use.radiusLine {
+#softLine-fullName, #darkLine-fullName {
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	z-index: -1;
+}
+
+#softLine-fullName {
 	stroke: var(--backgroundColor-light);
 	stroke-width: 4;
 	filter: blur(1px);
 }
 
-use.darkLine {
+#darkLine-fullName {
 	stroke: var(--color-accent-dull);
 	stroke-width: 6;
 	filter: blur(1px);
@@ -126,6 +142,15 @@ div#Row3Names {
 	display: flex;
 	flex-direction: column;
 }
+
+
+
+
+/* 
+                    <use href="#nameSVG" class="darkline"></use>
+                    <use href="#nameSVG" class="radiusline"></use>
+                    <use href="#nameSVG" class="mainline"></use>
+                    <use href="#nameSVG" class="leadline"></use> */
 
 /* Adjust spacing of names when in 3 rows */
 svg#RowanSVG { margin: -0.5rem 1rem 0; }
@@ -168,8 +193,8 @@ svg#MalczewskaSVG {	margin-left: 1rem;}
         animation: move var(--animation-mtime-Mariah) ease-in-out ;
         animation-fill-mode: forwards;
         animation-delay: var(--animation-delay-Mariah);  
-		stroke: red;
-		stroke-width: 1px;
+		/* stroke: red;
+		stroke-width: 1px; */
     }
 
     #idot, #idot1 { 
