@@ -1,19 +1,27 @@
 :root {
-    --backgroundColor: blue;
-    --backgroundColor-dark: darkblue;
+    --backgroundColor-light: #eaf0e7; /* light olivine */
+    --backgroundColor: #d7ddd4; /* light olivine */
+    --backgroundColor-med: #bdc5b8; /* light olivine */
+    --backgroundColor-dark: #a4ae9d; /*light olivine */
+    --backgroundColor-xdark: #94a08c; /*light olivine */
+
+    --color-accent-bright: #87e953; /*lime*/
+    --color-accent-light: #81ce58; /*lime*/
+    --color-accent: #6ebe44; /*lime*/
+    --color-accent-med: #61af37; /*lime*/
+    --color-accent-dark: #51972b; /*lime*/
+	--color-accent-dull: color-mix(in srgb, #888888, var(--color-accent)); /*lime*/
 
     /* color palette 1 */
     --color-main: #6ebe44; /*lime*/
     --color-subtlelight: #53574f; /*dark slate */
     --color-subtleMed: #41493b; /*dark slate */
     --color-subtleDark: #383f33; /*dark slate */
-    --color-altSubtleXLight: #d7ddd4; /*light slate */
-    --color-altSubtleLight: #bdc5b8; /*light slate */
-    --color-altSubtleMed: #a4ae9d; /*light slate */
-    --color-altSubtleDark: #94a08c; /*light slate */
+
     --color-focal: #00c6fd; /*bright cyan*/
     --color-focalDark: #008fc4; /*mid cyan*/
 
+    --BG-patternSize: 5%;
 }
 
 /*ALT THEMES*/
@@ -30,6 +38,10 @@
     --color-main: #6ebe44; /*lime*/
     --color-subtleLight: #f5f1de; /*light cream*/
     --color-subtleDark: #8b8550; /*green ochre*/
+}
+
+div, section {
+    background-color: transparent !important;
 }
 
 * {
@@ -55,13 +67,13 @@ p, button {font-family: "Gafata", sans-serif;}
 
 button {border-width: 0;}
 
-.sharedBG {
-    background: url("../images/Scale2RingsPattern.svg");
-    background-size: 5%;}
+#fullBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -999;
 
-#hero {
-
-    /* background-image: linear-gradient(#5f5f5fda, #ffffffda), url("../images/noise.svg"); */
-    /* background-size: 200%; */
+    height: 100vh;
+    width: 100vw;
 }
-

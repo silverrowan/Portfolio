@@ -1,4 +1,80 @@
-/* #region SVG styles & animation style - Create moving line Hero SVG animation*/
+<filter id='confetii'>
+	<!-- makes random noise (grainy effect) -->
+    <feTurbulence 
+      type='fractalNoise' 
+      baseFrequency='0.3' 
+      numOctaves='2' 
+      stitchTiles='stitch'
+	  result="NOISE"
+	></feTurbulence>
+
+		<!--High Pass Effect (Sub-filter Set)-->
+	    <!-- Make a blurred copy of the source -->
+    	<feGaussianBlur in="NOISE" stdDeviation="2" result="BLURNOISE" />
+    	<!--Calculate original - blurred -->
+   		<feComposite in="NOISE" in2="blurred" operator="arithmetic" 
+                 k1="0" k2="1" k3="-1" k4="0" result="DIFFBLUR" />
+	    Fill with 50% gray
+    	<feColorMatrix 
+			result="GREY"
+			type="matrix" 
+			values="1 0 0 0 0
+					0 1 0 0 0
+					0 0 1 0 0
+					-0.5 -0.5 -0.5 0 1" />
+
+
+	<!-- Strengthen (slope >1) or Soften (slope <1) the upcoming blend effect by reducing opacity of input -->
+	<feComponentTransfer 
+  		in="DIFFBLUR" 
+		result="TRANSL">
+    	<feFuncA type="linear" slope="02"/>
+	</feComponentTransfer>
+	<!-- Clip noise to opacity of path called on -->
+	<feComposite
+		in2="SourceAlpha"
+		in="TRANSL"
+		operator="in"
+		result="CLIPNOISE"
+	></feComposite>
+	/*below combines gradient with noise to get fading grain effect*/ 
+	/* poss values for mode=""  normal; darken; multiply; color-burn; lighten; 
+				screen; color-dodge; overlay ; soft-light; hard-light; 
+				difference; exclusion; hue; saturation; color; luminosity */
+	<feBlend
+          in="SourceGraphic"
+          in2="CLIPNOISE"
+          mode="color-dodge"
+          result="BLEND"
+    ></feBlend>
+  </filter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* #region SVG styles & animation style - Create moving line Hero SVG animation*/
 /* Stroke-animation : by segment, ordered by animation timing */
 
 	:root { 
@@ -72,12 +148,17 @@
 		--color-accent: #6ebe44; /*lime*/
 		--color-accent-med: #61af37; /*lime*/
 		--color-accent-dark: #51972b; /*lime*/
-		--color-accent-dull: color-mix(in srgb, #888888 80%, var(--color-accent)); /*lime*/
+		--color-accent-dull: color-mix(in srgb, #888888, var(--color-accent)); /*lime*/
 
 		--stroke-dashLength-MLine: 60;
-		--stroke-dashLead-MLine: var(--stroke-dashLength-MLine);
 		--stroke-dashLength-Mariah: 850;
-		--stroke-dashLead-Mariah: var(--s);
+		--stroke-dashLength-idot: 850;
+		--stroke-dashLength-Rline: 850;
+		--stroke-dashLength-Rbody: 850;
+		--stroke-dashLength-owan: 850;
+		--stroke-dashLength-q: 850;
+		--stroke-dashLength-Mal: 850;
+		--stroke-dashLength-czewska: 850;
 	}
 
 	.st0, .st1, .st2 { /* baseline svg line style */
@@ -87,110 +168,28 @@
 		stroke-linejoin:round;
 	}
 	
-	use#mainLine { /* baseline svg line style */
-		stroke: var(--color-accent);
+	#mainLine #MLine { /* baseline svg line style */
+		/* stroke: var(--color-accent); */
+		stroke: #6ebe44;
 		stroke-width: 3;
 	}
 
-	use#radiusLine {
-		stroke: var(--backgroundColor-light);
-		stroke-width: 4;
-		filter: blur(1px);
+	#radiusLine { /* background overlay line style */
+    /* filter: blur(5px) ; */
+	backdrop-filter: blur(20px);
+		stroke: #154b5f20;
+		stroke-width: 30;
+		/* background-image: url("../images/noise.svg"); */
 	}
 
-	use#darkLine {
-		stroke: var(--color-accent-dull);
-		stroke-width: 6;
-		filter: blur(1px);
-	}
-
+	/* #leadingLine {
+		stroke: var(--color-accent-bright);
+		stroke: #87e953;
+		stroke-width: 3;
+		stroke-dasharray: 10, 999; 
+	} */
 
 	@keyframes move { 100% { stroke-dashoffset: 0; } } 
 	
 	/*Applied to the SYMBOL (which gets re-used as layers)*/
 	/*Mariah set*/
-	#Mline {
-		stroke-dasharray: 60;
-        stroke-dashoffset: 60;
-        animation: move var(--animation-mtime-Mline) ease-in;
-        animation-fill-mode: forwards;
-        animation-delay: var(--animation-delay-Mline); 
-	}
-
-    #Mariah {
-        stroke-dasharray: 850;
-        stroke-dashoffset: 850;
-        animation: move var(--animation-mtime-Mariah) ease-in-out ;
-        animation-fill-mode: forwards;
-        animation-delay: var(--animation-delay-Mariah);  
-    }
-
-    #idot { 
-        stroke-dasharray: 10; 
-        stroke-dashoffset: 10;
-        animation: move var(--animation-mtime-dot) ease-in-out ;
-        animation-fill-mode: forwards;
-        animation-delay: var(--animation-delay-dot);
-    }
-
-/* "Rowan set */
-    #Rline {
-        stroke-dasharray: 100; 
-        stroke-dashoffset: 100;
-        animation: move var(--animation-mtime-Rline) ease-in-out ;
-        animation-fill-mode: forwards;
-        animation-delay: var(--animation-delay-Rline);
-    }
-
-    #Rbody {
-        stroke-dasharray: 320; 
-        stroke-dashoffset: 320;
-        animation: move var(--animation-mtime-Rbody) ease-in-out ;
-        animation-fill-mode: forwards;
-        animation-delay: var(--animation-delay-Rbody); 
-    }
-
-    #owan {
-        stroke-dasharray: 360; 
-        stroke-dashoffset: 360;
-        animation: move var(--animation-mtime-owan) ease-in-out ;
-        animation-fill-mode: forwards;
-        animation-delay: var(--animation-delay-owan);
-    }
-
-    #q1, #q2, #q3, #q4 {
-        stroke-dasharray: 5; 
-        stroke-dashoffset: -5;
-        animation: move var(--animation-mtime-q) ease-in-out ;
-        animation-fill-mode: forwards;
-    }
-
-    #q3 { animation-delay: var(--animation-delay-qA); }
-    #q4 { animation-delay: var(--animation-delay-qB); }
-    #q1 { animation-delay: var(--animation-delay-qC); }
-    #q2 { animation-delay: var(--animation-delay-qD); }
-
-/* "Malcz... set*/
-    #Mal { 
-		stroke-dasharray: 570; 
-		stroke-dashoffset: 570;
-		animation: move var(--animation-mtime-Mal) ease-in-out ;
-		animation-fill-mode: forwards;
-		animation-delay: var(--animation-delay-Mal);  
-    }
-
-    #czewska {
-        stroke-dasharray: 900; 
-        stroke-dashoffset: 900;
-        animation: move var(--animation-mtime-czewska) ease-in-out ;
-        animation-fill-mode: forwards;
-        animation-delay: var(--animation-delay-czewska);
-    }
-/* #endregion */
-
-
-
-
-
-
-
