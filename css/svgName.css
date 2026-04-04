@@ -11,7 +11,7 @@
 		--animation-time-Mline: 0.2s;
 		--animation-time-dot: 0.5s;
 		--animation-time-Rline: 0.5s;
-		--animation-time-Rbody: 1.5s;
+		--animation-time-Rbody: 1.2s;
 		--animation-time-owan: 2s;
 		--animation-time-q: 0.1s;
 		--animation-time-Mal: 2.5s;
@@ -86,6 +86,12 @@
 		stroke-linecap:round;
 		stroke-linejoin:round;
 	}
+
+	#heroContent {
+		overflow-x: hidden;
+		margin-right: 0;
+		margin-left: 0;
+	}
 	
 	use#mainLine { /* baseline svg line style */
 		stroke: var(--color-accent);
@@ -104,9 +110,45 @@
 		filter: blur(1px);
 	}
 
+	svg {
+		margin: 0;
+		padding: 0;
+	}
+
+
 
 	@keyframes move { 100% { stroke-dashoffset: 0; } } 
 	
+
+div#Row3Names {
+	display: flex;
+	flex-direction: column;
+}
+div#Row1Names {
+	display: none;
+}
+
+svg#RowanSVG {
+	margin: -0.5rem 1rem 0;
+}
+svg#MariahSVG {
+	margin-right: 1rem;
+}
+svg#MalczewskaSVG {
+	margin-left: 1rem;
+}
+
+
+@media (min-width: 525px) {
+	div#Row3Names {
+		display: none;
+	}
+	
+	div#Row1Names {
+		display: flex;
+	}
+}
+
 	/*Applied to the SYMBOL (which gets re-used as layers)*/
 	/*Mariah set*/
 	#Mline {
