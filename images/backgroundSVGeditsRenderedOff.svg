@@ -1,0 +1,146 @@
+<svg id="backgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="-240 -240 936 516" 
+    preserveAspectRatio="xMidYMid meet">
+
+    <style>
+:root {
+	--backgroundColor-light: #eaf0e7;
+	--backgroundColor: #d7ddd4;
+    --backgroundColor-med: #bdc5b8;
+
+	/* Background Animation timing calculation in variables */
+	--animationBG-speed-multiplier: 0.5;
+	}
+
+@keyframes rotateIn { 100% { stroke-dashoffset: 0; } } 
+
+.ring {
+	fill:none;
+	stroke-miterlimit:10;	
+	stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.fillCircle {stroke-width: 0; }
+.backgroundCircle{ fill: var(--backgroundColor-med); }
+
+.ring {
+	fill:transparent;
+	stroke: var(--backgroundColor-med);
+	stroke-width:10;
+}
+
+.lightRing {
+	fill:transparent;
+	stroke: var(--backgroundColor-light);
+	stroke-width:2;
+}
+
+#droplet {
+	fill: var(--backgroundColor-light);
+	stroke: var(--backgroundColor);
+	/* stroke-width: 2; */
+}
+
+.centermostCircle{ fill: var(--backgroundColor); }
+
+.behindDotsRingOuter, .thinOnMiddleThickRing, .medDividerRing, .outermostThinRing {
+	stroke: var(--backgroundColor-med); 
+}
+.dotRing, .middleThickRing, .outermostThickRing {
+	stroke: var(--backgroundColor); 
+}
+	
+.behindDotsRingOuter { stroke-width:50;}
+.dotRing { stroke-width:10; stroke-dasharray:0,15;}
+
+.middleThickRing{ stroke-width:32;}
+.thinOnMiddleThickRing{ stroke-width:2; }
+
+.medDividerRing{ stroke-width:6; }
+
+.outermostThickRing{ stroke-width:11; }
+.outermostThinRing{ stroke-width:2; }
+
+    </style>
+
+    <filter id='noiseFilter'>
+	<!-- makes random noise (grainy effect) -->
+        <feTurbulence 
+            type='turbulence' 
+            baseFrequency='0.3' 
+            numOctaves='1' 
+            stitchTiles='stitch'
+            result="NOISE" />
+
+		<!--High Pass Effect (Sub-filter Set)-->
+	    <!-- Make a blurred copy of the source -->
+    	<feGaussianBlur in="NOISE" stdDeviation="2" result="BLURNOISE" />
+    	<!--Calculate original - blurred -->
+   		<feComposite in="NOISE" in2="blurred" operator="arithmetic" 
+                 k1="0" k2="1" k3="-1" k4="0" result="DIFFBLUR" />
+	    <!-- Fill with 50% gray 
+		normally would follow with blend: overlay for sharpening, but transforming the result first -->
+    	<feColorMatrix 
+			result="GREY"
+			type="matrix" 
+			values="1 0 0 0 0
+					0 1 0 0 0
+					0 0 1 0 0
+					-0.5 -0.5 -0.5 0 1" />
+        <!-- Strengthen (slope >1) or Soften (slope <1) the upcoming blend effect by reducing opacity of input -->
+        <feComponentTransfer 
+            in="GREY" 
+            result="TRANSL">
+            <feFuncA type="linear" slope="0.15"/>
+        </feComponentTransfer>
+        <!-- Clip noise to opacity of path called on -->
+        <feComposite
+            in2="SourceAlpha"
+            in="TRANSL"
+            operator="in"
+            result="CLIPNOISE" />
+        /*below combines noise with parent path(s); its also the last step in the high-pass-sharpen effect*/ 
+        /* poss values for mode=""  normal; darken; multiply; color-burn; lighten; 
+                    screen; color-dodge; overlay ; soft-light; hard-light; 
+                    difference; exclusion; hue; saturation; color; luminosity */
+        <feBlend
+            in="SourceGraphic"
+            in2="CLIPNOISE"
+            mode="overlay"
+            result="BLEND" />
+    </filter>
+
+	<symbol  id="circle" viewBox="-240 -240 480 480" >
+		<g id="circleFilter" > 
+            <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="240" />
+            <circle class="centermostCircle fillCircle" cx="0" cy="0" r="50" />
+
+            <circle class="behindDotsRingOuter ring" cx="0" cy="0" r="100" />
+            <circle class="dotRing ring" cx="0" cy="0" r="100" />
+
+            <circle class="middleThickRing ring" cx="0" cy="0" r="182"  />
+            <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="198" />
+            <circle class="medDividerRing ring" cx="0" cy="0" r="208" />
+            
+
+            <circle class="outermostThickRing ring" cx="0" cy="0" r="225" />
+            <circle class="outermostThinRing ring" cx="0" cy="0" r="238" />
+		</g>
+	</symbol>
+
+    <pattern id="dotFanRingsPattern" width="240" height="120" patternUnits="userSpaceOnUse">
+        <g id="patternBase">
+            <!-- <use href="#circle" class="centerFan lowerMidFan" x="0" y="0" width="240" height="240"/> -->
+            
+            <use href="#circle" class="cornerFan rightFan topFan" x="120" y="-60" width="240" height="240"/>
+            <use href="#circle" class="cornerFan leftFan topFan" x="-120" y="-60" width="240" height="240"/>
+
+            <use href="#circle" class="centerFan upperMidFan" x="0" y="0" width="240" height="240"/>
+
+            <use href="#circle" class="cornerFan rightFan bottomFan" x="120" y="60" width="240" height="240"/>
+            <use href="#circle" class="cornerFan leftFan bottomFan" x="-120" y="60" width="240" height="240"/>
+        </g>
+	</pattern>
+    
+	<rect width="100%" height="100%" fill="url(#dotFanRingsPattern)"/>
+</svg>
