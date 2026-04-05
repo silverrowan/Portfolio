@@ -406,7 +406,7 @@
 	    <!-- Make a blurred copy of the source -->
     	<feGaussianBlur in="NOISE" stdDeviation="2" result="BLURNOISE" />
     	<!--Calculate original - blurred -->
-   		<feComposite in="NOISE" in2="blurred" operator="arithmetic" 
+   		<feComposite in="NOISE" in2="BLURNOISE" operator="arithmetic" 
                  k1="0" k2="1" k3="-1" k4="0" result="DIFFBLUR" />
 	    <!-- Fill with 50% gray 
 		normally would follow with blend: overlay for sharpening, but transforming the result first -->
