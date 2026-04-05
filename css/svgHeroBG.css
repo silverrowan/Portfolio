@@ -1,10 +1,11 @@
 :root {
+	/*copied from main style sheet as referenced didn't consistently pass into SVG otherwise*/
 	--backgroundColor-light: #eaf0e7;
 	--backgroundColor: #d7ddd4;
     --backgroundColor-med: #bdc5b8;
 
 	/* Background Animation timing calculation in variables */
-	--animationBG-speed-multiplier: 0.5;
+	/* --animationBG-speed-multiplier: 0.5; */
 	}
 
 @keyframes rotateIn { 100% { stroke-dashoffset: 0; } } 
@@ -43,7 +44,7 @@
 }
 	
 .behindDotsRingOuter { stroke-width:50;}
-.dotRing { stroke-width:10; stroke-dasharray:0,15;}
+.dotRing { stroke-width:10; stroke-dasharray:0,18;}
 
 /*sun variant*/
 /* .dotRing { stroke-width:50; stroke-dasharray:0.1em,15; 	stroke-linecap: butt;} */
