@@ -1,10 +1,19 @@
 :root {
 	/*copied from main style sheet as referenced didn't consistently pass into SVG otherwise*/
-	--themeNeutral: #f4f3f2;
-	--backgroundColor: hsl(41, 35%, 83%); /* #ebe4df; /*F6F0EE*/
-	--backgroundColor-light: color-mix(in srgb, var(--themeNeutral) 40%, var(--backgroundColor));
-	--backgroundColor-xlight: color-mix(in srgb, var(--themeNeutral) 50%, var(--backgroundColor-light));
-    /* --backgroundColor-med: #bdc5b8; */
+	--themeNeutral: #efebe4;
+
+    --backgroundColor-xlight: hsl(120, 17%, 98%); /* light olivine */
+    --backgroundColor-light: hsl(110, 13%, 92%); /* light olivine */
+    --backgroundColor: hsl(100, 12%, 85%); /* lighi: centt olivine */
+    --backgroundColor-med: hsl(99, 11%, 83%); /* lighi: centt olivine */
+    --backgroundColor-meddark: hsl(97, 10%, 80%); /* light olivine */
+
+	/* --backgroundColor: #e3d9c4;/* #f6edd9; /* #e3d9c4; /* #ebe4df; F6F0EE */
+	/* --backgroundColor-light: color-mix(in srgb, var(--themeNeutral) 40%, var(--backgroundColor)); */
+	/* --backgroundColor-xlight: color-mix(in srgb, var(--themeNeutral) 50%, var(--backgroundColor-light)); */
+    /*efebe4 w e3d, f5f1eb w f6e*/
+	
+	/* --backgroundColor-med: #bdc5b8; */
 
 	/* --backgroundColor-xlight: #f8faf8; 
 	--backgroundColor-light: #eaf0e7;
@@ -14,7 +23,7 @@
 	/* Background Animation timing calculation in variables */
 	/* --animationBG-speed-multiplier: 0.5; */
 	--stepDelay: 1s;
-	--BGinDelay: 7s;
+	--BGinDelay: 6s;
 	}
 
 @keyframes rotateIn { 100% { stroke-dashoffset: 0; } } 
@@ -48,11 +57,20 @@
 
 .centermostCircle{ fill: var(--backgroundColor-light); }
 
-.behindDotsRingOuter, .thinOnMiddleThickRing, .medDividerRing, .outermostThinRing {
-	stroke: var(--backgroundColor); 
-}
 .dotRing, .middleThickRing, .outermostThickRing {
 	stroke: var(--backgroundColor-light); 
+}
+
+.outermostThinRing {
+	stroke: var(--backgroundColor); 
+}
+
+.behindDotsRingOuter {
+	stroke: var(--backgroundColor-med); 
+}
+
+.thinOnMiddleThickRing, .medDividerRing {
+	stroke: var(--backgroundColor-meddark); 
 }
 	
 .behindDotsRingOuter { stroke-width:52;}

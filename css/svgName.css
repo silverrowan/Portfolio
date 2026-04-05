@@ -67,10 +67,6 @@
 	--backgroundColor-dark: #a4ae9d; /*light olivine */
 	--backgroundColor-xdark: #94a08c; /*light olivine */
 
-
-
-	
-
 	--color-accent-bright: #87e953; /*lime*/
 	--color-accent-light: #81ce58; /*lime*/
 	--color-accent: #35af05; /*green*/
@@ -104,12 +100,6 @@ svg {
 	stroke-miterlimit:10;
 	stroke-linecap:round;
 	stroke-linejoin:round;
-}
-
-#heroContent {
-	overflow-x: hidden;
-	margin-right: 0;
-	margin-left: 0;
 }
 
 /*tried using symbols in the SVG to reduce code duplication, but 
@@ -154,7 +144,6 @@ div#Row1Names, div#Row2Names, div#Row3Names {
 /* #endregion */
 
 /*#region svg name layout*/
-
 /* "Narrow Screen" (baseline) display settings for svg name section */ 
 div#Row1Names { display: none; }
 div#Row2Names { display: none; }
@@ -175,32 +164,11 @@ So I made different graphics for the three sizes */
 	div#Row3Names { display: none; }
 }
 
-	#heroContent {
-		height: 90vh;
-	}
-
-	#heroNameDiv {
-		/* justify-content: center;
-		align-items: start; */
-		/* overflow-x: hidden; */
-		/* height: 90%; */
-	}
-
 /*#endregion*/
 
 @keyframes move { 100% { stroke-dashoffset: 0; } } 
 
 /*#region Set up animation of svg name and it's prerequisites (stroke dash); Applied to paths IN symbol*/ 
-	/*Mariah set*/
-
-	/* .Mline, .Mariah, .idot, .Rline, .Rbody, .owan, .Mal, .czewska, .q1, .q2, .q3, .q4,
-	.Mline1, .Mariah1, .idot1, .Rline1, .Rbody1, .owan1, .Mal1, .czewska1, .q1-1, .q2-1, .q3-1, .q4-1
-	{
-		stroke: var(--svgStrokeColor);
-		stroke-width: var(--svgStrokeWidth);
-		filter: var(svgFilter);
-	} */
-
 	.Mline {
 		stroke-dasharray: 60;
         stroke-dashoffset: 60;

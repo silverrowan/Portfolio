@@ -1,13 +1,19 @@
 :root {
-    --themeNeutral: #f4f3f2;
+    /*dark theme colors*/
+    --themeNeutral: #f4f3f2; /*warm white*/
     --themeNeutralHSL: 30, 8%, 95%;
 
     --backgroundColor-xlight: #f8faf8; /* light olivine */
     --backgroundColor-light: #eaf0e7; /* light olivine */
-    --backgroundColor: #d7ddd4; /* light olivine */
-    --backgroundColor-med: #bdc5b8; /* light olivine */
-    --backgroundColor-dark: #a4ae9d; /*light olivine */
-    --backgroundColor-xdark: #94a08c; /*light olivine */
+    --backgroundColor: #d7ddd4; /* lighi: centt olivine */
+
+
+    /* --backgroundColor: #e3d9c4;
+	--backgroundColor-light: color-mix(in srgb, var(--themeNeutral) 40%, var(--backgroundColor));
+	--backgroundColor-xlight: color-mix(in srgb, var(--themeNeutral) 50%, var(--backgroundColor-light)); */
+
+
+
 
     --color-accent-bright: #87e953; /*lime*/
     --color-accent-light: #81ce58; /*lime*/
@@ -16,47 +22,50 @@
     --color-accent-dark: #51972b; /*lime*/
 	--color-accent-dull: color-mix(in srgb, #888888, var(--color-accent)); /*lime*/
 
-    --color-accent-ltver: #3a8f1f;
-
-    /* color palette 1 */
-    --color-main: #6ebe44; /*lime*/
     --color-subtlelight: #53574f; /*dark slate */
     --color-subtleMed: #41493b; /*dark slate */
     --color-subtleDark: #383f33; /*dark slate */
-
-    --color-focal: #00c6fd; /*bright cyan*/
-    --color-focalDark: #008fc4; /*mid cyan*/
-
-    --color-contrast: #6A4A6A;  /*aubergine*/
     --color-dark: #3A4037; /*charcoal; green-tint*/
-    --oxblood: #4A0404;
 
     --BG-patternSize: 5%;
 }
 
 /*ALT THEMES*/
-:root:has(#light-theme:checked) {
-    /*color palette 3*/
-    -color-main: #6ebe44; /*lime*/
-    -color-mainDark: #7f986f; /*sage*/
-    -color-subtleLight: #f4fced; /*liiiiiiight green*/
-    -color-subtleDark: #f6edd9; /*buff*/
-}
+:root:has(#light-theme:checked), :root:has(#natural-theme:checked) {
+    /*light theme colors*/
+    --themeNeutral: #f4f3f2; /*warm white*/
+    --themeNeutralHSL: 30, 8%, 95%;
+    --backgroundColor: #e3d9c4;
+	--backgroundColor-light: color-mix(in srgb, var(--themeNeutral) 40%, var(--backgroundColor));
+	--backgroundColor-xlight: color-mix(in srgb, var(--themeNeutral) 50%, var(--backgroundColor-light));
+    --backgroundColorAlt: ;
 
-:root:has(#natural-theme:checked) {
-    /*color palette 2 */
-    --color-main: #6ebe44; /*lime*/
-    --color-subtleLight: #f5f1de; /*light cream*/
-    --color-subtleDark: #8b8550; /*green ochre*/
-}
 
-div, section {
-    background-color: transparent;
+    --color-accent-ltver: #3a8f1f; /*darker limeish*/
+    --color-accent-main: #6ebe44; /*lime*/
+
+    --olivine-xlight: #f8faf8; /* light olivine */
+    --olivine-light: #eaf0e7; /* light olivine */
+    --olivine: #d7ddd4; /* lighi: centt olivine */
+    --olivine-med: #bdc5b8; /* light olivine */
+    --olivine-dark: #a4ae9d; /*light olivine */
+    --olivine-xdark: #94a08c; /*light olivine */
+
+    /*misc colors*/
+    --color-accent-softdark: #7f986f; /*sage*/
+    --color-subtleLight: #f4fced; /*liiiiiiight green*/
+    --color-subtleDark: #f6edd9; /*buff*/
+    --color-contrast: #6A4A6A;  /*aubergine*/
+    --oxblood: #4A0404;
 }
 
 * {
     /* border: 1px, solid, blue; */
     text-align: center;
+}
+
+div, section {
+    background-color: transparent;
 }
 
 .belleza-regular {
@@ -88,6 +97,44 @@ button {border-width: 0;}
     width: 100vw;
 }
 
+	#heroContainer {
+        display: flex;
+		height: 100vh;
+        justify-content: center;
+        align-items: center;
+	}
+
+	#heroNameDiv {
+		/* justify-content: center;
+		align-items: start; */
+		/* overflow-x: hidden; */
+		/* height: 90%; */
+	}
+
 #heroContent {
-    background-color: hsl(var(--themeNeutralHSL), 50%);
+    width: 100%;
+	overflow-x: hidden;
+	margin-right: 0;
+	margin-left: 0;
+    /* padding: 2rem 0; */
+}
+
+.glass, #navbar.glass {
+    background-color: hsl(var(--themeNeutralHSL), 30%);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid hsl(var(--themeNeutralHSL), 70%);
+}
+#navbar.glass {
+    background-color: hsl(var(--themeNeutralHSL), 30%) !important;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+#footerBar.glass {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+ 
 }
