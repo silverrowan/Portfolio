@@ -442,7 +442,8 @@
 
     <!-- define the shape to pattern -->
 	<symbol  id="circle" viewBox="-120 -120 240 240" >
-		<g id="circleStack" > 
+		<g id="circleStack"> 
+            <!-- transform="rotate(90)"  -->
             <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="120" pathlength="360"/>
             <circle class="centermostCircle fillCircle" cx="0" cy="0" r="25" pathlength="360"/>
 
@@ -467,7 +468,7 @@
                 x="-120" y="-60" width="240" height="240"/>
 
             <use href="#circle" class="centerFan upperMidFan" 
-                x="0" y="-1" width="240" height="240"/>
+                x="0" y="-1" width="240" height="240" />
 
             <use href="#circle" class="cornerFan rightFan bottomFan" 
                 x="120" y="60" width="240" height="240"/>

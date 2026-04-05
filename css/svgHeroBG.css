@@ -6,6 +6,7 @@
 
 	/* Background Animation timing calculation in variables */
 	/* --animationBG-speed-multiplier: 0.5; */
+	--stepDelay: 1s;
 	}
 
 @keyframes rotateIn { 100% { stroke-dashoffset: 0; } } 
@@ -20,6 +21,9 @@
 	stroke-miterlimit:10;	
 	stroke-linecap:round;
     stroke-linejoin:round;
+
+	stroke-dasharray: 360;
+	stroke-dashoffset: 180;
 }
 
 .lightRing {
@@ -43,16 +47,58 @@
 	stroke: var(--backgroundColor); 
 }
 	
-.behindDotsRingOuter { stroke-width:50;}
-.dotRing { stroke-width:10; stroke-dasharray:0,18;}
+.behindDotsRingOuter { stroke-width:52;}
+.dotRing { 
+	stroke-width:10; 
+	stroke-dasharray: 0,360,0,18,0,18,0,18,0,18,0,18,0,18,0,18,0,18,0,18,0,18,0,18,0,18,0,18,0,18;
+	stroke-dashoffset: 410;
+}
 
 /*sun variant*/
-/* .dotRing { stroke-width:50; stroke-dasharray:0.1em,15; 	stroke-linecap: butt;} */
+/* .dotRing { stroke-width:20; stroke-dasharray:0.1em,15; 	stroke-linecap: butt;} */
 
-.middleThickRing{ stroke-width:28;}
+.middleThickRing{ stroke-width:30;}
 .thinOnMiddleThickRing{ stroke-width:2; }
 
 .medDividerRing{ stroke-width:6; }
 
 .outermostThickRing{ stroke-width:12; }
 .outermostThinRing{ stroke-width:2; }
+
+
+@keyframes fanInDots { 100% { stroke-dashoffset: 144; } }
+@keyframes fanIn { 100% { stroke-dashoffset: 0; } }
+@keyframes expandOut { from { r: 0; } to { r: var(--circleRadius)} }
+
+/*set background 'default' values for animations*/
+.fillCircle, .ring {
+	animation-duration: 3s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+}
+
+/*animation attributes*/
+.centermostCircle {
+	--circleRadius: 120;
+	animation-name: expandOut;
+	animation-delay: 0s;
+}
+
+.behindDotsRingOuter { 
+	animation-name: fanIn; 
+	animation-duration: 2s; 
+	animation-delay: calc(var(--stepDelay)*1.75);
+}
+.middleThickRing { 
+	animation-name: fanIn; 
+	animation-duration: 2.5s;
+	animation-delay: calc(var(--stepDelay)*2);
+}
+.outermostThinRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*2.5);}
+.thinOnMiddleThickRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*3);}
+.medDividerRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*3.5);}
+.outermostThickRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*4);}
+.dotRing { animation-name: fanInDots; animation-delay: calc(var(--stepDelay)*4.5);}
+

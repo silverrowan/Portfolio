@@ -110,21 +110,21 @@
             result="BLEND" />
     </filter>
 
-	<symbol  id="circle" viewBox="-240 -240 480 480" >
+	<symbol  id="circle" viewBox="-120 -120 240 240" > 
+        <!-- -240 -240 480 480 -->
 		<g id="circleFilter" > 
-            <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="240" />
-            <circle class="centermostCircle fillCircle" cx="0" cy="0" r="50" />
+            <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="120" />
+            <circle class="centermostCircle fillCircle" cx="0" cy="0" r="25" />
 
-            <circle class="behindDotsRingOuter ring" cx="0" cy="0" r="100" />
-            <circle class="dotRing ring" cx="0" cy="0" r="100" />
+            <circle class="behindDotsRingOuter ring" cx="0" cy="0" r="50" />
+            <circle class="dotRing ring" cx="0" cy="0" r="50" />
 
-            <circle class="middleThickRing ring" cx="0" cy="0" r="182"  />
-            <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="198" />
-            <circle class="medDividerRing ring" cx="0" cy="0" r="208" />
-            
+            <circle class="middleThickRing ring" cx="0" cy="0" r="91"  />
+            <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="97" />
+            <circle class="medDividerRing ring" cx="0" cy="0" r="104" />
 
-            <circle class="outermostThickRing ring" cx="0" cy="0" r="225" />
-            <circle class="outermostThinRing ring" cx="0" cy="0" r="238" />
+            <circle class="outermostThickRing ring" cx="0" cy="0" r="112.5" />
+            <circle class="outermostThinRing ring" cx="0" cy="0" r="119" />
 		</g>
 	</symbol>
 
@@ -135,7 +135,8 @@
             <use href="#circle" class="cornerFan rightFan topFan" x="120" y="-60" width="240" height="240"/>
             <use href="#circle" class="cornerFan leftFan topFan" x="-120" y="-60" width="240" height="240"/>
 
-            <use href="#circle" class="centerFan upperMidFan" x="0" y="0" width="240" height="240"/>
+            <use href="#circle" class="centerFan upperMidFan" x="0" y="-1" width="240" height="240"/>
+            <!-- <use href="#circle" class="centerFan upperMidFan" x="0" y="120" width="240" height="240"/> -->
 
             <use href="#circle" class="cornerFan rightFan bottomFan" x="120" y="60" width="240" height="240"/>
             <use href="#circle" class="cornerFan leftFan bottomFan" x="-120" y="60" width="240" height="240"/>

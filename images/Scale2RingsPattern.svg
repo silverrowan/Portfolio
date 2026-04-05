@@ -37,7 +37,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	.outermostThinRing{ stroke-width:2; }
 </style>
 
-<!--ring sizes: all center @ 0,0. r=240s=0, r=50 s=0, r=100, s=50, r=100, s=dashed 10px, r=182 s=32, r=198 s=2, r=208 s=6, r=225 s=11, r=238 s=2
+<!--ring sizes: all center @ 0,0. r=240s=0, r=50 s=0, r=100, s=50, r=100, s=dashed 10px, r=182 s=32, r=198 s=2, r=208 s=6, r=225 s=11, r=238 s=2-->
   <filter id='noiseFilter'>
 	<!-- makes random noise (grainy effect) -->
     <feTurbulence 
