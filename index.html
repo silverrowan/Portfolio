@@ -440,58 +440,39 @@
             result="BLEND" />
     </filter>
 
-	<symbol  id="circle" viewBox="-119 -119 238 238" >
+    <!-- define the shape to pattern -->
+	<symbol  id="circle" viewBox="-120 -120 240 240" >
 		<g id="circleStack" > 
-            <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="119" />
+            <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="120" />
             <circle class="centermostCircle fillCircle" cx="0" cy="0" r="25" />
 
 			<circle class="behindDotsRingOuter ring" cx="0" cy="0" r="50" />
             <circle class="dotRing ring" cx="0" cy="0" r="50" />
 
-            <circle class="middleThickRing ring" cx="0" cy="0" r="87.5" filter="url(#noiseFilter)" />
-            <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="97.5" />
-            <circle class="medDividerRing ring" cx="0" cy="0" r="102.5" />
+            <circle class="middleThickRing ring" cx="0" cy="0" r="91" filter="url(#noiseFilter)" />
+            <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="97" />
+            <circle class="medDividerRing ring" cx="0" cy="0" r="104" />
 
-            <circle class="outermostThickRing ring" cx="0" cy="0" r="111" />
-            <circle class="outermostThinRing ring" cx="0" cy="0" r="118" />
+            <circle class="outermostThickRing ring" cx="0" cy="0" r="112.5" />
+            <circle class="outermostThinRing ring" cx="0" cy="0" r="119" />
 		</g>
 	</symbol>
 
-    <pattern id="dotFanRingsPattern" width="234" height="129" patternUnits="userSpaceOnUse">
+    <!-- layout the pattern tile -->
+    <pattern id="dotFanRingsPattern" width="240" height="120" patternUnits="userSpaceOnUse">
         <g id="patternBase">
-            <use href="#circle" width="238" height="238" 
-                class="centerFan upperMidFan"
-                x="-119" y="-119" 
-                transform="matrix(1 0 0 -1 116.9999 7.9999)" 
-                style="overflow:hidden;"/>
+            <use href="#circle" class="cornerFan rightFan topFan" 
+                x="120" y="-60" width="240" height="240"/>
+            <use href="#circle" class="cornerFan leftFan topFan" 
+                x="-120" y="-60" width="240" height="240"/>
 
-            <use href="#circle" width="238" height="238"
-                class="cornerFan rightFan topFan"
-                x="-119" y="-119" 
-                transform="matrix(1 0 0 -1 233.9999 71.9999)" 
-                style="overflow:hidden;"/>
-            <use href="#circle"  width="238" height="238" 
-                class="cornerFan leftFan topFan"
-                x="-119" y="-119" 
-                transform="matrix(1 0 0 -1 -1.027844e-04 71.9999)" 
-                style="overflow:hidden;"/>
+            <use href="#circle" class="centerFan upperMidFan" 
+                x="0" y="-1" width="240" height="240"/>
 
-            <use href="#circle"  width="238" height="238" 
-                class="centerFan lowerMidFan"
-                x="-119" y="-119" 
-                transform="matrix(1 0 0 -1 116.9999 135.9999)" 
-                style="overflow:hidden;"/>
-
-            <use href="#circle"  width="238" height="238" 
-                class="cornerFan rightFan bottomFan"
-                x="-119" y="-119" 
-                transform="matrix(1 0 0 -1 233.9999 200.9999)" 
-                style="overflow:hidden;"/>
-            <use href="#circle"  width="238" height="238" 
-                class="cornerFan leftFan bottomFan"
-                x="-119" y="-119" 
-                transform="matrix(1 0 0 -1 -1.027844e-04 200.9999)" 
-                style="overflow:hidden;"/>
+            <use href="#circle" class="cornerFan rightFan bottomFan" 
+                x="120" y="60" width="240" height="240"/>
+            <use href="#circle" class="cornerFan leftFan bottomFan" 
+                x="-120" y="60" width="240" height="240"/>
         </g>
 	</pattern>
     
