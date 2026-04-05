@@ -9,13 +9,6 @@
 
 @keyframes rotateIn { 100% { stroke-dashoffset: 0; } } 
 
-.st0, .st1, .st2, .st3 {
-	fill:none;
-	stroke-miterlimit:10;	
-	stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
 .fillCircle {stroke-width: 0; }
 .backgroundCircle{ fill: var(--backgroundColor-med); }
 
@@ -23,6 +16,9 @@
 	fill:transparent;
 	stroke: var(--backgroundColor-med);
 	stroke-width:10;
+	stroke-miterlimit:10;	
+	stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 .lightRing {
@@ -48,6 +44,9 @@
 	
 .behindDotsRingOuter { stroke-width:50;}
 .dotRing { stroke-width:10; stroke-dasharray:0,15;}
+
+/*sun variant*/
+/* .dotRing { stroke-width:50; stroke-dasharray:0.1em,15; 	stroke-linecap: butt;} */
 
 .middleThickRing{ stroke-width:28;}
 .thinOnMiddleThickRing{ stroke-width:2; }
