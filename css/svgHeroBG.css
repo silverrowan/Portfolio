@@ -1,22 +1,30 @@
 :root {
 	/*copied from main style sheet as referenced didn't consistently pass into SVG otherwise*/
+	--themeNeutral: #f4f3f2;
+	--backgroundColor: hsl(41, 35%, 83%); /* #ebe4df; /*F6F0EE*/
+	--backgroundColor-light: color-mix(in srgb, var(--themeNeutral) 40%, var(--backgroundColor));
+	--backgroundColor-xlight: color-mix(in srgb, var(--themeNeutral) 50%, var(--backgroundColor-light));
+    /* --backgroundColor-med: #bdc5b8; */
+
+	/* --backgroundColor-xlight: #f8faf8; 
 	--backgroundColor-light: #eaf0e7;
 	--backgroundColor: #d7ddd4;
-    --backgroundColor-med: #bdc5b8;
+    --backgroundColor-med: #bdc5b8; */
 
 	/* Background Animation timing calculation in variables */
 	/* --animationBG-speed-multiplier: 0.5; */
 	--stepDelay: 1s;
+	--BGinDelay: 7s;
 	}
 
 @keyframes rotateIn { 100% { stroke-dashoffset: 0; } } 
 
 .fillCircle {stroke-width: 0; }
-.backgroundCircle{ fill: var(--backgroundColor-med); }
+.backgroundCircle{ fill: var(--backgroundColor); }
 
 .ring {
 	fill:transparent;
-	stroke: var(--backgroundColor-med);
+	stroke: var(--backgroundColor);
 	stroke-width:10;
 	stroke-miterlimit:10;	
 	stroke-linecap:round;
@@ -28,23 +36,23 @@
 
 .lightRing {
 	fill:transparent;
-	stroke: var(--backgroundColor-light);
+	stroke: var(--backgroundColor-xlight);
 	stroke-width:2;
 }
 
 #droplet {
-	fill: var(--backgroundColor-light);
-	stroke: var(--backgroundColor);
+	fill: var(--backgroundColor-xlight);
+	stroke: var(--backgroundColor-light);
 	/* stroke-width: 2; */
 }
 
-.centermostCircle{ fill: var(--backgroundColor); }
+.centermostCircle{ fill: var(--backgroundColor-light); }
 
 .behindDotsRingOuter, .thinOnMiddleThickRing, .medDividerRing, .outermostThinRing {
-	stroke: var(--backgroundColor-med); 
+	stroke: var(--backgroundColor); 
 }
 .dotRing, .middleThickRing, .outermostThickRing {
-	stroke: var(--backgroundColor); 
+	stroke: var(--backgroundColor-light); 
 }
 	
 .behindDotsRingOuter { stroke-width:52;}
@@ -69,36 +77,49 @@
 @keyframes fanInDots { 100% { stroke-dashoffset: 144; } }
 @keyframes fanIn { 100% { stroke-dashoffset: 0; } }
 @keyframes expandOut { from { r: 0; } to { r: var(--circleRadius)} }
+@keyframes colorFade { from {fill: var(--initialColor)} to { fill: var(--finalColor)}
+	
+}
 
 /*set background 'default' values for animations*/
 .fillCircle, .ring {
 	animation-duration: 3s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: both;
-	animation-delay: 0s;
 	animation-iteration-count: 1;
 }
 
+.ring { animation-name: fanIn; }
+
 /*animation attributes*/
-.centermostCircle {
-	--circleRadius: 120;
-	animation-name: expandOut;
+.backgroundCircle {
+	--initialColor: var(--backgroundColor-med);
+	--finalColor: var(--backgroundColor-xlight);
+	animation-name: colorFade;
 	animation-delay: 0s;
 }
 
+.centermostCircle {
+	--circleRadius: 120;
+	animation-name: expandOut;
+	animation-delay: calc(0s + var(--BGinDelay));
+}
+
 .behindDotsRingOuter { 
-	animation-name: fanIn; 
+
 	animation-duration: 2s; 
-	animation-delay: calc(var(--stepDelay)*1.75);
+	animation-delay: calc(var(--stepDelay)*1.75 + var(--BGinDelay));
 }
 .middleThickRing { 
-	animation-name: fanIn; 
 	animation-duration: 2.5s;
-	animation-delay: calc(var(--stepDelay)*2);
+	animation-delay: calc(var(--stepDelay)*2 + var(--BGinDelay));
 }
-.outermostThinRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*2.5);}
-.thinOnMiddleThickRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*3);}
-.medDividerRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*3.5);}
-.outermostThickRing { animation-name: fanIn; animation-delay: calc(var(--stepDelay)*4);}
-.dotRing { animation-name: fanInDots; animation-delay: calc(var(--stepDelay)*4.5);}
+.outermostThinRing {  animation-delay: calc(var(--stepDelay)*2.5 + var(--BGinDelay));}
+.thinOnMiddleThickRing {  animation-delay: calc(var(--stepDelay)*3 + var(--BGinDelay));}
+.medDividerRing {  animation-delay: calc(var(--stepDelay)*3.5 + var(--BGinDelay));}
+.outermostThickRing {  animation-delay: calc(var(--stepDelay)*4 + var(--BGinDelay));}
+.dotRing { 
+	animation-name: fanInDots; 
+	animation-delay: calc(var(--stepDelay)*4.5 + var(--BGinDelay));
+}
 

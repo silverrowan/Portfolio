@@ -1,4 +1,8 @@
 :root {
+    --themeNeutral: #f4f3f2;
+    --themeNeutralHSL: 30, 8%, 95%;
+
+    --backgroundColor-xlight: #f8faf8; /* light olivine */
     --backgroundColor-light: #eaf0e7; /* light olivine */
     --backgroundColor: #d7ddd4; /* light olivine */
     --backgroundColor-med: #bdc5b8; /* light olivine */
@@ -12,6 +16,8 @@
     --color-accent-dark: #51972b; /*lime*/
 	--color-accent-dull: color-mix(in srgb, #888888, var(--color-accent)); /*lime*/
 
+    --color-accent-ltver: #3a8f1f;
+
     /* color palette 1 */
     --color-main: #6ebe44; /*lime*/
     --color-subtlelight: #53574f; /*dark slate */
@@ -20,6 +26,10 @@
 
     --color-focal: #00c6fd; /*bright cyan*/
     --color-focalDark: #008fc4; /*mid cyan*/
+
+    --color-contrast: #6A4A6A;  /*aubergine*/
+    --color-dark: #3A4037; /*charcoal; green-tint*/
+    --oxblood: #4A0404;
 
     --BG-patternSize: 5%;
 }
@@ -41,7 +51,7 @@
 }
 
 div, section {
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 * {
@@ -76,4 +86,8 @@ button {border-width: 0;}
 
     height: 100vh;
     width: 100vw;
+}
+
+#heroContent {
+    background-color: hsl(var(--themeNeutralHSL), 50%);
 }

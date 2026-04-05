@@ -59,7 +59,7 @@
 	--animation-delay-Mal:       calc( var(--animation-delay-qD)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-M) ) );
 	--animation-delay-czewska:  calc( var(--animation-delay-Mal)    + var(--animation-speed-multiplier) * ( var(--animation-time-Mal)      + var(--animation-gaps-Mal-czewska) ) );
 /* #endregion */
-
+	--themeNeutral: #f4f3f2;
 	/*copy color variables from base styles - for some reason dont work in svgs chained*/
 	--backgroundColor-light: #eaf0e7; /* light olivine */
 	--backgroundColor: #d7ddd4; /* light olivine */
@@ -67,18 +67,32 @@
 	--backgroundColor-dark: #a4ae9d; /*light olivine */
 	--backgroundColor-xdark: #94a08c; /*light olivine */
 
+
+
+	
+
 	--color-accent-bright: #87e953; /*lime*/
+	--color-accent-light: #81ce58; /*lime*/
+	--color-accent: #35af05; /*green*/
+	--color-accent-med: #61af37; /*lime*/
+	--color-accent-dark: #51972b; /*lime*/
+	--color-accent-dull: color-mix(in srgb, #888888 80%, var(--color-accent)); /*lime*/
+
+	/* --stroke-dashLength-MLine: 60;
+	--stroke-dashLead-MLine: var(--stroke-dashLength-MLine);
+	--stroke-dashLength-Mariah: 850;
+	--stroke-dashLead-Mariah: var(--s); */
+}
+
+/* @theme: dark {
+	color-accent-bright: #87e953; /*lime*/
 	--color-accent-light: #81ce58; /*lime*/
 	--color-accent: #6ebe44; /*lime*/
 	--color-accent-med: #61af37; /*lime*/
 	--color-accent-dark: #51972b; /*lime*/
 	--color-accent-dull: color-mix(in srgb, #888888 80%, var(--color-accent)); /*lime*/
 
-	--stroke-dashLength-MLine: 60;
-	--stroke-dashLead-MLine: var(--stroke-dashLength-MLine);
-	--stroke-dashLength-Mariah: 850;
-	--stroke-dashLead-Mariah: var(--s);
-}
+ */
 
 svg {
 	margin: 0;
@@ -126,15 +140,15 @@ div#Row1Names, div#Row2Names, div#Row3Names {
 }
 
 #softLine-fullName, #softLine-fullName2, #softLine-fullName3 {
-	stroke: var(--backgroundColor-light);
-	stroke-width: 4;
+	stroke: var(--themeNeutral);
+	stroke-width: 5;
 	filter: blur(1px);
 }
 
 #darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 {
 	stroke: var(--color-accent-dull);
-	stroke-width: 6;
-	filter: blur(1px);
+	stroke-width: 3;
+	filter: blur(4px);
 }
 
 /* #endregion */
