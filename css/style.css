@@ -367,12 +367,12 @@
 }
 
 :root { /* assigning colors */
---mainTextColor: var(--neutralPlainColor);
+--mainTextColor: var(--neutralRiseWarmColor);
 --mainBackground: var(--neutralBrandColor-hsl);
 --mainBackgroundAlt: var(--neutralSecondColor-hsl);
 }
 :root:has(#light-theme:checked) { /* assigning colors - light theme */
---mainTextColor: var(--neutralRiseWarmColor)
+--mainTextColor: var(--neutralPlainColor)
 }
 
 * {
