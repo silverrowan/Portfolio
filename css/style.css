@@ -441,7 +441,7 @@ SVG { transform-style: preserve-3d }
 }
 
 .glass, #navbar.glass {
-    background-color: hsl(var(--neutralRiseWarmColor), 30%);
+    background-color: hsl(var(--neutralRiseWarmColor), 30%)!important;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -449,7 +449,6 @@ SVG { transform-style: preserve-3d }
     border: 1px solid hsl(var(--neutralRiseWarmColor), 70%);
 }
 #navbar.glass {
-    background-color: hsl(var(--neutralRiseWarmColor), 30%) !important;
     border-top-right-radius: 0px !important;
     border-top-left-radius: 0px !important;
 }
