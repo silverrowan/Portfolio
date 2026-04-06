@@ -1,0 +1,193 @@
+/* neutral to brand color progressions
+Primary color - /* primary base is lime, accent color: #6ebe44; *lime blended w raise: warm white: 
+      #f4f3f2
+ 	  #edf0e9
+ 	  #e7eee1
+ 	  #e0ebd8
+ 	  #d9e8cf
+ 	  #d2e6c6
+ 	  #cce3be
+ 	  #c5e0b5
+ 	  #bedeac
+ 	  #b8dba4 < --looks possible?
+ 	  #b1d89b
+ 	  #aad692
+ 	  #a4d38a
+ 	  #9dd181
+ 	  #96ce78
+ 	  #90cb70
+ 	  #89c967
+ 	  #82c65e
+ 	  #7bc355
+ 	  #75c14d
+      #6ebe44 
+
+    --primaryColorRGB: #b8dba4;
+    --accentColor-h: 98; 
+    --accentColor-s: 43%;
+    --accentColor-l: 75%;
+
+/*secondary? - #f5e0b2 (bright ver of contrast bkgrnd - 
+--secondBaseColorRGB: #ddb255;
+--secondBaseColor: hsl(41, 67%, 60%);
+    /*dark chain:  	  
+ 	  #141312
+ 	  #1e1b15
+ 	  #282319
+ 	  #322b1c
+ 	  #3c331f
+ 	  #463b23
+ 	  #504326
+ 	  #5a4b29
+ 	  #64532d
+ 	  #6e5b30
+ 	  #786234
+ 	  #836a37
+ 	  #8d723a
+ 	  #977a3e
+ 	  #a18241
+ 	  #ab8a44
+ 	  #b59248
+ 	  #bf9a4b
+ 	  #c9a24e
+ 	  #d3aa52
+      #ddb255
+    light chain:
+      #f4f3f2
+ 	  #f3f0ea
+ 	  #f2ede2
+ 	  #f1e9da
+ 	  #efe6d3
+ 	  #eee3cb
+ 	  #ede0c3 <--plaus
+ 	  #ecdcbb
+ 	  #ebd9b3
+ 	  #ead6ab
+ 	  #e8d2a4
+ 	  #e7cf9c
+ 	  #e6cc94
+ 	  #e5c98c
+ 	  #e4c684
+ 	  #e3c27c
+ 	  #e2bf74
+ 	  #e0bc6d
+ 	  #dfb865
+ 	  #deb55d
+      #ddb255
+
+    */
+
+/*theme subtle color /* #414a3b; /*dark slate; other related: #53574f (light), #383f33 (dull?), #3A4037 (dark)   */
+    --subtleColor-h:94;
+    --subtleColor-s:11%;
+    --subtleColor-l:26%;
+
+/*theme shadow color: #1e1e1e /* dark green?*/
+    --shadowColor-h: 0;
+    --shadowColor-s: 0%;
+    --shadowColor-l: 12%;
+
+--color-accent-ltver: #3a8f1f; /*darker limeish*/
+--color-accent-main: #6ebe44; /*lime*/
+/*theme accent color - /* #35af05; /*darker lime */
+    --accentColor-h: 103; 
+    --accentColor-s: 94%;
+    --accentColor-l: 35%;
+
+/*theme subtle color /* #414a3b; /*dark slate; other related: #53574f (light), #383f33 (dull?), #3A4037 (dark)   */
+    --subtleColor-h:94;
+    --subtleColor-s:11%;
+    --subtleColor-l:26%;
+
+    --olivine-xlight: #f8faf8; /* light olivine */
+    --olivine-light: #eaf0e7; /* light olivine */
+    --olivine: #d7ddd4; /* lighi: centt olivine */
+    --olivine-med: #bdc5b8; /* light olivine */
+    --olivine-dark: #a4ae9d; /*light olivine */
+    --olivine-xdark: #94a08c; /*light olivine */
+
+    /*misc colors*/
+    --color-accent-softdark: #7f986f; /*sage*/
+    --color-subtleLight: #f4fced; /*liiiiiiight green*/
+    --color-subtleDark: #f6edd9; /*buff*/
+    --color-contrast: #6A4A6A;  /*aubergine*/
+    --oxblood: #4A0404;
+
+
+SVG NAME
+    	--themeNeutral: #f4f3f2;
+	/*copy color variables from base styles - for some reason dont work in svgs chained*/
+	--backgroundColor-light: #eaf0e7; /* light olivine */
+	--backgroundColor: #d7ddd4; /* light olivine */
+	--backgroundColor-med: #bdc5b8; /* light olivine */
+	--backgroundColor-dark: #a4ae9d; /*light olivine */
+	--backgroundColor-xdark: #94a08c; /*light olivine */
+
+	--color-accent-bright: #87e953; /*lime*/
+	--color-accent-light: #81ce58; /*lime*/
+	--color-accent: #35af05; /*green*/
+	--color-accent-med: #61af37; /*lime*/
+	--color-accent-dark: #51972b; /*lime*/
+	--color-accent-dull: color-mix(in srgb, #888888 80%, var(--color-accent)); /*lime*/
+
+
+/* @theme: dark {
+	color-accent-bright: #87e953; /*lime*/
+	--color-accent-light: #81ce58; /*lime*/
+	--color-accent: #6ebe44; /*lime*/
+	--color-accent-med: #61af37; /*lime*/
+	--color-accent-dark: #51972b; /*lime*/
+	--color-accent-dull: color-mix(in srgb, #888888 80%, var(--color-accent)); /*lime*/
+
+
+SVG BG
+	--themeNeutral: #efebe4;
+
+    --backgroundColor-xlight: hsl(120, 17%, 98%); /* light olivine */
+    --backgroundColor-light: hsl(110, 13%, 92%); /* light olivine */
+    --backgroundColor: hsl(100, 12%, 85%); /* lighi: centt olivine */
+    --backgroundColor-med: hsl(99, 11%, 83%); /* lighi: centt olivine */
+    --backgroundColor-meddark: hsl(97, 10%, 80%); /* light olivine */
+
+
+
+
+:root { /*copied color values from main style sheet as referenced didn't consistently pass into SVG otherwise or affected path order*/
+
+/*standard color adjustments*/
+    --color-slStepSize: 7%;
+    --neutralColor-slStepSize: 5%;
+
+    --neutralBrandColor: #181b17;
+    --neutralBrandColor-hsl: hsl(105, 8%, 10%);
+    --neutralBrandColor-h:105;
+    --neutralBrandColor-s:8%;
+    --neutralBrandColor-l:10%;
+
+    --neutralBrandColor-light: hsl(105, 11%, 13%);
+    --neutralBrandColor-xlight: hsl(105, 14%, 16%);
+    --neutralBrandColor-dark: hsl(105, 5%, 7%);
+    --neutralBrandColor-xdark: hsl(105, 2%, 4%);
+	--neutralBrandColor-bright: hsl(105, 20%, 10%);
+    --neutralBrandColor-xbright: hsl(105, 32%, 10%);
+    --neutralBrandColor-dull: hsl(105, 2%, 10%);
+    --neutralBrandColor-xdull: hsl(105, 0%, 10%);
+}
+
+:root:has(#light-theme:checked){
+/*neutral color /* hsl(100, 12%, 85%);  d7ddd4 /* light olivine*/
+    --neutralBrandColor: #d7ddd4;
+    --neutralBrandColor-hsl: hsl(100, 12%, 85%);
+    --neutralBrandColor-h:100;
+    --neutralBrandColor-s:12%;
+    --neutralBrandColor-l:85%;
+
+	--neutralBrandColor-light: hsl(100, 15%, 88%);
+    --neutralBrandColor-xlight: hsl(100, 18%, 91%);
+    --neutralBrandColor-dark: hsl(100, 9%, 82%);
+    --neutralBrandColor-xdark: hsl(100, 6%, 79%);
+	--neutralBrandColor-bright: hsl(100, 24%, 85%);
+    --neutralBrandColor-xbright: hsl(100, 36%, 85%);
+    --neutralBrandColor-dull: hsl(100, 6%, 85%);
+    --neutralBrandColor-xdull:  hsl(100, 0%, 85%);
+}

@@ -1,0 +1,51 @@
+/* style the nav bar & theme changer */
+nav, .theme-menu {
+    width: calc(100% - var(--standard-padding));
+    background: var(--nav-background-primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: calc(var(--standard-padding)/2);
+    z-index: 99;
+    position: fixed;
+}
+
+.theme-menu {
+    bottom: 0;
+    z-index: 98;
+    justify-content: flex-start;
+    gap: calc(var(--standard-padding)/2); 
+}
+
+
+
+
+/* hide the checkbox */
+#mobile-menu-trigger, #theme-menu-trigger { display: none; } 
+
+
+
+/*STYLE BUTTONS & EFFECT*/
+label.theme-label { 
+    display: inline-block;
+    cursor: pointer;
+}
+
+input#dark-theme:checked ~ main label[for=dark-theme], 
+input#light-theme:checked ~ main label[for=light-theme],
+input#fall-theme:checked ~ main label[for=fall-theme] {
+    font-weight: bold;
+    background-color: var(--spotlight-dark-Color);    
+    color: var(--font-spotlight-color);
+}
+
+/*hide the "page-theme" radio buttons */
+input[name="page-theme"] { 
+    display: none;
+}
+
+
+/* hide & reveal menu lists */
+nav ul { display: none; } 
+
+nav input:checked ~ ul {display: block;}

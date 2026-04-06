@@ -1,0 +1,505 @@
+:root {
+    /*dark theme colors*/
+    --neutralColor: #f4f3f2; /*warm white*/
+    --neutralColorHSL: 30, 8%, 95%;
+
+    --backgroundColor-xlight: #f8faf8; /* light olivine */
+    --backgroundColor-light: #eaf0e7; /* light olivine */
+    --backgroundColor: #d7ddd4; /* lighi: centt olivine */
+
+    --color-accent-bright: #87e953; /*lime*/
+    --color-accent-light: #81ce58; /*lime*/
+    --color-accent: #6ebe44; /*lime*/
+    --color-accent-med: #61af37; /*lime*/
+    --color-accent-dark: #51972b; /*lime*/
+	--color-accent-dull: color-mix(in srgb, #888888, var(--color-accent)); /*lime*/
+
+    --color-subtlelight: #53574f; /*dark slate */
+    --color-subtleMed: #41493b; /*dark slate */
+    --color-subtleDark: #383f33; /*dark slate */
+    --color-dark: #3A4037; /*charcoal; green-tint*/
+
+    --color-accent-ltver: #3a8f1f; /*darker limeish*/
+    --color-accent-main: #6ebe44; /*lime*/
+
+    /*misc colors*/
+    --color-accent-softdark: hsl(97, 17%, 52%); /*sage*/
+    --color-subtleLight: #f4fced; /*liiiiiiight green*/
+    --color-subtleDark: #f6edd9; /*buff*/
+    --color-contrast: hsl(300, 18%, 35%);  /*aubergine*/
+    --oxblood: hsl(0, 90%, 15%);
+}
+
+:root dark theme{
+    /*standard color adjustments*/
+    --color-slStepSize: 7%;
+    --color-h-StepSize: 5;
+
+    /*theme accent color - /* #6ebe44; /*lime */
+    --accentColor-h: 99; 
+    --accentColor-s: 48%;
+    --accentColor-l: 51%;
+
+    /*neutralColor: #040302; hsl(60, 17%, 2%) /*warm charcoal*/ 
+    --neutralColor-slStepSize: 2.5%;
+
+    --neutralColor-h:60;
+    --neutralColor-s:17%;
+    --neutralColor-l:2%;
+}
+
+    /*dark primary color scheme
+    recomendations: baseline 'black' of #121212; branded blacks are brand primary overlaid @ low opacity, eg. 8%; contrast 15.8:1 w white text
+    brand colors should be desaturated (~200-50, vs 900-500 in primary theme), esp primary and secondary( :( 
+    high saturation w limited use eg logo, brand button)
+
+    --neutral = background, 
+    --neutralRaise =  background color overlay,
+
+    --subtle = duller/softer accent
+
+    */
+
+
+:root {
+    --BG-patternSize: 5%;
+}
+
+:root { /*colors - default*/
+    /*dark primary color scheme
+    recomendations: baseline 'black' of #121212; branded blacks are brand primary overlaid @ low opacity, eg. 8%; contrast 15.8:1 w white text
+    brand colors should be desaturated (~200-50, vs 900-500 in primary theme), esp primary and secondary( :( 
+    high saturation w limited use eg logo, brand button)
+    */
+/*standard color adjustments*/
+    --color-slStepSize: 7%;
+    --color-h-StepSize: 5;
+
+/*theme accent color - /* #6ebe44; /*lime */
+    --accentColor-h: 99; 
+    --accentColor-s: 48%;
+    --accentColor-l: 51%;
+
+/*neutralColor: #040302; hsl(60, 17%, 2%) /*warm charcoal
+121212
+*/ 
+    --neutral-hex:#121212;
+    --neutral-hex:hsl(0, 0%, 9%);
+    --neutralColor-slStepSize: 5%;
+
+    --neutralColor-h:60;
+    --neutralColor-s:17%;
+    --neutralColor-l:9%;
+
+/*theme background primary color /* hsl(100, 12%, 85%);  d7ddd4 /* light olivine*/
+    --backgroundColor-h:100;
+    --backgroundColor-s:12%;
+    --backgroundColor-l:85%;
+
+
+/*
+    --lime over almost black : 202c1a, #1b2317, 171b14
+    --lime over warm white: 
+      #f4f3f2
+ 	  #edf0e9
+ 	  #e7eee1
+ 	  #e0ebd8
+ 	  #d9e8cf
+ 	  #d2e6c6
+ 	  #cce3be
+ 	  #c5e0b5
+ 	  #bedeac
+ 	  #b8dba4 < -looks possible?
+ 	  #b1d89b
+ 	  #aad692
+ 	  #a4d38a
+ 	  #9dd181
+ 	  #96ce78
+ 	  #90cb70
+ 	  #89c967
+ 	  #82c65e
+ 	  #7bc355
+ 	  #75c14d
+      #6ebe44
+  */
+
+
+/*theme background secondary color /*41, 36%, 83% e3d9c4 /* light orangey yellow*/
+    --backgroundAltColor-h:41;
+    --backgroundAltColor-s:36%;
+    --backgroundAltColor-l:83%;
+
+/*theme subtle color /* #414a3b; /*dark slate; other related: #53574f (light), #383f33 (dull?), #3A4037 (dark)   */
+    --subtleColor-h:94;
+    --subtleColor-s:11%;
+    --subtleColor-l:26%;
+
+/*theme shadow color: #1e1e1e /* dark green*/
+    --shadowColor-h: 0;
+    --shadowColor-s: 0%;
+    --shadowColor-l: 12%;
+
+/*theme other color 1: #6A4A6A;  /*aubergine*/
+    --other1Color-h: 300;
+    --other1Color-s: 18%;
+    --other1Color-l: 35%;
+
+/*theme other color 2: #7f986f;  /*sage*/
+    --other2Color-h: 97;
+    --other2Color-s: 17%;
+    --other2Color-l: 52%;
+
+/*theme other color 3: #4A0404;  /*oxblood*/
+    --other3Color-h: 0;
+    --other3Color-s: 90%;
+    --other3Color-l: 15%;
+
+}
+
+:root:has(#light-theme:checked){
+/*in a light color scheme 'away' to mean darker, 'towards' to mean lighter*/
+
+/*light color scheme*/
+/*standard color adjustments*/
+    --color-slStepSize: 7%;
+    --color-h-StepSize: 5;
+
+/*theme accent color - /* #35af05; /*darker lime */
+    --accentColor-h: 103; 
+    --accentColor-s: 94%;
+    --accentColor-l: 35%;
+
+/*neutralColor: #f4f3f2; /*warm white*/ 
+    --neutralColor-slStepSize: 2.5%;
+
+    --neutralColor-h:30;
+    --neutralColor-s:8%;
+    --neutralColor-l:95%;
+
+/*theme background primary color /* hsl(100, 12%, 85%);  d7ddd4 /* light olivine*/
+    --backgroundColor-h:100;
+    --backgroundColor-s:12%;
+    --backgroundColor-l:85%;
+
+/*theme background secondary color /*41, 36%, 83% e3d9c4 /* light orangey yellow*/
+    --backgroundAltColor-h:41;
+    --backgroundAltColor-s:36%;
+    --backgroundAltColor-l:83%;
+
+/*theme subtle color /* #414a3b; /*dark slate; other related: #53574f (light), #383f33 (dull?), #3A4037 (dark)   */
+    --subtleColor-h:94;
+    --subtleColor-s:11%;
+    --subtleColor-l:26%;
+
+/*theme shadow color: #1e1e1e /* dark green*/
+    --shadowColor-h: 0;
+    --shadowColor-s: 0%;
+    --shadowColor-l: 12%;
+
+/*theme other color 1: #6A4A6A;  /*aubergine*/
+    --other1Color-h: 300;
+    --other1Color-s: 18%;
+    --other1Color-l: 35%;
+
+/*theme other color 2: #7f986f;  /*sage*/
+    --other2Color-h: 97;
+    --other2Color-s: 17%;
+    --other2Color-l: 52%;
+
+/*theme other color 3: #4A0404;  /*oxblood*/
+    --other3Color-h: 0;
+    --other3Color-s: 90%;
+    --other3Color-l: 15%;
+}
+
+:root { /* theme color variants calculation */
+/*accent color calculations*/
+    --accentColor-hslNums: var(--accentColor-h) var(--accentColor-s) var(--accentColor-l);
+    --accentColor-hsl: hsl( var(--accentColor-hslNums) );
+
+    --accentColor-light: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*1 ));
+    --accentColor-xlight: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*2 ));
+    --accentColor-dark: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--accentColor-l) - var(--color-slStepSize)*1 ));
+    --accentColor-xdark: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--accentColor-l) - var(--color-slStepSize)*2 ));
+    --accentColor-bright: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+    --accentColor-xbright: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+    --accentColor-dull: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+    --accentColor-xdull: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*4 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+
+/*neutralColor calculations*/ 
+    --neutralColor-hsl: hsl( var(--neutralColor-h) var(--neutralColor-s) var(--neutralColor-l) );
+
+    --neutralColor-light: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) + var(--neutralColor-slStepSize)*1 ) 
+                                calc(var(--neutralColor-l) + var(--neutralColor-slStepSize)*1 ));
+    --neutralColor-xlight: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) + var(--neutralColor-slStepSize)*2 ) 
+                                calc(var(--neutralColor-l) + var(--neutralColor-slStepSize)*2 ));
+    --neutralColor-dark: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) - var(--neutralColor-slStepSize)*1 ) 
+                                calc(var(--neutralColor-l) - var(--neutralColor-slStepSize)*1 ));
+    --neutralColor-xdark: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) - var(--neutralColor-slStepSize)*2 ) 
+                                calc(var(--neutralColor-l) - var(--neutralColor-slStepSize)*2 ));
+    --neutralColor-xbright: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) + var(--neutralColor-slStepSize)*6 ) 
+                                calc(var(--neutralColor-l) + var(--neutralColor-slStepSize)*0 ));
+    --neutralColor-bright: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) + var(--neutralColor-slStepSize)*3 ) 
+                                calc(var(--neutralColor-l) + var(--neutralColor-slStepSize)*0 ));
+    --neutralColor-dull: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) - var(--neutralColor-slStepSize)*2 ) 
+                                calc(var(--neutralColor-l) + var(--neutralColor-slStepSize)*0 ));
+    --neutralColor-xdull: hsl(var(--neutralColor-h) 
+                                calc( var(--neutralColor-s) - var(--neutralColor-slStepSize)*4 ) 
+                                calc(var(--neutralColor-l) + var(--neutralColor-slStepSize)*0 ));
+
+/*theme background primary color*/
+    --backgroundColor-hsl: hsl( var(--backgroundColor-h) var(--backgroundColor-s) var(--backgroundColor-l) );
+
+    --backgroundColor-light: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--backgroundColor-l) + var(--color-slStepSize)*1 ));
+    --backgroundColor-xlight: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--backgroundColor-l) + var(--color-slStepSize)*2 ));
+    --backgroundColor-dark: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--backgroundColor-l) - var(--color-slStepSize)*1 ));
+    --backgroundColor-xdark: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--backgroundColor-l) - var(--color-slStepSize)*2 ));
+    --backgroundColor-xbright: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--backgroundColor-l) + var(--color-slStepSize)*0 ));
+    --backgroundColor-bright: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--backgroundColor-l) + var(--color-slStepSize)*0 ));
+    --backgroundColor-dull: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--backgroundColor-l) + var(--color-slStepSize)*0 ));
+    --backgroundColor-xdull: hsl(var(--backgroundColor-h) 
+                                calc( var(--backgroundColor-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--backgroundColor-l) + var(--color-slStepSize)*0 ));
+
+/*theme background secondary color*/
+    --backgroundAltColor-hsl: hsl( var(--backgroundAltColor-h) var(--backgroundAltColor-s) var(--backgroundAltColor-l) );
+
+    --backgroundAltColor-light: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--backgroundAltColor-l) + var(--color-slStepSize)*1 ));
+    --backgroundAltColor-xlight: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--backgroundAltColor-l) + var(--color-slStepSize)*2 ));
+    --backgroundAltColor-dark: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--backgroundAltColor-l) - var(--color-slStepSize)*1 ));
+    --backgroundAltColor-xdark: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--backgroundAltColor-l) - var(--color-slStepSize)*2 ));
+    --backgroundAltColor-xbright: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--backgroundAltColor-l) + var(--color-slStepSize)*0 ));
+    --backgroundAltColor-bright: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--backgroundAltColor-l) + var(--color-slStepSize)*0 ));
+    --backgroundAltColor-dull: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--backgroundAltColor-l) + var(--color-slStepSize)*0 ));
+    --backgroundAltColor-xdull: hsl(var(--backgroundAltColor-h) 
+                                calc( var(--backgroundAltColor-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--backgroundAltColor-l) + var(--color-slStepSize)*0 ));
+
+/*theme subtle color */
+    --subtleColor-hsl: hsl( var(--subtleColor-h) var(--subtleColor-s) var(--subtleColor-l) );
+
+    --subtleColor-light: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--subtleColor-l) + var(--color-slStepSize)*1 ));
+    --subtleColor-xlight: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--subtleColor-l) + var(--color-slStepSize)*2 ));
+    --subtleColor-dark: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--subtleColor-l) - var(--color-slStepSize)*1 ));
+    --subtleColor-xdark: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--subtleColor-l) - var(--color-slStepSize)*2 ));
+    --subtleColor-xbright: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--subtleColor-l) + var(--color-slStepSize)*0 ));
+    --subtleColor-bright: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--subtleColor-l) + var(--color-slStepSize)*0 ));
+    --subtleColor-dull: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--subtleColor-l) + var(--color-slStepSize)*0 ));
+    --subtleColor-xdull: hsl(var(--subtleColor-h) 
+                                calc( var(--subtleColor-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--subtleColor-l) + var(--color-slStepSize)*0 ));
+
+/*theme shadow color */
+    --shadowColor-hsl: hsl( var(--shadowColor-h) var(--shadowColor-s) var(--shadowColor-l) );
+
+    --shadowColor-light: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--shadowColor-l) + var(--color-slStepSize)*1 ));
+    --shadowColor-xlight: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--shadowColor-l) + var(--color-slStepSize)*2 ));
+    --shadowColor-dark: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--shadowColor-l) - var(--color-slStepSize)*1 ));
+    --shadowColor-xdark: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--shadowColor-l) - var(--color-slStepSize)*2 ));
+    --shadowColor-xbright: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--shadowColor-l) + var(--color-slStepSize)*0 ));
+    --shadowColor-bright: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--shadowColor-l) + var(--color-slStepSize)*0 ));
+    --shadowColor-dull: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--shadowColor-l) + var(--color-slStepSize)*0 ));
+    --shadowColor-xdull: hsl(var(--shadowColor-h) 
+                                calc( var(--shadowColor-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--shadowColor-l) + var(--color-slStepSize)*0 ));
+
+/*theme other color 1 */
+    --other1Color-hsl: hsl( var(--other1Color-h) var(--other1Color-s) var(--other1Color-l) );
+
+    --other1Color-light: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*1 ));
+    --other1Color-xlight: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*2 ));
+    --other1Color-dark: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--other1Color-l) - var(--color-slStepSize)*1 ));
+    --other1Color-xdark: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--other1Color-l) - var(--color-slStepSize)*2 ));
+    --other1Color-xbright: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+    --other1Color-bright: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+    --other1Color-dull: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+    --other1Color-xdull: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+
+/*theme other color 2 */
+    --other2Color-hsl: hsl( var(--other2Color-h) var(--other2Color-s) var(--other2Color-l) );
+
+    --other2Color-light: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*1 ));
+    --other2Color-xlight: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*2 ));
+    --other2Color-dark: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--other2Color-l) - var(--color-slStepSize)*1 ));
+    --other2Color-xdark: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--other2Color-l) - var(--color-slStepSize)*2 ));
+    --other2Color-xbright: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+    --other2Color-bright: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+    --other2Color-dull: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+    --other2Color-xdull: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+
+/*theme other color 3 */
+    --other3Color-hsl: hsl( var(--other3Color-h) var(--other3Color-s) var(--other3Color-l) );
+
+    --other3Color-light: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*1 ));
+    --other3Color-xlight: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*2 ));
+    --other3Color-dark: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--other3Color-l) - var(--color-slStepSize)*1 ));
+    --other3Color-xdark: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--other3Color-l) - var(--color-slStepSize)*2 ));
+    --other3Color-xbright: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
+    --other3Color-bright: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
+    --other3Color-dull: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
+    --other3Color-xdull: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
+}
+
+:root { /* color cal'd application tweaks */
+
+}
+
+
+
+
+
+/*ALT THEMES*/
+:root:has(#light-theme:checked), :root:has(#natural-theme:checked) {
+    /*light theme colors*/
+    --neutralColor: #f4f3f2; /*warm white*/
+    --neutralColorHSL: 30, 8%, 95%;
+    --backgroundColor: hsl(41, 36%, 83%);
+	--backgroundColor-light: color-mix(in srgb, var(--neutralColor) 40%, var(--backgroundColor));
+	--backgroundColor-xlight: color-mix(in srgb, var(--neutralColor) 50%, var(--backgroundColor-light));
+    --backgroundColorAlt: ;
+
+
+    --color-accent-ltver: #3a8f1f; /*darker limeish*/
+    --color-accent-main: #6ebe44; /*lime*/
+
+    --olivine-xlight: #f8faf8; /* light olivine */
+    --olivine-light: #eaf0e7; /* light olivine */
+    --olivine: #d7ddd4; /* lighi: centt olivine */
+    --olivine-med: #bdc5b8; /* light olivine */
+    --olivine-dark: #a4ae9d; /*light olivine */
+    --olivine-xdark: #94a08c; /*light olivine */
+
+    /*misc colors*/
+    --color-accent-softdark: #7f986f; /*sage*/
+    --color-subtleLight: #f4fced; /*liiiiiiight green*/
+    --color-subtleDark: #f6edd9; /*buff*/
+    --color-contrast: #6A4A6A;  /*aubergine*/
+    --oxblood: #4A0404;
+}

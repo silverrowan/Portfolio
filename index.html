@@ -17,6 +17,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/svgName.css" rel="stylesheet">
     <link href="css/svgHeroBG.css" rel="stylesheet">
+    <link href="css/navTheme.css" rel="stylesheet">
 </head>
 <body>
 
@@ -471,7 +472,18 @@
 </svg>
 
 </div>
-<!-- NAVIGATION-->
+<!-- NAVIGATION & THEME CHANGER-->
+<input type="radio" name="page-theme" id="light-theme">
+<input type="radio" name="page-theme" id="dark-theme" checked>
+<input type="radio" name="page-theme" id="nature-theme">
+<main>
+    <div class="theme-menu">
+        <input type="checkbox" id="theme-menu-trigger">
+        <label class="theme-label button " for="light-theme"><i class="theme-label fa-solid fa-sun fa-sm"></i><p class="btn btn-primary m-2">light</p></label>
+        <label class="theme-label button" for="dark-theme"><i class="fa-solid fa-moon fa-sm"></i><p class="btn btn-primary m-2">dark</p></label>
+        <label class="theme-label button" for="nature-theme"><i class="fa-solid fa-leaf turn80 fa-sm"></i><p class="btn btn-primary m-2">nature</p></label>
+    </div>
+</main>
 <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary glass">
   <div class="container-fluid">
     <a class="navbar-brand logo-text" href="#">Mariah Malczewska</a>
@@ -500,7 +512,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO & ABOUT-->
 <div class="m-0 p-0">
     <section class="hero container-fluid p-0 pt-3" id="heroContainer">
         <div id="heroContent" class="hero row flex-column glass pt-5 pb-5">
@@ -1204,7 +1216,7 @@
     <!-- ABOUT ME TEMPLATE-->
     <section id="about" class="container about">
         <div class="row glass p-5">
-            <div class="col col-md-8 about-description">
+            <div class="col col-lg-8 about-description">
                 <h2>About Me</h2>
                 <p class="about">
                 I started out as an artist and entrepreneur, then found my love for coding and software development.
@@ -1216,7 +1228,7 @@
                 I love coming up with new ideas and taking on unique challenges, whether in coding, the arts, or just for fun. In my free time, I enjoy a cup of tea with my cat Marigold, go on adventures in D&D or indie RPGs, and take walks with my partner along the beaches of Vancouver Island. Getting out into nature and gardening isn’t just a hobby for me, it’s a necessity of modern living. 
             </p>
             </div>
-            <div class="col col-md-4 about-img">
+            <div class="col col-lg-4 about-img">
                 <img src="images/placeholder.jpg" alt="Digital drawing of me" class="about img-fluid">
             </div>
         </div>
