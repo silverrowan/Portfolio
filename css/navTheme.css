@@ -17,13 +17,8 @@ nav, .theme-menu {
     gap: calc(var(--standard-padding)/2); 
 }
 
-
-
-
 /* hide the checkbox */
 #mobile-menu-trigger, #theme-menu-trigger { display: none; } 
-
-
 
 /*STYLE BUTTONS & EFFECT*/
 label.theme-label { 
@@ -35,8 +30,8 @@ input#dark-theme:checked ~ main label[for=dark-theme],
 input#light-theme:checked ~ main label[for=light-theme],
 input#fall-theme:checked ~ main label[for=fall-theme] {
     font-weight: bold;
-    background-color: var(--spotlight-dark-Color);    
-    color: var(--font-spotlight-color);
+    background-color: var(--accentColor);    
+    color: var(--neutralPlainColor);
 }
 
 /*hide the "page-theme" radio buttons */
