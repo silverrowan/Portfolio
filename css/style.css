@@ -1,9 +1,16 @@
 :root {
     --BG-patternSize: 5%;
+
+    --glassBlurr: 8px;
+    --glassOpacity: 8%;
+    --glassBorderOpacity: 15%;
+    --glassColor-hslNums: 120, 41%, 34%; /*bottle green*/
+    --glassIntDark:120 26% 7%;
+    --glassIntBright:120 81% 54;
+    --glassGradient: linear-gradient(-20deg, hsl(120 61% 54% / 8%)2px, transparent 20%, transparent 80%,  hsl(120 71% 74% / 8%) 100%);
 }
 
 :root { /*colors - default - accentColor, primeColor, secondColor, neutralBrandColor, neutralSecondColor, neutralRiseWarmColor, neutralPlainColor */
-
 /*standard color adjustments*/
     --color-slStepSize: 7%;
     --neutralColor-slStepSize: 5%;
@@ -45,6 +52,7 @@
 
 /*'neutral' (background) colors*/
     --neutralRiseWarmColor:  #f4f3f2; /* warm white - #f4f3f2*/
+    --neutralRiseWarm-hslNums: 30, 8%, 95%; /* warm white - #f4f3f2*/
 
     --neutralPlainColor: #121212; /*near black*/
     --neutralPlainColor-h:0;
@@ -372,7 +380,16 @@
 --mainBackgroundAlt: var(--neutralSecondColor-hsl);
 }
 :root:has(#light-theme:checked) { /* assigning colors - light theme */
---mainTextColor: var(--neutralPlainColor)
+--mainTextColor: var(--neutralPlainColor);
+
+/* --glassBlurr: 5px; */
+--glassOpacity: 30%;
+--glassBorderOpacity: 70%;
+--glassIntDarkk:30, 8%, 85;
+--glassIntBright:30, 15%, 95;
+--glassColor-hslNums: var(--neutralRiseWarm-hslNums);
+--glassGradient: linear-gradient(-20deg, hsl(30, 100%, 93%, 15%)2px, transparent 20%, transparent 80%,  hsl(31, 71%, 90%, 15%) 100%);
+
 }
 
 * {
@@ -399,8 +416,8 @@ div, section {
 h1, h2, h3, h4, h5, h6, .logo-text { font-family: "Belleza", sans-serif; font-weight: 600; }
 p, button {font-family: "Gafata", sans-serif; }
 
-h1, h2, h3, .logo-text, button { color: var(--primeColor)}
-h4, h5, h6, p {color: var(--mainTextColor)}
+h1, h2, h3, .logo-text, button { color: var(--primeColor); padding-bottom: 3rem !important;}
+body {color: var(--mainTextColor)}
 
 
 button {border-width: 0;}
@@ -440,14 +457,21 @@ SVG { transform-style: preserve-3d }
     /* padding: 2rem 0; */
 }
 
-.glass, #navbar.glass {
-    background-color: hsl(var(--neutralRiseWarmColor), 30%)!important;
+.glass, #navbar.glass, #projects {
+    background-color: hsl(var(--glassColor-hslNums), var(--glassOpacity))!important;
+    background-image: var(--glassGradient) ;
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid hsl(var(--neutralRiseWarmColor), 70%);
+    box-shadow: inset 0 0 10px 2px hsl( var(--glassIntBright) / 5%), inset 0 0 30px 5px hsl( var(--glassIntDark) / 8%), 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur( var(--glassBlurr) );
+    -webkit-backdrop-filter: blur( var(--glassBlurr) );
+    border: 1px solid hsl(var(--glassColor-hslNums), var(--glassBorderOpacity) );
 }
+
+ #about, #projects, #resume, #contact {
+    margin-top: 3rem !important;
+    margin-bottom: 6rem !important;
+}
+
 #navbar.glass {
     border-top-right-radius: 0px !important;
     border-top-left-radius: 0px !important;
