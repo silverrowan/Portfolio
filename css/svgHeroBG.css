@@ -1,25 +1,21 @@
-:root {
-	/*copied from main style sheet as referenced didn't consistently pass into SVG otherwise*/
+:root {	/*copied color values from main style sheet as referenced didn't consistently pass into SVG otherwise, affected stacking order*/
 	--themeNeutral: #efebe4;
-
-    --backgroundColor-xlight: hsl(120, 17%, 98%); /* light olivine */
+/*in dark theme color names are backwards to actual light/dark*/
+    --backgroundColor-xlight: hsl(105, 2%, 4%);
+    --backgroundColor-light:  hsl(105, 5%, 7%);
+    --backgroundColor: hsl(105, 8%, 10%);
+    --backgroundColor-med:hsl(105, 9.5%, 11.5%);
+    --backgroundColor-meddark: hsl(105, 11%, 13%);
+}
+:root:has(#light-theme:checked){
+	--backgroundColor-xlight: hsl(120, 17%, 98%); /* light olivine */
     --backgroundColor-light: hsl(110, 13%, 92%); /* light olivine */
     --backgroundColor: hsl(100, 12%, 85%); /* lighi: centt olivine */
     --backgroundColor-med: hsl(99, 11%, 83%); /* lighi: centt olivine */
     --backgroundColor-meddark: hsl(97, 10%, 80%); /* light olivine */
+}
 
-	/* --backgroundColor: #e3d9c4;/* #f6edd9; /* #e3d9c4; /* #ebe4df; F6F0EE */
-	/* --backgroundColor-light: color-mix(in srgb, var(--themeNeutral) 40%, var(--backgroundColor)); */
-	/* --backgroundColor-xlight: color-mix(in srgb, var(--themeNeutral) 50%, var(--backgroundColor-light)); */
-    /*efebe4 w e3d, f5f1eb w f6e*/
-	
-	/* --backgroundColor-med: #bdc5b8; */
-
-	/* --backgroundColor-xlight: #f8faf8; 
-	--backgroundColor-light: #eaf0e7;
-	--backgroundColor: #d7ddd4;
-    --backgroundColor-med: #bdc5b8; */
-
+:root {
 	/* Background Animation timing calculation in variables */
 	/* --animationBG-speed-multiplier: 0.5; */
 	--stepDelay: 1s;
