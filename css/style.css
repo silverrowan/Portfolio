@@ -375,18 +375,19 @@
                                 calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
 }
 
-:root { /* assigning colors */
+:root { /* assigning values */
 --mainTextColor: var(--neutralRiseWarmColor);
 --contraTextColor: var(--neutralPlainColor);
 --mainBackground: var(--neutralBrandColor-hsl);
 --mainBackgroundAlt: var(--neutralSecondColor-hsl);
 --cardBackground: var(--neutralBrandColor-light);
 --borderColor: var(--neutralBrandColor-dark);
-
+--themeTogglerSVG: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23121212' class='bi bi-toggle-on' viewBox='0 0 16 16'%3E%3Cpath d='M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8'/%3E%3C/svg%3E");
 }
 :root:has(#light-theme:checked) { /* assigning colors - light theme */
 --mainTextColor: var(--neutralPlainColor);
 --contraTextColor: var(--neutralRiseWarmColor);
+--themeTogglerSVG: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23f4f3f2' class='bi bi-toggle-off' viewBox='0 0 16 16'%3E%3Cpath d='M11 4a4 4 0 0 1 0 8H8a5 5 0 0 0 2-4 5 5 0 0 0-2-4zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8M0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5'/%3E%3C/svg%3E");
 
 /* --glassBlurr: 5px; */
 --glassOpacity: 30%;
@@ -413,11 +414,14 @@
     font-style: normal;
     }
 
+/*set a background color and size for images that don't load*/
+img {background-color: var(--neutralBrandColor-dull);}
+
 /*font sizes*/
     h1, h2 {font-size: 2.5rem;}
     h6 {font-size: 1.15rem;}
     p {font-size: 1.15rem; line-height: 1.5rem;}
-
+    p.about { line-height: 2rem;}
 
 /*font colors*/
     body {color: var(--mainTextColor)}
@@ -554,4 +558,262 @@ p.foot {
 
 .footNote p {
     text-align: right;
+}
+
+/* progress bar*/
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.skillContainer {
+    width: 100%;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--contraTextColor);
+    text-align: center;
+    white-space: nowrap;
+    /* background-color: var(--accentColor); */
+    width: 0; /*moved here from inline styling in the demo. Set to 0 to allow hover growth*/
+    background-image: linear-gradient(-45deg, var(--accentColor) 40%, var(--accentColor-dull), var(--accentColor-bright), var(--accentColor) 60%) !important;
+    background-size: 500% 500%;
+    background-position: right;
+    transition: all .15s ease-in-out;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress, .progress-stacked { /*override bootstrap variables & attributes*/
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+    --bs-progress-bar-transition: width 0.6s ease;
+    display: flex;
+    height: 1.5rem;
+    overflow: hidden;
+    font-size: var(--bs-progress-font-size);
+    background-color: var(--bs-progress-bg);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accentColor-xdark);
+    width: 75%; /*amount of space the entire bar takes up width-wise per column*/
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+    transition: all .15s ease-in-out;
+}
+
+/*set bar growth animation final width values based on bar value*/
+#skillContainerRow:hover div div .progress .progress-bar.bar5 { width: 50%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar6 { width: 60%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar7 { width: 70%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar8 { width: 80%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar9 { width: 90%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar10 { width: 100%; }
+
+.progress:hover .progress-bar { /*add a hover glow to the outer progress bar 
+    & set animation of the inner bar */
+    animation: bgToRight 3s infinite;
+    box-shadow: 0 0 5px 0 var(--accentColor);
+}
+.progress:hover { /*add a hover glow to the progress bar*/
+    box-shadow: 0 0 5px 0 var(--accentColor);
+}
+
+@keyframes grow { /*animation effect for the skill bar growth*/ 
+    from { width: 0px; } to { width: 100% }
+}
+
+/*vertical line styling*/
+.vr { 
+    height: 100%;
+    background-color: var(--primeColor);
+    opacity: 1;
+ }
+
+ /*buttons styling*/
+.btn {
+    display: inline-block;
+    font-size: 1.15rem;
+/* I FIGURED OUT WHY border-radius: 999px IS A THING--ITS NOT AN AI ARTIFACT (in this case)*/
+    border-radius: 99px;
+/* IF you set radius = 50% you get an OVAL. 
+If you set it to a stupid large nubmer, eg 99 you get a pill shape instead! 
+... it doesnt actually make sense, but thats what it does.
+I'd just set it to a specific number, but the buttons vary in size.
+*/
+    transition: all .2s ease-in-out; 
+}
+.btn:hover { /*add drop-glow on hover*/
+    box-shadow: 0 0 5px 0 var(--accentColor-bright);
+}
+
+.btn-primary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--mainTextColor);
+    --bs-btn-bg:var(--accentColor-dark);
+    --bs-btn-border-color: var(--accentColor-xdark);
+    --bs-btn-hover-color: var(--mainTextColor);
+    --bs-btn-hover-bg: var(--accentColor);
+    --bs-btn-hover-border-color:var(--accentColor-bright);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--mainTextColor);
+    --bs-btn-active-bg: var(--accentColor-bright);
+    --bs-btn-active-border-color: var(--accentColor-dull);
+    background-image: linear-gradient(-45deg, var(--accentColor-dark) 40%, var(--accentColor), var(--accentColor-bright), var(--accentColor-dark) 60%) !important;
+    background-size: 500% 500%;
+    background-position: right;
+    transition: all .15s ease-in-out;
+}
+
+.btn-secondary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--contraTextColor);
+    --bs-btn-bg: var(--primeColor-dull);
+    --bs-btn-border-color: var(--primeColor-xdark);
+    --bs-btn-hover-color:var(--contraTextColor);
+    --bs-btn-hover-bg: var(--primeColor);
+    --bs-btn-hover-border-color: var(--primeColor-dull);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--contraTextColor);
+    --bs-btn-active-bg: var(--primeColor);
+    --bs-btn-active-border-color:var(--primeColor-dark);
+    transition: all .15s ease-in-out;
+}
+
+.btn-outline-primary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--accentColor-dark);
+    --bs-btn-border-color: var(--accentColor-dark);
+    --bs-btn-hover-color: var(--neutralPlainColor);
+    --bs-btn-hover-bg:var(--accentColor-bright);
+    --bs-btn-hover-border-color:var(--accentColor-bright);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--mainTextColor);
+    --bs-btn-active-bg: var(--accentColor-bright);
+    --bs-btn-active-border-color: var(--accentColor-dull);
+    transition: all .15s ease-in-out;
+}
+
+.btn-outline-secondary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--primeColor-dull);
+    --bs-btn-border-color: var(--primeColor-dull);
+    --bs-btn-hover-color: var(--contraTextColor);
+    --bs-btn-hover-bg: var(--primeColor);
+    --bs-btn-hover-border-color: var(--primeColor-dark);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color:var(--contraTextColor);
+    --bs-btn-active-bg:var(--primeColor);
+    --bs-btn-active-border-color: var(--primeColor-dark);
+    transition: all .15s ease-in-out;
+}
+
+.btn-group-sm>.btn, .btn-sm { /*override bootstrap variables & attributes*/
+    --bs-btn-font-size: 0.85rem;
+}
+
+a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap variables & attributes*/
+    animation: bump 700ms ease-in;
+}
+
+.btn-primary:hover, .btn-outline-primary:hover {/*override bootstrap variables & attributes*/
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+}
+
+.btn-sm:hover { /*override bootstrap variables & attributes*/
+    animation: smBump 700ms ease-in;
+}
+
+.btn-primary.btn-sm:hover { /*override bootstrap variables & attributes*/
+    animation: smBump 700ms ease-in, bgToRight 3s infinite;
+}
+
+/*create movement animation*/
+@keyframes bump {
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-20%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-10%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-5%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes smBump { /*same movement, less amplitude*/
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-10%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-5%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-2%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes bgToRight { /*create the gradient push wave effect*/
+    to {background-position: left;}
+}
+
+/*card styling*/
+.card { /*override bootstrap variables & attributes*/
+    color: var(--mainTextColor);
+    background-color: var(--cardBackground);
+    border: 1px solid var(--borderColor) !important;
+    transition: all .5s ease-in-out;
+}
+
+.card:hover { /*add effects to cards on hover*/
+    animation: smBump 700ms ease-in;
+    border: 1px solid var(--accentColor-bright) !important;
+    box-shadow: 0 0 12px 1px var(--accentColor) !important;
+}
+
+/*form fields styling*/
+.form-control { /*override bootstrap variables & attributes*/
+    font-size: 1.2 rem;
+    color: var(--contraTextColor);
+    background-color: var(--primeColor-xlight);
+    border: 1px solid var(--primeColor-light);
+    transition: all .15s ease-in-out,
+}
+
+button, input, optgroup, select, textarea { /*override bootstrap variables & attributes*/
+    transition: all 0.2s ease-in-out !important;
+}
+
+input:hover, optgroup:hover, select:hover, textarea:hover { /*create hover fx on form items*/
+    background-color: var(--accentColor);
+}
+
+.form-control:focus { /*override bootstrap variables & attributes*/
+    color: var(--contraTextColor);
+    background-color: var(--primeColor);
+    border-color: var(--primeColor-dark);
+    box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
+}
+
+.form-check-input:checked { /*override bootstrap variables & attributes*/
+    background-color: var(--primeColor);
+    border-color: var(--primeColor-dark);
+    color: var(--contraTextColor);
+}
+
+.form-check-input:checked[type=checkbox] { /*override bootstrap checkmark image - minor edit of fill color*/
+    --bs-form-check-bg-image: url('../images/check.svg');
+}
+
+.form-check-input { /*override bootstrap variables & attributes*/
+    width: 1.2em;
+    height: 1.2em;
+
+    background-color: var(--primeColor-xlight);
+    background-image: var(--bs-form-check-bg-image); /*overridden image ver abv*/
+    border: 1px solid var(--primeColor-light);
+}
+
+.form-check-input:focus { /*override bootstrap variables & attributes*/
+    border-color: var(--accentColor);
+    box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
 }
