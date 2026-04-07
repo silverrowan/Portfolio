@@ -1,26 +1,39 @@
 /* style the nav bar & theme changer */
-nav, .theme-menu {
-    width: calc(100% - var(--standard-padding));
-    background: var(--nav-background-primary-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: calc(var(--standard-padding)/2);
-    z-index: 99;
-    position: fixed;
-}
+    nav, .theme-menu {
+        width: calc(100% - var(--standard-padding));
+        background: var(--nav-background-primary-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: calc(var(--standard-padding)/2);
+        z-index: 99;
+        position: fixed;
+    }
 
-.theme-menu {
-    bottom: 0;
-    z-index: 98;
-    justify-content: flex-start;
-    gap: calc(var(--standard-padding)/2); 
-}
+    .theme-menu {
+        bottom: 0;
+        z-index: 98;
+        justify-content: flex-start;
+        gap: calc(var(--standard-padding)/2); 
+    }
 
-/* hide the checkbox */
-#mobile-menu-trigger, #theme-menu-trigger { display: none; } 
+    .navbar-toggler:focus {
+        text-decoration: none;
+        /* box-shadow: 0 0 0px 0.1rem; */
+        border: 0.5rem dotted var(--accentColor);
+        stroke-dasharray: 1,6;
+        stroke-linecap: round;
+        border-radius: 50%;
+        aspect-ratio: 1;
+    }
 
-/*STYLE BUTTONS & EFFECT*/
+/* hide the checkbox for theme selector and dropdown */
+    #mobile-menu-trigger, #theme-menu-trigger { display: none; } 
+
+/*hide the "page-theme" radio buttons */
+    input[name="page-theme"] { display: none; }
+
+/*STYLE theme BUTTONS & EFFECT*/
 label.theme-label { 
     display: inline-block;
     cursor: pointer;
@@ -34,13 +47,6 @@ input#fall-theme:checked ~ main label[for=fall-theme] {
     color: var(--neutralPlainColor);
 }
 
-/*hide the "page-theme" radio buttons */
-input[name="page-theme"] { 
-    display: none;
-}
-
-
 /* hide & reveal menu lists */
-nav ul { display: none; } 
-
-nav input:checked ~ ul {display: block;}
+    nav ul { display: none; } 
+    nav input:checked ~ ul {display: block;}

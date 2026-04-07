@@ -1,9 +1,7 @@
 /* #region SVG styles & animation style - Create moving line Hero SVG animation*/
 /* Stroke-animation : by segment, ordered by animation timing */
 
-:root { 
-	/* #region Timeing variables*/
-	/* Hero Animation timing calculation in variables */
+:root { /* Hero Animation timing calculation & variables */
 	--animation-speed-multiplier: 0.5;
 
 	/*rough manually determined timings*/
@@ -58,7 +56,6 @@
 	--animation-delay-qD:       calc( var(--animation-delay-qC)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-q) ) );
 	--animation-delay-Mal:       calc( var(--animation-delay-qD)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-M) ) );
 	--animation-delay-czewska:  calc( var(--animation-delay-Mal)    + var(--animation-speed-multiplier) * ( var(--animation-time-Mal)      + var(--animation-gaps-Mal-czewska) ) );
-/* #endregion */
 }
 
 svg {
@@ -66,80 +63,81 @@ svg {
 	padding: 0;
 }
 
-.heroName { /* baseline svg line style */
-	fill:none;
-	stroke-miterlimit:10;
-	stroke-linecap:round;
-	stroke-linejoin:round;
-}
-
+/* style SVG lines */
 /*tried using symbols in the SVG to reduce code duplication, but 
 unfortnuately it thoroughly messed up styling, so treating them
 as I would a ::before or ::after I intended to stack with parent*/
-/* #region Styling for svg name by use 'layer' - color, width, and filters */
 
-div#Row1Names, div#Row2Names, div#Row3Names {
-	position: relative;
-}
+/* #region Styling for svg name via 'layer' - color, width, and filters */
 
-#mainLine-fullName, #mainLine-fullName2, #mainLine-fullName3  { /* baseline svg line style */
-	position: relative;
-	stroke: var(--accentColor);
-	stroke-width: 3;
-	width: 100%;
-	height: auto;
-	inset: 0; /*replaces top/left/etc*/
-}
+	div#Row1Names, div#Row2Names, div#Row3Names {
+		position: relative;
+	}
 
-#softLine-fullName, #softLine-fullName2, #softLine-fullName3, 
-#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 {
-	position: absolute;
-	inset:0;
-	width: 100%;
-	height: auto;
-	z-index: -1;
-}
+	.heroName { /* baseline svg line style */
+		fill:none;
+		stroke-miterlimit:10;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+	}
 
-#softLine-fullName, #softLine-fullName2, #softLine-fullName3 {
-	stroke: var(--themeNeutral);
-	stroke-width: 5;
-	filter: blur(1px);
-}
+	#mainLine-fullName, #mainLine-fullName2, #mainLine-fullName3  { /* top line style */
+		position: relative;
+		stroke: var(--accentColor);
+		stroke-width: 3;
+		width: 100%;
+		height: auto;
+		inset: 0; /*replaces top/left/etc*/
+	}
 
-#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 {
-	stroke: var(--accentColor-dull);
-	stroke-width: 3;
-	filter: blur(4px);
-}
+	#softLine-fullName, #softLine-fullName2, #softLine-fullName3, 
+	#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 { /* dark and bright-lining layout*/
+		position: absolute;
+		inset:0;
+		width: 100%;
+		height: auto;
+		z-index: -1;
+	}
 
+	#softLine-fullName, #softLine-fullName2, #softLine-fullName3 { /*brightline styling*/
+		stroke: var(--themeNeutral);
+		stroke-width: 5;
+		filter: blur(1px);
+	}
+
+	#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 { /*darkline styling*/
+		stroke: var(--accentColor-dull);
+		stroke-width: 3;
+		filter: blur(4px);
+	}
 /* #endregion */
 
-/*#region svg name layout*/
+/*#region svg name responsive layout*/
 /* "Narrow Screen" (baseline) display settings for svg name section */ 
-div#Row1Names { display: none; }
-div#Row2Names { display: none; }
-div#Row3Names {	display: flex; }
+	div#Row1Names { display: none; }
+	div#Row2Names { display: none; }
+	div#Row3Names {	display: flex; }
 
 /*adjust Hero script to alternate image at specific widths*/
 /*using the same svg code and adjusting its layout did not look good
 So I made different graphics for the three sizes */
-@media (min-width: 700px) {
-	div#Row1Names { display: none; }
-	div#Row2Names { display: flex; }
-	div#Row3Names {	display: none; }
-}
+	@media (min-width: 700px) {
+		div#Row1Names { display: none; }
+		div#Row2Names { display: flex; }
+		div#Row3Names {	display: none; }
+	}
 
-@media (min-width: 1100px) {
-	div#Row1Names { display: flex; }
-	div#Row2Names { display: none; }
-	div#Row3Names { display: none; }
-}
-
+	@media (min-width: 1100px) {
+		div#Row1Names { display: flex; }
+		div#Row2Names { display: none; }
+		div#Row3Names { display: none; }
+	}
 /*#endregion*/
 
-@keyframes move { 100% { stroke-dashoffset: 0; } } 
+/*#region Set up animation of svg name and it's prerequisites (stroke dash); 
+Applied to paths IN symbol*/ 
+	@keyframes move { 100% { stroke-dashoffset: 0; } } 
 
-/*#region Set up animation of svg name and it's prerequisites (stroke dash); Applied to paths IN symbol*/ 
 	.Mline {
 		stroke-dasharray: 60;
         stroke-dashoffset: 60;
