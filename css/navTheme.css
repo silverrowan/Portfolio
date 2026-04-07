@@ -21,11 +21,19 @@
         text-decoration: none;
         /* box-shadow: 0 0 0px 0.1rem; */
         border: 0.5rem dotted var(--accentColor);
-        stroke-dasharray: 1,6;
-        stroke-linecap: round;
+        /* stroke-dasharray: 1,6;
+        stroke-linecap: round; */
         border-radius: 50%;
         aspect-ratio: 1;
     }
+
+    .navbar-toggler-icon {
+        fill: var(--mainTextColor);
+        stroke: var(--mainTextColor);
+        stroke-width: 1px;
+        height: 90%;
+        aspect-ratio: 1;
+}
 
 /* hide the checkbox for theme selector and dropdown */
     #mobile-menu-trigger, #theme-menu-trigger { display: none; } 
@@ -34,10 +42,10 @@
     input[name="page-theme"] { display: none; }
 
 /*STYLE theme BUTTONS & EFFECT*/
-label.theme-label { 
-    display: inline-block;
-    cursor: pointer;
-}
+    label.theme-label { 
+        display: inline-block;
+        cursor: pointer;
+    }
 
 input#dark-theme:checked ~ main label[for=dark-theme], 
 input#light-theme:checked ~ main label[for=light-theme],

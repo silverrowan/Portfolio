@@ -1,6 +1,7 @@
-:root {	/*copied color values from main style sheet as referenced didn't consistently pass into SVG otherwise, affected stacking order*/
+:root {	/*copied color values from main style sheet as referenced didn't 
+	consistently pass into SVG otherwise, and somehow affected stacking order*/
 	--themeNeutral: #efebe4;
-/*in dark theme color names are backwards to actual light/dark*/
+/*in dark theme color names are backwards to actual light/dark appearance*/
     --backgroundColor-xlight: hsl(105, 2%, 4%);
     --backgroundColor-light:  hsl(105, 5%, 7%);
     --backgroundColor: hsl(105, 8%, 10%);
@@ -91,9 +92,7 @@
 @keyframes fanInDots { 100% { stroke-dashoffset: 144; } }
 @keyframes fanIn { 100% { stroke-dashoffset: 0; } }
 @keyframes expandOut { from { r: 0; } to { r: var(--circleRadius)} }
-@keyframes colorFade { from {fill: var(--initialColor)} to { fill: var(--finalColor)}
-	
-}
+@keyframes colorFade { from {fill: var(--initialColor)} to { fill: var(--finalColor) } }
 
 /*set background 'default' values for animations*/
 .fillCircle, .ring {
@@ -120,7 +119,6 @@
 }
 
 .behindDotsRingOuter { 
-
 	animation-duration: 2s; 
 	animation-delay: calc(var(--stepDelay)*1.75 + var(--BGinDelay));
 }

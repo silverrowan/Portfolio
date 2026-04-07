@@ -43,6 +43,14 @@ a:hover {
     align-items: center;
 }
 
+.skillContainer {
+    width: 100%;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .progress-bar {
     display: flex;
     flex-direction: column;
@@ -56,26 +64,164 @@ a:hover {
 }
 
 .progress, .progress-stacked {
-    --bs-progress-height: 1rem;
-    --bs-progress-font-size: 0.75rem;
-    --bs-progress-bg: var(--bs-secondary-bg);
-    --bs-progress-border-radius: var(--bs-border-radius);
-    --bs-progress-box-shadow: var(--bs-box-shadow-inset);
-    --bs-progress-bar-color: #fff;
-    --bs-progress-bar-bg: #0d6efd;
     --bs-progress-bar-transition: width 0.6s ease;
     display: flex;
-    height: var(--bs-progress-height);
+    height: 1.5rem;
     overflow: hidden;
     font-size: var(--bs-progress-font-size);
     background-color: var(--bs-progress-bg);
-    border-radius: var(--bs-progress-border-radius);
+    border-radius: 0.75rem;
     margin-bottom: 1rem;
     border: 1px solid var(--accentColor-xdark);
+    width: 75%;
 }
 
+/*vertical line styling*/
 .vr { 
     height: 100%;
     background-color: var(--primeColor);
     opacity: 1;
  }
+
+ /*buttons*/
+.btn {
+    display: inline-block;
+    font-size: 1.15rem;
+/* I FIGURED OUT WHY border-radius: 999px IS A THING--ITS NOT AN AI ARTIFACT*/
+    border-radius: 99px;
+/* IF you set radius = 50% you get an OVAL. 
+If you set it to a stupid large nubmer, eg 99 you get a pill shape instead! 
+... it doesnt actually make sense, but thats what it does.
+I'd just set it to a specific number, but some of the buttons are different sizes.
+*/
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn:hover {
+    box-shadow: 0 0 5px 0 var(--accentColor-bright);
+}
+
+.btn-primary {
+    --bs-btn-color: var(--mainTextColor);
+    --bs-btn-bg:var(--accentColor-dark);
+    --bs-btn-border-color: var(--accentColor-xdark);
+    --bs-btn-hover-color: var(--mainTextColor);
+    --bs-btn-hover-bg: var(--accentColor);
+    --bs-btn-hover-border-color:var(--accentColor-bright);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--mainTextColor);
+    --bs-btn-active-bg: var(--accentColor-bright);
+    --bs-btn-active-border-color: var(--accentColor-dull);
+    background-image: linear-gradient(-45deg, var(--accentColor-dark) 40%, var(--accentColor), var(--accentColor-bright), var(--accentColor-dark) 60%) !important;
+    background-size: 500% 500%;
+    background-position: right;
+    transition: all .15s ease-in-out;
+}
+
+.btn-secondary {
+    --bs-btn-color: var(--contraTextColor);
+    --bs-btn-bg: var(--primeColor-dull);
+    --bs-btn-border-color: var(--primeColor-xdark);
+    --bs-btn-hover-color:var(--contraTextColor);
+    --bs-btn-hover-bg: var(--primeColor);
+    --bs-btn-hover-border-color: var(--primeColor-dull);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--contraTextColor);
+    --bs-btn-active-bg: var(--primeColor);
+    --bs-btn-active-border-color:var(--primeColor-dark);
+    transition: all .15s ease-in-out;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--accentColor-dark);
+    --bs-btn-border-color: var(--accentColor-dark);
+    --bs-btn-hover-color: var(--neutralPlainColor);
+    --bs-btn-hover-bg:var(--accentColor-bright);
+    --bs-btn-hover-border-color:var(--accentColor-bright);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--mainTextColor);
+    --bs-btn-active-bg: var(--accentColor-bright);
+    --bs-btn-active-border-color: var(--accentColor-dull);
+    transition: all .15s ease-in-out;
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--primeColor-dull);
+    --bs-btn-border-color: var(--primeColor-dull);
+    --bs-btn-hover-color: var(--contraTextColor);
+    --bs-btn-hover-bg: var(--primeColor);
+    --bs-btn-hover-border-color: var(--primeColor-dark);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color:var(--contraTextColor);
+    --bs-btn-active-bg:var(--primeColor);
+    --bs-btn-active-border-color: var(--primeColor-dark);
+    transition: all .15s ease-in-out;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    --bs-btn-font-size: 0.85rem;
+}
+
+a svg:hover, button svg:hover .iconLink:hover, .btn:hover {
+    animation: bump 700ms ease-in;
+}
+
+
+a svg:hover {
+    transition: all;
+}
+
+.btn-primary:hover, .btn-outline-primary:hover {
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+}
+
+.btn-sm:hover {
+    animation: smBump 700ms ease-in;
+}
+
+.btn-primary.btn-sm:hover {
+    animation: smBump 700ms ease-in, bgToRight 3s infinite;
+}
+
+.bi-arrow-bar-down, .bi-sun-fill, .bi-moon-stars-fill {
+    width: 1em;
+    height: 1em;
+}
+
+@keyframes bump {
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-20%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-10%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-5%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes smBump {
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-10%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-5%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-2%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes bgToRight {
+    to {background-position: left;}
+}
+
+/*caard*/
+.card {
+    color: var(--mainTextColor);
+    background-color: var(--cardBackground);
+    border: 1px solid var(--borderColor) !important;
+    transition: all .5s ease-in-out;
+}
+
+.card:hover {
+    animation: smBump 700ms ease-in;
+    border: 1px solid var(--accentColor-bright) !important;
+    box-shadow: 0 0 12px 1px var(--accentColor) !important;
+}
+

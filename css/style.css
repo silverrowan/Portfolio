@@ -377,11 +377,16 @@
 
 :root { /* assigning colors */
 --mainTextColor: var(--neutralRiseWarmColor);
+--contraTextColor: var(--neutralPlainColor);
 --mainBackground: var(--neutralBrandColor-hsl);
 --mainBackgroundAlt: var(--neutralSecondColor-hsl);
+--cardBackground: var(--neutralBrandColor-light);
+--borderColor: var(--neutralBrandColor-dark);
+
 }
 :root:has(#light-theme:checked) { /* assigning colors - light theme */
 --mainTextColor: var(--neutralPlainColor);
+--contraTextColor: var(--neutralRiseWarmColor);
 
 /* --glassBlurr: 5px; */
 --glassOpacity: 30%;
@@ -392,21 +397,17 @@
 --glassGradient: linear-gradient(-20deg, hsl(30, 100%, 93%, 15%)2px, transparent 20%, transparent 80%,  hsl(31, 71%, 90%, 15%) 100%);
 }
 
-
-
-
-
 /*font family & weight*/
-    h1, h2, h3, h4, h5, h6, .logo-text { font-family: "Belleza", sans-serif; font-weight: 600; }
-    p, button {font-family: "Gafata", sans-serif; font-weight: 400;}
-
-    .belleza-regular {
+    h1, h2, h3, h4, h5, .logo-text { font-family: "Belleza", sans-serif; font-weight: 600; }
+    h6, p, button {font-family: "Gafata", sans-serif; font-weight: 400;}
+   
+    .belleza {
     font-family: "Belleza", sans-serif;
     font-weight: 400;
     font-style: normal;
     }
 
-    .gafata-regular {
+    .gafata {
     font-family: "Gafata", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -414,15 +415,20 @@
 
 /*font sizes*/
     h1, h2 {font-size: 2.5rem;}
+    h6 {font-size: 1.15rem;}
+    p {font-size: 1.15rem; line-height: 1.5rem;}
+
 
 /*font colors*/
     body {color: var(--mainTextColor)}
     h1, h2, h3, h4, h5, h6 .logo-text, button{ color: var(--primeColor);}
 
 /*text margins*/
-    h2.projects { margin-bottom: 3rem !important;}
+    h2.projects, h2.resume { margin-bottom: 3rem !important;}
     h3.highlights, h3.skills, h2.contact, h2.about { margin-bottom: 1.5rem !important;}
     h3.skills { margin-top: 1.5rem !important;}
+    /* h4 {margin-bottom: 1rem;} */
+    h6 {margin-bottom: 0.25rem;}
 
 /*test alignment*/
     section#resume ul li, .contactForm div {text-align: left;}
@@ -456,8 +462,8 @@
     }
 
     #about, #projects, #resume, #contact {
-        margin-top: 3rem !important;
-        margin-bottom: 6rem !important;
+        margin-top: 6rem !important;
+        margin-bottom: 3rem !important;
     }
 
     #navbar.glass {
@@ -469,6 +475,10 @@
         border-bottom-right-radius: 0px !important;
         border-bottom-left-radius: 0px !important;
     }
+
+    .navbar-toggler 
+
+    .navbar-toggler-icon
 
 /*layout*/
     #heroContainer {
@@ -491,8 +501,14 @@
         justify-content: contactTypes;
     }
 
+    .rSHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 /* SVG related */
-    SVG { transform-style: preserve-3d }
+    SVG { transform-style: preserve-3d; transition: all .15s ease-in-out; }
 
 /*svg icons*/
     .social, .social path {
@@ -500,7 +516,27 @@
         height: var(--link-iconSize);
         width: var(--link-iconSize);
         margin: calc( var(--link-iconSize) / 4);
+        transition: all .15s ease-in-out;
     }
 
+.social:hover {
+    fill: var(--accentColor-dark);
+    stroke: 1px solid var(--accentColor-bright);
+}
+
+a {
+    text-decoration: none;
+}
+
 button {border-width: 0;}
+
+.exp {
+    height: 100% !important;
+}
+
+.expInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 

@@ -57,7 +57,14 @@
 	--animation-delay-Mal:       calc( var(--animation-delay-qD)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-M) ) );
 	--animation-delay-czewska:  calc( var(--animation-delay-Mal)    + var(--animation-speed-multiplier) * ( var(--animation-time-Mal)      + var(--animation-gaps-Mal-czewska) ) );
 }
-
+:root { /*other variables*/
+	--brightlineOpacity: 100%;
+	--brightlineWidth: 2px;
+}
+:root:has(#light-theme:checked) {
+	--brightlineOpacity: 100%;
+	--brightlineWidth: 5px;
+}
 svg {
 	margin: 0;
 	padding: 0;
@@ -100,8 +107,8 @@ as I would a ::before or ::after I intended to stack with parent*/
 	}
 
 	#softLine-fullName, #softLine-fullName2, #softLine-fullName3 { /*brightline styling*/
-		stroke: var(--themeNeutral);
-		stroke-width: 5;
+		stroke: hsl( var(--neutralRiseWarm-hslNums), var(--brightlineOpacity) );
+		stroke-width: var(--brightlineWidth);
 		filter: blur(1px);
 	}
 
