@@ -759,6 +759,7 @@ I'd just set it to a specific number, but the buttons vary in size.
 }
 
 .btn-group { display:flex; width: 100%; }
+.btn-wide { width: 100%; }
 
 .btn-group .btn {
   flex:1; /*fill the button group; makes the two buttons even size*/
@@ -811,6 +812,24 @@ a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap
     to {background-position: left;}
 }
 
+
+/*style stand-alone images*/
+.img-isol {
+    border-radius: calc( 1rem * var(--cornerCutEnlarger) );
+    corner-shape: var(--cornerType);
+    border: 1px solid var(--borderColor);
+} 
+
+/*add hover fx to stand-alone image*/
+div .img-ison {
+        transition: all .5s ease-in-out;
+}
+
+.img-isol:hover { /*add effects to cards on hover*/
+    border: 1px solid var(--accentColor-bright) ;
+    box-shadow: 0 0 12px 1px var(--accentColor) ;
+}
+
 /*card styling*/
 .card { /*override bootstrap variables & attributes*/
     color: var(--mainTextColor);
@@ -818,6 +837,12 @@ a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap
     border: 1px solid var(--borderColor) !important;
     transition: all .5s ease-in-out;
     border-radius: calc( 1rem * var(--cornerCutEnlarger) );
+    corner-shape: var(--cornerType);
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc( 1rem * var(--cornerCutEnlarger) );
+    border-top-right-radius: calc( 1rem * var(--cornerCutEnlarger) );
     corner-shape: var(--cornerType);
 }
 

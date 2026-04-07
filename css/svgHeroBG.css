@@ -98,7 +98,7 @@
 .fillCircle, .ring {
 	animation-duration: 3s;
 	animation-timing-function: ease-in-out;
-	animation-fill-mode: both;s
+	animation-fill-mode: both;
 	animation-iteration-count: 1;
 }
 

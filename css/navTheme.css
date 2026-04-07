@@ -28,7 +28,7 @@
         border: 0.5rem dotted var(--accentColor);
         /* stroke-dasharray: 1,6;
         stroke-linecap: round; */
-        border-radius: calc(50% * var(--cornerMultiplier));
+        border-radius: calc(50% * var(--cornerCutEnlarger));
         corner-shape: var(--cornerType);
         aspect-ratio: 1;
     }
