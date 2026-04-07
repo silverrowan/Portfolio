@@ -9,10 +9,10 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>  
     <!-- BOOTSTRAP MASONRY -->
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-<!-- FONT TRIALING -->
+<!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa+Ink:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Arya:wght@400;700&family=Belleza&family=Buda:wght@300&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Gafata&family=Gurajada&family=Italiana&family=Junge&family=Molengo&family=Quattrocento:wght@400;700&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Ysabeau+Infant:ital@0;1&family=Ysabeau:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Gafata&display=swap" rel="stylesheet">
 <!-- My Styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/svgName.css" rel="stylesheet">
@@ -1060,6 +1060,63 @@
                     <li>broad set of skills and knowledge, from accounting to project planning to book writing and layout, and more.</li>
                 </ul>
             </div>
+            <div class="row">
+                <h3 class="skills">Skills Summary</h3>
+                <p><em>hover over this section to see values</em></p>
+                <div class="col-6 skills">
+                    <h4>Technical Skills</h4>
+                    <div class="col col-md-6 skillContainer">
+                        HTML 
+                        <div class="progress" role="progressbar" aria-label="HTML Skill" 
+                            aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar8"></div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6 skillContainer">
+                        CSS 
+                        <div class="progress" role="progressbar" aria-label="CSS Skill" 
+                            aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar8"></div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6 skillContainer">
+                        JavaScript
+                        <div class="progress" role="progressbar" aria-label="JavaScript Skill" 
+                            aria-valuenow="7" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar7"></div>
+                        </div> 
+                    </div>
+                    <div class="col col-md-6 skillContainer">
+                        Java
+                        <div class="progress" role="progressbar" aria-label="Java Skill" 
+                            aria-valuenow="5" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 skills">
+                    <h4>Soft Skills</h4>
+                    <div class="col col-md-6 skillContainer">
+                        Problem Solving
+                        <div class="progress" role="progressbar" aria-label="Problem Solving Skill" 
+                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar10"></div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6 skillContainer">
+                        Teamwork
+                        <div class="progress" role="progressbar" aria-label="Teamwork Skill" 
+                            aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar8"></div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6 skillContainer">
+                        Creativity
+                        <div class="progress" role="progressbar" aria-label="Creativity Skill" 
+                            aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar8"></div>
+                        </div>
+                    </div>
         </div>
         <!-- Experience -->
         <div class="row mb-3">
@@ -1391,7 +1448,7 @@
     </div>
 </section>
 
-<!-- CONTACT TEMPLATE-->
+<!-- CONTACT-->
 <div class="noSpace" id="abvContact"></div>
 <section id="contact" class="contact form">
     <div class="container glass p-5">
@@ -1429,15 +1486,15 @@
                 <form class="contactForm">
                 <div class="mb-3">
                     <label for="contactName" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="contactName">
+                    <input type="text" class="form-control" id="contactName" name="name">
                 </div>
                 <div class="mb-3">
-                    <label for="contactEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="contactEmail">
+                    <label for="contactEmail" class="form-label" >Email address</label>
+                    <input type="email" class="form-control" id="contactEmail" name="email" required>
                 </div>
                 <div class="mb-3">
                     <label for="contactMessage" class="form-label">Message</label>
-                    <textarea class="form-control" id="contactMessage" rows="4"></textarea>
+                    <textarea class="form-control" id="contactMessage" name="message" rows="4"></textarea>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -1454,33 +1511,15 @@
 </section>
 
 <!-- FOOTER -->
-<div class="container-fluid glass p-5" id="footerBar">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
-                <svg class="bi" width="30" height="24" aria-hidden="true">
-                    <use href="#bootstrap"></use>
-                </svg> 
-            </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span> 
-        </div>
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#" aria-label="Instagram">
-                    <svg class="bi" width="24" height="24" aria-hidden="true">
-                        <use href="#instagram"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#" aria-label="Facebook">
-                    <svg class="bi" width="24" height="24">
-                        <use href="#facebook"></use>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </footer>
+<footer class="container-fluid glass p-3" id="footerBar">
+    <div class="row d-flex flex-column-reverse flex-md-row justify-content-between align-items-end">
+        <div class="empty spacer"></div>
+        <p class="copyr foot small">&copy; Mariah Malczewska, 2026</p>
+        <p class="phoneCont foot"><em>Phone:</em> (555) 555-5555</p>
+        <p class="emailCont foot"><em>Email:</em> fakeemail@notreal.com</p>
+    </div>
+    <div class="row footNote"><p class="small">Portfolio Demo site using Bootstrap, HTML, & CSS without custom scripts.</p></div>
+</footer>
 </div>
 </body>
 </html>

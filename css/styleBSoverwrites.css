@@ -56,11 +56,16 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    color: var();
+    color: var(--contraTextColor);
     text-align: center;
     white-space: nowrap;
-    background-color: var(--accentColor);
-    transition: var(--bs-progress-bar-transition);
+    /* background-color: var(--accentColor); */
+    width: 0;
+    background-image: linear-gradient(-45deg, var(--accentColor) 40%, var(--accentColor-dull), var(--accentColor-bright), var(--accentColor) 60%) !important;
+    background-size: 500% 500%;
+    background-position: right;
+    transition: all .15s ease-in-out;
+    transition: width 0.5s ease-in-out;
 }
 
 .progress, .progress-stacked {
@@ -74,13 +79,39 @@ a:hover {
     margin-bottom: 1rem;
     border: 1px solid var(--accentColor-xdark);
     width: 75%;
+    transition: all .15s ease-in-out;
 }
+
+div:hover .progress .progress-bar.bar5 { width: 50%; }
+div:hover .progress .progress-bar.bar6 { width: 60%; }
+div:hover .progress .progress-bar.bar7 { width: 70%; }
+div:hover .progress .progress-bar.bar8 { width: 80%; }
+div:hover .progress .progress-bar.bar9 { width: 90%; }
+div:hover .progress .progress-bar.bar10 { width: 100%; }
+
+.progress:hover .progress-bar {
+    animation: bgToRight 3s infinite;
+    box-shadow: 0 0 5px 0 var(--accentColor);
+}
+.progress:hover {
+    box-shadow: 0 0 5px 0 var(--accentColor);
+}
+
+@keyframes grow {
+    from { width: 0px; } to { width: 100% }
+}
+
+@keyframes bgToRight {
+    to {background-position: left;}
+}
+
+
 
 /*vertical line styling*/
 .vr { 
     height: 100%;
     background-color: var(--primeColor);
-    opacity: 1;
+    opacity: 1;d
  }
 
  /*buttons*/
@@ -92,9 +123,9 @@ a:hover {
 /* IF you set radius = 50% you get an OVAL. 
 If you set it to a stupid large nubmer, eg 99 you get a pill shape instead! 
 ... it doesnt actually make sense, but thats what it does.
-I'd just set it to a specific number, but some of the buttons are different sizes.
+I'd just set it to a specific number, but the buttons vary in size.
 */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 .btn:hover {
     box-shadow: 0 0 5px 0 var(--accentColor-bright);
@@ -225,3 +256,67 @@ a svg:hover {
     box-shadow: 0 0 12px 1px var(--accentColor) !important;
 }
 
+/*form fields styling*/
+textarea.form-control {
+    min-height: calc(1.5em + .75rem + calc(var(--bs-border-width) * 2));
+}
+
+.form-control {
+    font-size: 1.2 rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--contraTextColor);
+    background-color: var(--primeColor-xlight);
+    border: 1px solid var(--primeColor-light);
+    border-radius: var(--bs-border-radius);
+    transition: all .15s ease-in-out,
+}
+
+textarea {
+    resize: vertical;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    transition: all 0.2s ease-in-out !important;
+}
+
+input:hover, optgroup:hover, select:hover, textarea:hover {
+    background-color: var(--accentColor);
+}
+
+.form-control:focus {
+    color: var(--contraTextColor);
+    background-color: var(--primeColor);
+    border-color: var(--primeColor-dark);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primeColor);
+    border-color: var(--primeColor-dark);
+    color: var(--contraTextColor);
+}
+
+.form-check-input:checked[type=checkbox] {
+    --bs-form-check-bg-image: url('../images/check.svg');
+}
+
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+
+    background-color: var(--primeColor-xlight);
+    background-image: var(--bs-form-check-bg-image);
+    border: 1px solid var(--primeColor-light);
+}
+
+.form-check-input:focus {
+    border-color: var(--accentColor);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
+}

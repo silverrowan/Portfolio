@@ -425,10 +425,11 @@
 
 /*text margins*/
     h2.projects, h2.resume { margin-bottom: 3rem !important;}
-    h3.highlights, h3.skills, h2.contact, h2.about { margin-bottom: 1.5rem !important;}
+    h3.highlights, h3.skills + p, h2.contact, h2.about { margin-bottom: 1.5rem !important;}
     h3.skills { margin-top: 1.5rem !important;}
     /* h4 {margin-bottom: 1rem;} */
     h6 {margin-bottom: 0.25rem;}
+    h3.skills + p {margin-top: -1rem; color: var(--primeColor-xdark)}
 
 /*test alignment*/
     section#resume ul li, .contactForm div {text-align: left;}
@@ -540,3 +541,17 @@ button {border-width: 0;}
     justify-content: space-between;
 }
 
+/*footer styling & layout*/
+.empty.spacer {
+    width: 5.5rem;
+    flex: none;
+}
+
+p.foot {
+    display: inline-block;
+    width: fit-content;
+}
+
+.footNote p {
+    text-align: right;
+}

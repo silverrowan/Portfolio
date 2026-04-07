@@ -1,0 +1,36 @@
+<svg id="backgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 936 516" 
+    preserveAspectRatio="xMidYMid meet">
+
+    <!-- define the shape to pattern -->
+	<symbol  id="circle" viewBox="-120 -120 240 240" >
+		<g id="circleStack" > 
+            <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="120" pathlength="360"/>
+            <circle class="centermostCircle fillCircle" cx="0" cy="0" r="25" pathlength="360"/>
+
+			<circle class="behindDotsRingOuter ring" cx="0" cy="0" r="50" pathlength="360"/>
+            <circle class="dotRing ring" cx="0" cy="0" r="50" pathlength="360"/>
+
+            <circle class="middleThickRing ring" cx="0" cy="0" r="91" pathlength="360" />
+            <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="97" pathlength="360"/>
+            <circle class="medDividerRing ring" cx="0" cy="0" r="104" pathlength="360"/>
+
+            <circle class="outermostThickRing ring" cx="0" cy="0" r="112.5" pathlength="360"/>
+            <circle class="outermostThinRing ring" cx="0" cy="0" r="119" pathlength="360"/>
+		</g>
+	</symbol>
+
+        <g id="patternBase">
+            <use href="#circle" class="cornerFan rightFan topFan" 
+                x="120" y="-60" width="240" height="240"/>
+            <use href="#circle" class="cornerFan leftFan topFan" 
+                x="-120" y="-60" width="240" height="240"/>
+
+            <use href="#circle" class="centerFan upperMidFan" 
+                x="0" y="-1" width="240" height="240"/>
+
+            <use href="#circle" class="cornerFan rightFan bottomFan" 
+                x="120" y="60" width="240" height="240"/>
+            <use href="#circle" class="cornerFan leftFan bottomFan" 
+                x="-120" y="60" width="240" height="240"/>
+        </g>
+</svg>
