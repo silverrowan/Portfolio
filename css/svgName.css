@@ -1,9 +1,7 @@
 /* #region SVG styles & animation style - Create moving line Hero SVG animation*/
 /* Stroke-animation : by segment, ordered by animation timing */
 
-:root { 
-	/* #region Timeing variables*/
-	/* Hero Animation timing calculation in variables */
+:root { /* Hero Animation timing calculation & variables */
 	--animation-speed-multiplier: 0.5;
 
 	/*rough manually determined timings*/
@@ -58,134 +56,94 @@
 	--animation-delay-qD:       calc( var(--animation-delay-qC)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-q) ) );
 	--animation-delay-Mal:       calc( var(--animation-delay-qD)    + var(--animation-speed-multiplier) * ( var(--animation-time-q)       + var(--animation-gaps-q-M) ) );
 	--animation-delay-czewska:  calc( var(--animation-delay-Mal)    + var(--animation-speed-multiplier) * ( var(--animation-time-Mal)      + var(--animation-gaps-Mal-czewska) ) );
-/* #endregion */
-
-	/*copy color variables from base styles - for some reason dont work in svgs chained*/
-	--backgroundColor-light: #eaf0e7; /* light olivine */
-	--backgroundColor: #d7ddd4; /* light olivine */
-	--backgroundColor-med: #bdc5b8; /* light olivine */
-	--backgroundColor-dark: #a4ae9d; /*light olivine */
-	--backgroundColor-xdark: #94a08c; /*light olivine */
-
-	--color-accent-bright: #87e953; /*lime*/
-	--color-accent-light: #81ce58; /*lime*/
-	--color-accent: #6ebe44; /*lime*/
-	--color-accent-med: #61af37; /*lime*/
-	--color-accent-dark: #51972b; /*lime*/
-	--color-accent-dull: color-mix(in srgb, #888888 80%, var(--color-accent)); /*lime*/
-
-	--stroke-dashLength-MLine: 60;
-	--stroke-dashLead-MLine: var(--stroke-dashLength-MLine);
-	--stroke-dashLength-Mariah: 850;
-	--stroke-dashLead-Mariah: var(--s);
 }
-
+:root { /*other variables*/
+	--brightlineOpacity: 100%;
+	--brightlineWidth: 2px;
+}
+:root:has(#light-theme:checked) {
+	--brightlineOpacity: 100%;
+	--brightlineWidth: 5px;
+}
 svg {
 	margin: 0;
 	padding: 0;
 }
 
-.heroName { /* baseline svg line style */
-	fill:none;
-	stroke-miterlimit:10;
-	stroke-linecap:round;
-	stroke-linejoin:round;
-}
-
-#heroContent {
-	overflow-x: hidden;
-	margin-right: 0;
-	margin-left: 0;
-}
-
+/* style SVG lines */
 /*tried using symbols in the SVG to reduce code duplication, but 
 unfortnuately it thoroughly messed up styling, so treating them
 as I would a ::before or ::after I intended to stack with parent*/
-/* #region Styling for svg name by use 'layer' - color, width, and filters */
 
-div#Row1Names, div#Row2Names, div#Row3Names {
-	position: relative;
-}
+/* #region Styling for svg name via 'layer' - color, width, and filters */
 
-#mainLine-fullName, #mainLine-fullName2, #mainLine-fullName3  { /* baseline svg line style */
-	position: relative;
-	stroke: var(--color-accent);
-	stroke-width: 3;
-	width: 100%;
-	height: auto;
-	inset: 0; /*replaces top/left/etc*/
-}
+	div#Row1Names, div#Row2Names, div#Row3Names {
+		position: relative;
+	}
 
-#softLine-fullName, #softLine-fullName2, #softLine-fullName3, 
-#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 {
-	position: absolute;
-	inset:0;
-	width: 100%;
-	height: auto;
-	z-index: -1;
-}
+	.heroName { /* baseline svg line style */
+		fill:none;
+		stroke-miterlimit:10;
+		stroke-linecap:round;
+		stroke-linejoin:round;
+	}
 
-#softLine-fullName, #softLine-fullName2, #softLine-fullName3 {
-	stroke: var(--backgroundColor-light);
-	stroke-width: 4;
-	filter: blur(1px);
-}
+	#mainLine-fullName, #mainLine-fullName2, #mainLine-fullName3  { /* top line style */
+		position: relative;
+		stroke: var(--accentColor);
+		stroke-width: 3;
+		width: 100%;
+		height: auto;
+		inset: 0; /*replaces top/left/etc*/
+	}
 
-#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 {
-	stroke: var(--color-accent-dull);
-	stroke-width: 6;
-	filter: blur(1px);
-}
+	#softLine-fullName, #softLine-fullName2, #softLine-fullName3, 
+	#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 { /* dark and bright-lining layout*/
+		position: absolute;
+		inset:0;
+		width: 100%;
+		height: auto;
+		z-index: -1;
+	}
 
+	#softLine-fullName, #softLine-fullName2, #softLine-fullName3 { /*brightline styling*/
+		stroke: hsl( var(--neutralRiseWarm-hslNums), var(--brightlineOpacity) );
+		stroke-width: var(--brightlineWidth);
+		filter: blur(1px);
+	}
+
+	#darkLine-fullName, #darkLine-fullName2, #darkLine-fullName3 { /*darkline styling*/
+		stroke: var(--accentColor-dull);
+		stroke-width: 3;
+		filter: blur(4px);
+	}
 /* #endregion */
 
-/*#region svg name layout*/
-
+/*#region svg name responsive layout*/
 /* "Narrow Screen" (baseline) display settings for svg name section */ 
-div#Row1Names { display: none; }
-div#Row2Names { display: none; }
-div#Row3Names {	display: flex; }
+	div#Row1Names { display: none; }
+	div#Row2Names { display: none; }
+	div#Row3Names {	display: flex; }
 
 /*adjust Hero script to alternate image at specific widths*/
 /*using the same svg code and adjusting its layout did not look good
 So I made different graphics for the three sizes */
-@media (min-width: 700px) {
-	div#Row1Names { display: none; }
-	div#Row2Names { display: flex; }
-	div#Row3Names {	display: none; }
-}
-
-@media (min-width: 1100px) {
-	div#Row1Names { display: flex; }
-	div#Row2Names { display: none; }
-	div#Row3Names { display: none; }
-}
-
-	#heroContent {
-		height: 90vh;
+	@media (min-width: 700px) {
+		div#Row1Names { display: none; }
+		div#Row2Names { display: flex; }
+		div#Row3Names {	display: none; }
 	}
 
-	#heroNameDiv {
-		/* justify-content: center;
-		align-items: start; */
-		/* overflow-x: hidden; */
-		/* height: 90%; */
+	@media (min-width: 1100px) {
+		div#Row1Names { display: flex; }
+		div#Row2Names { display: none; }
+		div#Row3Names { display: none; }
 	}
-
 /*#endregion*/
 
-@keyframes move { 100% { stroke-dashoffset: 0; } } 
-
-/*#region Set up animation of svg name and it's prerequisites (stroke dash); Applied to paths IN symbol*/ 
-	/*Mariah set*/
-
-	/* .Mline, .Mariah, .idot, .Rline, .Rbody, .owan, .Mal, .czewska, .q1, .q2, .q3, .q4,
-	.Mline1, .Mariah1, .idot1, .Rline1, .Rbody1, .owan1, .Mal1, .czewska1, .q1-1, .q2-1, .q3-1, .q4-1
-	{
-		stroke: var(--svgStrokeColor);
-		stroke-width: var(--svgStrokeWidth);
-		filter: var(svgFilter);
-	} */
+/*#region Set up animation of svg name and it's prerequisites (stroke dash); 
+Applied to paths IN symbol*/ 
+	@keyframes move { 100% { stroke-dashoffset: 0; } } 
 
 	.Mline {
 		stroke-dasharray: 60;

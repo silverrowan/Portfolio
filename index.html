@@ -9,447 +9,32 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>  
     <!-- BOOTSTRAP MASONRY -->
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-<!-- FONT TRIALING -->
+<!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa+Ink:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Arya:wght@400;700&family=Belleza&family=Buda:wght@300&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Gafata&family=Gurajada&family=Italiana&family=Junge&family=Molengo&family=Quattrocento:wght@400;700&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Ysabeau+Infant:ital@0;1&family=Ysabeau:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Gafata&display=swap" rel="stylesheet">
 <!-- My Styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/svgName.css" rel="stylesheet">
     <link href="css/svgHeroBG.css" rel="stylesheet">
+    <link href="css/navTheme.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- RESUME MODAL -->
-<div class="modal fade" tabindex="-1" id="resumeModal" aria-labelledby="resumeModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-    <!-- RESUME IN MODAL-->
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <!-- Header -->
-                    <div class="row">
-                        <div class="col">
-                            <h1>Mariah Malczewska</h1>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-md-4">fake address st Victoria, BC</div>
-                        <div class="col col-md-4">(555) 555-5555</div>
-                        <div class="col col-md-4">fakeemail@email.com</div>
-                    </div>
-                    <!-- Prof. Summary -->
-                    <div class="row">
-                        <div class="col">
-                            <h2 class="qual">Summary of Qualifications</h2>
-                            <p>Modal body text goes here.</p>
-                            <ul>
-                                <li>Excel at creative problem solving and devising new ways to try things.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Skills -->
-                    <div class="row">
-                        <h2 class="skills">Skills</h2>
-                    </div>
-                    <!-- SKILLS CARD TEMPLATE -->
-                    <!-- <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                        <div class="card border border-primary shadow">
-                            <img src="images/placeholder.jpg" class="card-img-top mb-1">
-                            <div class="card-body p-3">
-                                <h3 class="card-title ">Project Name</h3>
-                                <p class="card-text">description of project, skills/tools used</p>
-                                <div class="btn-group shadow-sm">
-                                <a href="" target="_blank" type="button" class="btn btn-sm btn-outline-secondary">Github Repository</a>
-                                <a href="" target="_blank" type="button" class="btn btn-sm btn-primary">Live Website</a>
-
-                                <button type="button" class="btn btn-primary appointment"  data-bs-toggle="offcanvas" data-bs-target="#offcanvas">github repo</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="row g-3">
-                        <p>short Text a</p>
-                        <div class="progress" role="progressbar" aria-label="SkillA" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar" style="width: 50%"></div>
-                        </div>
-                    </div>
-                    <!-- Experience -->
-                    <div class="row">
-                        <h2 class="experience">Work Experience</h2>
-                    </div>
-                    <!-- EXP CARD TEMPLATE -->
-                    <!-- 
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title"></h2>
-                                        <h3 class="company"></h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">Month Yr - Month Yr</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    -->
-                    <div class="row" data-masonry='{"percentPosition": true }' style="position: relative;">
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Entrepreneur</h2>
-                                        <h3 class="company">Dahlia Tea</h3>
-                                        <p class="location">Hamilton, Ontario</p>
-                                        <p class="dates">June 2023 - Nov 2024</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>have to actually think about this</li>
-                                            <li>not sure yet what to put in here</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Entrepreneur, Artist</h2>
-                                        <h3 class="company">Doodle Tree Designs</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">January 2019 - August 2023</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Creation of design products.</li>
-                                            <li>Exploration of product options & marketing.</li>
-                                            <li>Outreach to clients</li>
-                                            <li>Minimized disruption from covid supply line and shipping issues by changing product production location and method as needed.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Admission and Student Services Coordinator</h2>
-                                        <h3 class="company">CMU College of Make Up Art & Design</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">August 2017 - January 2019</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Supported student social, emotional and academic development.</li>
-                                            <li>Improved efficiency of Admissions department by automating routine data entry and tracking documents.</li>
-                                            <li>Ensured regulation compliance by updating processes as necessary, and checking implementation.</li>
-                                            <li>Decreased enrolment uncertainty by implementing new system for following study permit updates.</li>
-                                            <li>Increased revenue by clarifying regulations, decreasing per-student costs, and increasing registration.</li>
-                                            <li>Found solutions to significant time waste, which was slowing down growth of CMU College.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Entrepreneur</h2>
-                                        <h3 class="company">Dark Smile Games</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">April 2012 - Month Yr</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Developed primary product and promotional materials.</li>
-                                                <!-- CHOOSE ONE of these -->
-                                                <li>Coordinated production of three projects and promotional materials across a team of 16 writers, artists, editors, and testers.</li>
-                                                <li>Coordinated production of two projects and promotional materials across a team of up to 15 writers, artists, editors, and testers.</li>
-                                                <li>Leading, delegating to, and working with small teams (5 members).</li>
-                                                <li>Managed a small team of 3-10 writers, artists, editors, and play-testers.</li>
-                                            <li>liaison with artists, tech, editing, customers.</li>
-                                            <li>Ensured projects remained under cost by setting budgets and tracking variances, managed AP & AR.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Administrative Assistant</h2>
-                                        <h3 class="company">Kinetica Health Clinic</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">February 2017 - November 2017 Yr</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Improved business presentation by debugging the clinic website.</li>
-                                            <li>Maintained a friendly atmosphere and high patient engagement by communicating with clients, insurance, and coworkers via: email, phone, in person and physical mail.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Administrative Assistant</h2>
-                                        <h3 class="company">Mount Pleasant Dental Centre</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">December 2016 - August 2017</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Maintained smooth operations of office by training new staff.</li>
-                                            <li>Improved team communication through creation and refinement of internal documents.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Laser Operator</h2>
-                                        <h3 class="company">Toronto Tool Library</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">May 2016 - June 2017</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Increased community engagement by operating laser for visitors to the tool library, helping them find the volunteers and tools they needed, while providing information about the mission and services of the Tool Library, Sharing Depot, and Makerspace in a helpful friendly manner.</li>
-                                            <li>Decreased laser downtime by diagnosing problems and repairing common issues.</li>
-                                            <li>Increased community engagement by helping visitors with their design files.</li>
-                                            <li>Became the Toronto Tool Library “Laser Expert” by finding ways to work around the numerous bugs in Lasersaur's software—<em>without</em> compromising safety.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Volunteer Librarian</h2>
-                                        <h3 class="company">Toronto Tool Library</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">March 2016 - June 2017</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Increased safety and decreased search times for supplies by creating an organization system for the front desk and area, including moving potentially dangerous items away from regular use supplies.</li>
-                                            <li>Decreased tool downtime by organizing unsorted donations into prioritized groups, and taking inventory of tools in need of repair and their required parts.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Customer Service Leader (Store Manager)</h2>
-                                        <h3 class="company">H&R Block</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">February 2016 - May 2016</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Maximized client service ability, to above target, by determining ideal staff coverage, and scheduling from my locations roster and reaching out to other locations staff when necessary.</li>
-                                            <li>Increased client satisfaction by: acting as a warm and welcoming first point of contact, responding to client complaints within 48 hours, encouraging tax professionals to take a client first perspective and employing conflict resolution tactics as needed.</li>
-                                            <li>Ensured accurate reporting by: reviewing daily and weekly reports for errors, tracking expected vs actual services and money reported and sending communications to upper management.</li>
-                                            <li>Relied on to deescalate conflict situations and recover dissatisfied clients at H&R Block.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="position">
-                                        <h2 class="position card-title">Office Administrator</h2>
-                                        <h3 class="company">Admiral Road Designs</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">January 2015 - September 2015</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>Reduced over/under stock by designing and implementing organization systems and spreadsheets for more automated, simpler and more visible tracking of inventory.</li>
-                                            <li>Enabled uninterrupted continuation of business during a prolonged emergency by running all immediately required aspects of the business without supervision.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Education -->
-                    <div class="row">
-                        <h2 class="education">Education</h2>
-                    </div>
-                    <div class="row" data-masonry='{"percentPosition": true }' style="position: relative;">
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="credential">
-                                        <h2 class="credential card-title">Information and Computer Systems Technology Diploma</h2>
-                                        <h3 class="school">Camosun</h3>
-                                        <p class="location">Victoria, British Columbia</p>
-                                        <p class="dates">2026 - ongoing</p>
-                                    </div>
-                                    <div class="btn-group shadow-sm">
-                                        <a href="https://calendar.camosun.ca/preview_program.php?catoid=25&poid=3947" target="_blank" type="button" class="btn btn-sm btn-outline-primary">Curriculum information</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="credential">
-                                        <h2 class="credential card-title">The Odin Project</h2>
-                                        <h3 class="school">Open Source Curriculum</h3>
-                                        <p class="location">Victoria, British Columbia</p>
-                                        <p class="dates">2025 - ongoing</p>
-                                    </div>
-                                    <div class="btn-group shadow-sm">
-                                        <a href="https://www.theodinproject.com/paths" target="_blank" type="button" class="btn btn-sm btn-outline-primary">Curriculum information</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="credential">
-                                        <h2 class="credential card-title">Management Accounting Fundamentals Certificate</h2>
-                                        <h3 class="school">University of Toronto</h3>
-                                        <p class="location">Toronto, Ontario</p>
-                                        <p class="dates">2014</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>4.0 GPA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
-                            <div class="card border border-primary shadow">
-                                <div class="card-body p-3">
-                                    <div class="credential">
-                                        <h2 class="credential card-title">Bachelor of Science with Distinction in Geography and Biology</h2>
-                                        <h3 class="school">University of Victoria</h3>
-                                        <p class="location">Victoria, British Columbia</p>
-                                        <p class="dates">2005 - 2010</p>
-                                    </div>
-                                    <div class="description card-text">
-                                        <ul class="expDesc">
-                                            <li>3.8 Graduating GPA equivalent; Rising Star Award 2009.</li>
-                                            <li>Society of Geography Students Secretary 2007.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Download PDF</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div id="fullBackground" class="m-0 p-0">
-<svg id="backgroundSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 936 516" 
-    preserveAspectRatio="xMidYMid meet">
-    <filter id='noiseFilter'>
-	<!-- makes random noise (grainy effect) -->
-        <feTurbulence 
-            type='turbulence' 
-            baseFrequency='0.3' 
-            numOctaves='1' 
-            stitchTiles='stitch'
-            result="NOISE" />
-
-		<!--High Pass Effect (Sub-filter Set)-->
-	    <!-- Make a blurred copy of the source -->
-    	<feGaussianBlur in="NOISE" stdDeviation="2" result="BLURNOISE" />
-    	<!--Calculate original - blurred -->
-   		<feComposite in="NOISE" in2="BLURNOISE" operator="arithmetic" 
-                 k1="0" k2="1" k3="-1" k4="0" result="DIFFBLUR" />
-	    <!-- Fill with 50% gray 
-		normally would follow with blend: overlay for sharpening, but transforming the result first -->
-    	<feColorMatrix 
-			result="GREY"
-			type="matrix" 
-			values="1 0 0 0 0
-					0 1 0 0 0
-					0 0 1 0 0
-					-0.5 -0.5 -0.5 0 1" />
-        <!-- Strengthen (slope >1) or Soften (slope <1) the upcoming blend effect by reducing opacity of input -->
-        <feComponentTransfer 
-            in="GREY" 
-            result="TRANSL">
-            <feFuncA type="linear" slope="0.15"/>
-        </feComponentTransfer>
-        <!-- Clip noise to opacity of path called on -->
-        <feComposite
-            in2="SourceAlpha"
-            in="TRANSL"
-            operator="in"
-            result="CLIPNOISE" />
-        /*below combines noise with parent path(s); its also the last step in the high-pass-sharpen effect*/ 
-        /* poss values for mode=""  normal; darken; multiply; color-burn; lighten; 
-                    screen; color-dodge; overlay ; soft-light; hard-light; 
-                    difference; exclusion; hue; saturation; color; luminosity */
-        <feBlend
-            in="SourceGraphic"
-            in2="CLIPNOISE"
-            mode="overlay"
-            result="BLEND" />
-    </filter>
-
+<svg id="backgroundSVG" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+    viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice">
     <!-- define the shape to pattern -->
 	<symbol  id="circle" viewBox="-120 -120 240 240" >
-		<g id="circleStack" > 
+		<g id="circleStack"> 
+            <!-- transform="rotate(90)"  -->
             <circle class="backgroundCircle fillCircle" cx="0" cy="0" r="120" pathlength="360"/>
             <circle class="centermostCircle fillCircle" cx="0" cy="0" r="25" pathlength="360"/>
 
 			<circle class="behindDotsRingOuter ring" cx="0" cy="0" r="50" pathlength="360"/>
             <circle class="dotRing ring" cx="0" cy="0" r="50" pathlength="360"/>
 
-            <circle class="middleThickRing ring" cx="0" cy="0" r="91" pathlength="360"filter="url(#noiseFilter)" />
+            <circle class="middleThickRing ring" cx="0" cy="0" r="91" pathlength="360" />
             <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="97" pathlength="360"/>
             <circle class="medDividerRing ring" cx="0" cy="0" r="104" pathlength="360"/>
 
@@ -467,7 +52,7 @@
                 x="-120" y="-60" width="240" height="240"/>
 
             <use href="#circle" class="centerFan upperMidFan" 
-                x="0" y="-1" width="240" height="240"/>
+                x="0" y="-1" width="240" height="240" />
 
             <use href="#circle" class="cornerFan rightFan bottomFan" 
                 x="120" y="60" width="240" height="240"/>
@@ -480,41 +65,68 @@
 </svg>
 
 </div>
-<!-- NAVIGATION-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- NAVIGATION & THEME CHANGER-->
+<input type="radio" name="page-theme" id="light-theme">
+<input type="radio" name="page-theme" id="dark-theme" checked>
+<!-- <input type="radio" name="page-theme" id="nature-theme"> -->
+<main>
+    <div class="theme-menu">
+        <input type="checkbox" id="theme-menu-trigger">
+        <label class="theme-label btn btn-primary m-1 " for="light-theme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+                fill="currentColor" class="bi bi-sun-fill mb-1" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+            </svg>
+        </label>
+        <label class="theme-label btn btn-primary m-1" for="dark-theme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+                fill="currentColor" class="bi bi-moon-stars-fill mb-1" viewBox="0 0 16 16">
+                <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+                <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+            </svg>
+        </label>
+        <!-- <label class="theme-label btn btn-primary m-2" for="nature-theme"><i class="fa-solid fa-leaf turn80 fa-sm"></i>nature</label> -->
+    </div>
+</main>
+<nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary sticky-top glass">
   <div class="container-fluid">
     <a class="navbar-brand logo-text" href="#">Mariah Malczewska</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler btn btn-primary" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+        aria-label="Toggle navigation" alt="Show menu options">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+        fill="currentColor" class="bi bi-list navbar-toggler-icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+          <a class="nav-link" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">About Me</a>
+          <a class="nav-link" href="#abvAbout">About Me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#abvProject">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#resume">Resume</a>
+          <a class="nav-link" href="#abvResume">Resume</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#abvContact">Contact</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO & ABOUT-->
 <div class="m-0 p-0">
-    <section class="hero container-fluid p-0 pt-3" id="hero">
-        <div id="heroContent" class="hero row flex-column">
+    <section class="hero container-fluid p-0 pt-3" id="heroContainer">
+        <div id="heroContent" class="hero row flex-column glass pt-5 pb-5">
             <div id="Row1Names" class="col-12 p-0">
-                <svg id="darkLine-fullName" xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 796 133" >
+                <svg id="darkLine-fullName" xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 796 133" alt="header animated svg with website builder's name (Mariah 'Rowan' Malczewska)">
                     <g id="MariahGroup1">
                             <path class="Mline heroName" d="M65.32,38.14c-0.14,12-3.73,42.78-6.29,57.97"/>
                             <path class="idot heroName" d="M169.66,51.77c0.82-1.3,1.29-2.33,1.17-3.62c-0.07-0.72-0.2-0.42-0.76,1.44"/>
@@ -1206,41 +818,35 @@
                     </g>
                 </svg>
             </div>
-            <h2 class="hero">Creative Maker</h2>
+            <h2 class="hero">Creative Solutions Programming</h2>
         </div>
     </section>
 
-    <!-- ABOUT ME TEMPLATE-->
+    <!-- ABOUT ME-->
+<div class="noSpace" id="abvAbout"></div>
     <section id="about" class="container about">
-        <div class="row">
-            <div class="col col-md-8 about-description">
-                <h2>About Me</h2>
-                <p class="about">
-                I started out as an artist and entrepreneur, then found my love for coding and software development.
-                <br>
-                There's a clear pattern in my work, whether at an international makeup college, a designer baby blanket company, or an independent physiotherapy clinic. In every job I'm drawn to solving problems, especially where the human/technology interface or logistics fall short. The best solutions aren’t just technical; they’re creative, human, and made for real people.
-                <br>
-                In the past five years, I tested these instincts by running several small indie businesses that mixed fun, affordability, and fresh ideas. During COVID, what started as making masks for a few friends rapidly snowballed into a niche, but profitable undertaking which helped me save for my first house. As the need for masks was dwindling, I started a tea brand, focusing on quality and affordability, which surprisingly is what lead to realizing that I very much enjoy programming (available tools didn't do what I wanted, so I started hacking together my own). Each project taught me more about turning ideas into reality.
-                <br>
-                I love coming up with new ideas and taking on unique challenges, whether in coding, the arts, or just for fun. In my free time, I enjoy a cup of tea with my cat Marigold, go on adventures in D&D or indie RPGs, and take walks with my partner along the beaches of Vancouver Island. Getting out into nature and gardening isn’t just a hobby for me, it’s a necessity of modern living. 
-            </p>
+        <div class="row glass p-5">
+            <div class="col-12 col-lg-8 about-description">
+                <h2 class="about">About Me</h2>
+                <p class="about">I enjoy tackling unique challenges, whether in coding, the arts, or just for fun. I am drawn to solving problems, in particular where technology or logistics don’t quite meet people’s needs. I believe the best solutions are creative, practical, and designed for real people.</p>
+                <p class="about">In my free time, I like to have tea with my cat, Marigold, play D&D, and take walks in the greenspaces of Vancouver Island. Spending time in nature and gardening are necessities for me to stay balanced. Surprisingly, it was through my Tea Brand that I realized my love of programming; I always found myself creating tools and finding solutions to my unique business problems.</p>
             </div>
-            <div class="col col-md-4 about-img">
-                <img src="images/placeholder.jpg" alt="Digital drawing of me" class="about img-fluid">
+            <div class="col-12 col-lg-4 about-img">
+                <img src="images/me.jpg" alt="Digital photo of me" class="about img-fluid">
             </div>
         </div>
     </section>
 </div>
 
 <!-- PORTFOLIO/PROJECTS-->
-<div class="projectBG m-o p-0">
+<div class="noSpace" id="abvProject"></div>
 <section id="projects" class="container-fluid p-5">
     <div class="row title">
         <h2 class="projects">Projects</h2>
     </div>
     <div class="row" data-masonry='{"percentPosition": true }' style="position: relative;">
         <!-- CARD TEMPLATE -->
-                <!-- <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+                <!-- <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
                     <div class="card border border-primary shadow">
                         <img src="images/placeholder.jpg" class="card-img-top mb-1">
                         <div class="card-body p-3">
@@ -1256,10 +862,10 @@
                     </div>
                 </div> -->
 <!-- KEYBOARD -->
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
             <div class="card border border-primary shadow ">
                 <div class="image-border">
-                    <img src="images/placeholder.jpg" class="card-img-top ">
+                    <img src="images/keeb.jpg" class="card-img-top" alt="photograph of one half of a handwired and 3D printed ergonomic orthocolumnar split keyboard">
                 </div>
                 <div class="card-body p-3">
                     <h3 class="card-title ">Custom Design Handwired Keyboard</h3>
@@ -1271,9 +877,9 @@
             </div>
         </div>
 <!-- FAE NIGHTMARES -->
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
             <div class="card border border-primary shadow">
-                <img src="images/faeNightmares.jpg" class="card-img-top mb-1 ">
+                <img src="images/faeNightmares.jpg" class="card-img-top mb-1" alt="photo of the tabletop role-playing book 'Fae Nightmares' by Dark Smile Games">
                 <div class="card-body p-3">
                     <h3 class="card-title ">Tabletop RPG Setting</h3>
                     <p class="card-text">Co-authored a >200pg tabletop RPG setting, including custom rules, for the savage worlds system.</p>
@@ -1284,10 +890,10 @@
             </div>
         </div>
 <!-- CALCULATOR -->
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
             <div class="card border border-primary shadow">
                 <div class="image-border">
-                    <img src="images/calculator.jpeg" class="card-img-top mb-1">
+                    <img src="images/calculator.jpeg" class="card-img-top mb-1" alt="Screenshot of online calculator in flat style">
                 </div>
                 <div class="card-body p-3">
                     <h3 class="card-title ">Calculator</h3>
@@ -1300,10 +906,10 @@
             </div>
         </div>
 <!-- CURSOR TRACKING -->
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
             <div class="card border border-primary shadow">
                 <div class="image-border">
-                    <img src="images/cursorTrace.png" class="card-img-top mb-1">
+                    <img src="images/cursorTrace.png" class="card-img-top mb-1" alt="Screenshot of online app showing the trace trail of user's mouse">
                 </div>
                 <div class="card-body p-3">
                     <h3 class="card-title ">"Etch-a-Sketch" style cursor tracing</h3>
@@ -1316,7 +922,7 @@
             </div>
         </div>
 <!-- TEMPERATURE WEBSITE -->
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+        <!-- <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
             <div class="card border border-primary shadow">
                 <div class="image-border">
                     <img src="images/placeholder.jpg" class="card-img-top mb-1">
@@ -1326,12 +932,12 @@
                     <p class="card-text">Apache web-server hosted on a raspberry pi, displaying the current and previous (5seconds ago) temperatures. Written in Python.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 <!-- DEMO BUIS WEBSITE -->
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
             <div class="card border border-primary shadow">
                 <div class="image-border">
-                    <img src="images/dahliaWebsite.jpeg" class="card-img-top mb-1">
+                    <img src="images/dahliaWebsite.jpeg" class="card-img-top mb-1" alt="Screenshot of the demo website for Dahlia Tea">
                 </div>
                 <div class="card-body p-3">
                     <h3 class="card-title ">Demo Website: Dahlia Tea</h3>
@@ -1343,10 +949,10 @@
             </div>
         </div>
 <!-- DEMO MASONRY WEBPAGE -->
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
             <div class="card border border-primary shadow">
                 <div class="image-border">
-                    <img src="images/masonry.jpeg" class="card-img-top mb-1">
+                    <img src="images/masonry.jpeg" class="card-img-top mb-1" alt="Screenshot of the demo masonry grid and off-page canvas page">
                 </div>
                 <div class="card-body p-3">
                     <h3 class="card-title ">Demo Website: Masonry Cards & Modal</h3>
@@ -1363,171 +969,506 @@
         <!-- WIP: garden log, and/or tea inventory databases -->
     </div>
 </section>
-</div>
 
-<!-- RESUME MODAL ACCESS -->
- <div class="resumeBG m-0 p-0">
-       <section class="jumbotron text-center">
-        <div class="container">
+
+<!-- RESUME -->
+<div class="noSpace" id="abvResume"></div>
+<section id="resume" class="text-center">
+    <div class="container glass p-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="resume">Resume</h2>
+            </div>
+                    <!-- Header -->
             <div class="row">
                 <div class="col">
-                    <h2 class="jumbotron-heading">Resume</h2>
-                    <h3>Highlights of Qualifications</h3>
-                    <p class="lead text-muted">resume stuff here</p>
-                    <ul>
-                        <!-- TECHNICAL -->
-                        <li>Website building with HTML, CSS, and JavaScript, as well as familiarity with Wordpress and Bootstrap</li>
-                        <li>Rocky Linux as a Server OS</li>
-                        <li>Simple program design, using Java or JavaScript</li>
-
-                        <!-- PROBLEM SOLVING -->
-                        <li>excels at problem solving</li>
-                        <li>Proactive and flexible with strong critical thinking and planning abilities with detail-oriented approach </li>
-                        <li>Organized and creative <li>
-
-                        <!-- MANAGEMENT / PROJECT MANGEMENT -->
-                        <li>Recognize, communicate, resolve issues and gaps in task coverage</li>
-                        <li>Work Process Design/Improvements</li>
-                        <li>small business experience  </li>
-                        <li>Ability to handle multiple projects simultaneously with a high degree of accuracy.</li>
-                        <li>Proactive, able to prioritize, methodical and committed to meeting deadlines.</li>
-                        <li>Design and implement lengthy and complex projects by self and in a team</li>
-                        <li>Efficient time management of multiple tasks and projects</li>
-
-                        <!-- COMMUNICATION -->
-                        <li>Work cooperatively, coordinating tasks and learning from peers in a group environment</li>
-                        <li>Actively listen to and consult with stakeholders as well as colleagues</li>
-                        <li>Trained individuals and groups which led to successful running of the business</li>
-                        <li>Design workshops which included PowerPoint presentations </li>
-                        <li>Created information-rich, concise briefing papers and monographs for various audiences</li>
-                        <li>Creating information resources, including briefing papers, reports, process documentation, etc.</li>
-                        <li>Professional Correspondence</li>
-                        <li>Excellent relationship building and communication: in person, over the phone, and in writing.</li>
-
-                        <!-- OTHER -->
-                        <li>Sensitive information handling</li>
-                        <li>broad set of skills and knowledge, from accounting to project planning to book writing and layout, and more.</li>
-                    </ul>
+                    <h2>Mariah Malczewska</h2>
+                    <hr>
                 </div>
             </div>
             <div class="row">
-                <h3>Skills Summary</h3>
-                <!-- col-sm-12 col-md-6 col-lg-4 col-xxl-3 mb-3 -->
-                <div class="col-6">
+                <div class="d-none d-md-flex col-md-4 rSHeader flex-column"><p class="mb-0">fake address st</p><p>Victoria, BC</p></div>
+                <div class="col-12 d-md-none rSHeader"><p>fake address st, Victoria, BC</p></div>
+                <div class="col-6 col-md-4 rSHeader"><p>(555) 555-5555</p></div>
+                <div class="col-6 col-md-4 rSHeader"><p>fakeemail@email.com</p></div>
+            </div>
+            <div class="row">
+                <h3 class="highlights">Highlights of Qualifications</h3>
+                <ul>
+                    <!-- PROBLEM SOLVING -->
+                    <li>Excel at creative problem solving and devising new ways to try things.</li>                    
+                    <li>Strong critical thinking and planning.</li>
+                    <!-- TECHNICAL -->
+                    <li>Website building with HTML, CSS, and JavaScript.</li>
+                    <li>Familiarity with WordPress and Bootstrap.</li>
+                    <!-- MANAGEMENT / PROJECT MANGEMENT -->
+                    <li>Small business experience.</li>
+                    <li>Design and implementation of multiple projects in teams and on my own.</li>
+                    <li>Work Process Design/Improvements.</li>
+                    <!-- COMMUNICATION -->
+                    <li>Trained individuals and groups which led to successful running of the business.</li>
+                    <li>Creating information resources, including briefing papers, reports, documentation, etc. for various audiences.</li>
+                    <!-- OTHER -->
+                    <li>Experience handling sensitive information</li>
+                    <li>Broad set of skills and knowledge, from accounting to project planning to book writing and layout, and more.</li>
+                </ul>
+            </div>
+            <div class="row" id="skillContainerRow">
+                <h3 class="skills">Skills Summary</h3>
+                <p><em>hover over this section to see values</em></p>
+                <div class="col-6 skills">
                     <h4>Technical Skills</h4>
-                    <div class="col col-md-6">
+                    <div class="col col-md-6 skillContainer">
                         HTML 
                         <div class="progress" role="progressbar" aria-label="HTML Skill" 
                             aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar bar8"></div>
                         </div>
                     </div>
-                    <div class="col col-md-6">
+                    <div class="col col-md-6 skillContainer">
                         CSS 
                         <div class="progress" role="progressbar" aria-label="CSS Skill" 
-                            aria-valuenow="6" aria-valuemin="0" aria-valuemax="10">
-                            <div class="progress-bar" style="width: 60%"></div>
+                            aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar8"></div>
                         </div>
                     </div>
-                    <div class="col col-md-6">
+                    <div class="col col-md-6 skillContainer">
                         JavaScript
                         <div class="progress" role="progressbar" aria-label="JavaScript Skill" 
-                            aria-valuenow="6" aria-valuemin="0" aria-valuemax="10">
-                            <div class="progress-bar" style="width: 60%"></div>
+                            aria-valuenow="7" aria-valuemin="0" aria-valuemax="10">
+                            <div class="progress-bar bar7"></div>
                         </div> 
                     </div>
-                    <div class="col col-md-6">
+                    <div class="col col-md-6 skillContainer">
                         Java
                         <div class="progress" role="progressbar" aria-label="Java Skill" 
                             aria-valuenow="5" aria-valuemin="0" aria-valuemax="10">
-                            <div class="progress-bar" style="width: 50%"></div>
+                            <div class="progress-bar bar5"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 skills">
                     <h4>Soft Skills</h4>
-                    <div class="col col-md-6">
+                    <div class="col col-md-6 skillContainer">
                         Problem Solving
                         <div class="progress" role="progressbar" aria-label="Problem Solving Skill" 
                             aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
-                            <div class="progress-bar" style="width: 100%"></div>
+                            <div class="progress-bar bar10"></div>
                         </div>
                     </div>
-                    <div class="col col-md-6">
+                    <div class="col col-md-6 skillContainer">
                         Teamwork
                         <div class="progress" role="progressbar" aria-label="Teamwork Skill" 
                             aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar bar8"></div>
                         </div>
                     </div>
-                    <div class="col col-md-6">
+                    <div class="col col-md-6 skillContainer">
                         Creativity
                         <div class="progress" role="progressbar" aria-label="Creativity Skill" 
                             aria-valuenow="8" aria-valuemin="0" aria-valuemax="10">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar bar8"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-    <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#resumeModal">See Resume</button>
-    <!-- ADD PDF download -->
-            <a href="#" class="btn btn-secondary my-2">Download PDF</a>
-
         </div>
-      </section>
-</div>
-<!-- CONTACT TEMPLATE-->
- <h2>Contact</h2>
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<!-- UNIQUE -->
+        <!-- Experience -->
+        <div class="row mb-3">
+            <div>
+                <a class="btn btn-primary experience fs-5 mb-3 mt-3 p-p" data-bs-toggle="collapse" 
+                    href="#experienceGallery" role="button" aria-expanded="false" 
+                    aria-controls="experienceGallery">Work Experience
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+                        fill="currentColor" class="bi bi-arrow-bar-down ml-3" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5M8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- EXP CARD TEMPLATE -->
+        <!-- 
+            <div class="col-12 col-lg-6 col-xxl-3 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">JobTitle</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Camosun College</h5>
+                            <p class="location mb-0">Victoria, British Columbia</p>
+                            <p class="dates">2025 - ongoing</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>point1</li>
+                                <li>point2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        -->
+        <div id="experienceGallery" class="row collapse"> 
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Entrepreneur</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Dahlia Tea</h5>
+                            <p class="location mb-0">Hamilton, Ontario</p>
+                            <p class="dates">May 2023 -  November 2024</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Structure and create interface for product creation & tracking database.</li>
+                                <li>Face to face sales at events.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Entrepreneur, Artist</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Doodle Tree Designs</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">January 2019 - August 2023</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Outreach to clients</li>
+                                <li>Exploration of product options and marketing.</li>
+                                <li>Minimized disruption from covid supply line and shipping issues by changing product production location and method as needed.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Admission and Student Services Coordinator</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">CMU College of Make Up Art & Design</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">August 2017 - January 2019</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Improved efficiency of Admissions department by automating routine data entry and tracking documents.</li>
+                                <li>Decreased enrolment uncertainty by implementing new system for following study permit updates.</li>
+                                <li>Found solutions to significant time waste, which was slowing down growth of CMU College.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Entrepreneur</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Dark Smile Games</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">April 2012 - January 2023</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Developed primary product and promotional materials.</li>
+                                <li>Coordinated production of two projects and promotional materials across a team of 3-10 writers, artists, editors, and testers.</li>
+                                <li>Built website in Wordpress</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Administrative Assistant</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Kinetica Health Clinic</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">February 2017 - November 2017</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Improved business presentation by debugging the clinic website.</li>
+                                <li>Maintained a friendly atmosphere and high patient engagement by communicating with clients, insurance, and coworkers via: email, phone, in person and physical mail.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Laser Operator</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Toronto Tool Library</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">May 2016 - June 2017</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Decreased laser downtime by diagnosing problems and repairing common issues.</li>
+                                <li>Increased community engagement by helping visitors with their design files.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Volunteer Librarian</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Toronto Tool Library</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">March 2016 - June 2017</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Increased safety and decreased search times for supplies by creating an organization system for the front desk and area, including moving potentially dangerous items away from regular use supplies.</li>
+                                <li>Decreased tool downtime by organizing unsorted donations into prioritized groups, and taking inventory of tools in need of repair and their required parts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Customer Service Leader (Store Manager)</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">H&R Block</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">February 2016 - May 2016</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Maximized client service ability (and profit) to above target.</li>
+                                <li>Relied on to deescalate conflict situations and recover dissatisfied clients at H&R Block.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-lg-6 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="position">
+                            <h4 class="position card-title mb-3">Office Administrator</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="org mb-0">Admiral Road Designs</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">January 2015 - September 2015</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>Reduced over/under stock by designing and implementing organization systems and spreadsheets for more automated, simpler and more visible tracking of inventory.</li>
+                                <li>Enabled uninterrupted continuation of business during a prolonged emergency by running all immediately required aspects of the business without supervision.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- Education -->
+        <div class="row mb-3">
+            <div>
+                <a class="btn btn-primary education fs-5 mb-3 p-p" data-bs-toggle="collapse" 
+                    href="#educationGallery" role="button" aria-expanded="false" 
+                    aria-controls="educationGallery">Education
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+                        fill="currentColor" class="bi bi-arrow-bar-down ml-3" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5M8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- <div id="educationGallery" class="row "> -->
+        <div id="educationGallery" class="row collapse">
+            <div class="col-12 col-lg-6 col-xxl-3 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="credential">
+                            <h4 class="credential card-title mb-3">Information and Computer Systems Technology Diploma</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="school mb-0">Camosun College</h5>
+                            <p class="location mb-0">Victoria, British Columbia</p>
+                            <p class="dates">2026 - ongoing</p>
+                        </div>
+                        <div class="btn-group shadow-sm">
+                            <a href="https://calendar.camosun.ca/preview_program.php?catoid=25&poid=3947" target="_blank" type="button" class="btn btn-sm btn-outline-secondary">Curriculum information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xxl-3 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="credential">
+                            <h4 class="credential card-title mb-3">The Odin Project</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="school mb-0">Open Source Curriculum</h5>
+                            <p class="location mb-0">Victoria, British Columbia</p>
+                            <!-- not sure: do i put the program's (non-existant) location? or where I was when I took it?-->
+                            <p class="dates">2025 - ongoing</p>
+                        </div>
+                        <div class="btn-group shadow-sm">
+                            <a href="https://www.theodinproject.com/paths" target="_blank" type="button" class="btn btn-sm btn-outline-secondary">Curriculum information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xxl-3 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="credential">
+                            <h4 class="credential card-title mb-3">Management Accounting Fundamentals Certificate</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="school mb-0">University of Toronto</h5>
+                            <p class="location mb-0">Toronto, Ontario</p>
+                            <p class="dates">2014</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>4.0 GPA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xxl-3 mb-3">
+                <div class="card border border-primary shadow exp">
+                    <div class="card-body p-3 expInner">
+                        <div class="credential">
+                            <h4 class="credential card-title mb-3">Bachelor of Science with Distinction in Geography and Biology</h4>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="school mb-0">University of Victoria</h5>
+                            <p class="location mb-0">Victoria, British Columbia</p>
+                            <p class="dates">2005 - 2010</p>
+                        </div>
+                        <div class="description card-text">
+                            <ul class="expDesc">
+                                <li>3.8 Graduating GPA equivalent; Rising Star Award 2009.</li>
+                                <li>Society of Geography Students Secretary 2007.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- ADD PDF download -->
+        <a href="files/Mariah_Malczewska-2026-Resume.pdf" class="btn btn-primary my-2 p-p" download>Download PDF</a>
+
+    </div>
+</section>
+
+<!-- CONTACT-->
+<div class="noSpace" id="abvContact"></div>
+<section id="contact" class="contact form">
+    <div class="container glass p-5">
+        <div class="row">
+            <div class="col col-md-4 contactTypes">
+                <h2 class="contact">Contact</h2>
+                <div class="contactMethd">
+                    <h4>Phone</h4>
+                    <p>(555) 555-5555</p>
+                </div>
+                <div class="contactMethd">
+                    <h4>Email</h4>
+                    <p>fake@notreal.com</p>
+                </div>
+                <div class="contactMethd">
+                    <h4>Social Media</h4>
+                    <div class="social-icons">
+                        <a class="iconLink" href="https://github.com/silverrowan" target="_blank" alt="Visit GitHub">
+                            <svg role="img" class="social github" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title>GitHub</title>
+                                <path class="social github" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                        </a>
+                        <a class="iconLink" href="https://ca.linkedin.com/in/mariahmalcz" target="_blank" alt="Visit LinkedIn">
+                            <svg class="social linkedin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <title>LinkedIn</title>
+                                <path class="social linkedin" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"><div class="vr"></div></div>
+            <div class="col col-md-7 ">
+                <form class="contactForm">
+                <div class="mb-3">
+                    <label for="contactName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="contactName" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="contactEmail" class="form-label" >Email address</label>
+                    <input type="email" class="form-control" id="contactEmail" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contactMessage" class="form-label">Message</label>
+                    <textarea class="form-control" id="contactMessage" name="message" rows="4"></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                    <label class="form-check-label" for="exampleCheck1">This form goes nowhere - demo only. No messages will be sent from here. </label>
+                </div>
+                <button type="submit" class="btn btn-primary p-p">Submit</button>
+                </form>
+            </div>
+            <!-- <div class="col-md-1 col-lg-2 col-xl-3 d-none d-md-block">
+            </div> -->
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- FOOTER -->
-<div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
-                <svg class="bi" width="30" height="24" aria-hidden="true">
-                    <use href="#bootstrap"></use>
-                </svg> 
-            </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span> 
-        </div>
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#" aria-label="Instagram">
-                    <svg class="bi" width="24" height="24" aria-hidden="true">
-                        <use href="#instagram"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#" aria-label="Facebook">
-                    <svg class="bi" width="24" height="24">
-                        <use href="#facebook"></use>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </footer>
+<footer class="container-fluid glass p-3" id="footerBar">
+    <div class="row d-flex flex-column-reverse flex-md-row justify-content-between align-items-end">
+        <div class="empty spacer"></div>
+        <p class="copyr foot small">&copy; Mariah Malczewska, 2026</p>
+        <p class="phoneCont foot">(555) 555-5555</p>
+        <p class="emailCont foot">fakeemail@notreal.com</p>
+    </div>
+    <div class="row footNote"><p class="small">Portfolio Demo site using Bootstrap, HTML, & CSS without custom scripts.</p></div>
+    <div class="row footNote"><p class="small">
+        icons from Bootstrap icons
+        <br>leaf watermark from freepick: <a href="https://www.flaticon.com/free-icons/branch" title="branch icons">Branch icons created by Freepik - Flaticon</a>
+        <br>Screenshots may have images from various location, credits will be on the relevant linked pages
+        <br>all other images are mine</p></div>
+</footer>
 </div>
-
-
 </body>
 </html>

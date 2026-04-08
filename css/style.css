@@ -1,79 +1,902 @@
 :root {
-    --backgroundColor-light: #eaf0e7; /* light olivine */
-    --backgroundColor: #d7ddd4; /* light olivine */
-    --backgroundColor-med: #bdc5b8; /* light olivine */
-    --backgroundColor-dark: #a4ae9d; /*light olivine */
-    --backgroundColor-xdark: #94a08c; /*light olivine */
-
-    --color-accent-bright: #87e953; /*lime*/
-    --color-accent-light: #81ce58; /*lime*/
-    --color-accent: #6ebe44; /*lime*/
-    --color-accent-med: #61af37; /*lime*/
-    --color-accent-dark: #51972b; /*lime*/
-	--color-accent-dull: color-mix(in srgb, #888888, var(--color-accent)); /*lime*/
-
-    /* color palette 1 */
-    --color-main: #6ebe44; /*lime*/
-    --color-subtlelight: #53574f; /*dark slate */
-    --color-subtleMed: #41493b; /*dark slate */
-    --color-subtleDark: #383f33; /*dark slate */
-
-    --color-focal: #00c6fd; /*bright cyan*/
-    --color-focalDark: #008fc4; /*mid cyan*/
-
     --BG-patternSize: 5%;
+    --link-iconSize: 3rem;
+
+    --glassBlurr: 8px;
+    --glassOpacity: 8%;
+    --glassBorderOpacity: 15%;
+    --glassColor-hslNums: 120, 41%, 34%; /*bottle green*/
+    --glassIntDark:120 26% 7%;
+    --glassIntBright:120 81% 54;
+    --glassGradient: linear-gradient(-20deg, hsl(120 61% 54% / 8%)2px, transparent 20%, transparent 80%,  hsl(120 71% 74% / 8%) 100%);
 }
 
-/*ALT THEMES*/
-:root:has(#light-theme:checked) {
-    /*color palette 3*/
-    -color-main: #6ebe44; /*lime*/
-    -color-mainDark: #7f986f; /*sage*/
-    -color-subtleLight: #f4fced; /*liiiiiiight green*/
-    -color-subtleDark: #f6edd9; /*buff*/
+:root { /*colors - default - accentColor, primeColor, secondColor, neutralBrandColor, neutralSecondColor, neutralRiseWarmColor, neutralPlainColor */
+/*standard color adjustments*/
+    --color-slStepSize: 7%;
+    --neutralColor-slStepSize: 5%;
+
+    --brandColor: #6ebe44;
+    --brandColor: hsl(99, 48%, 51%);
+    --brandColor-h:99;
+    --brandColor-s:48%;
+    --brandColor-l:51%;
+
+    --brandSecondColor:#ddb255;
+    --brandSecondColor:hsl(41, 67%, 60%);
+    --brandSecondColor-h:41;
+    --brandSecondColor-s:67%;
+    --brandSecondColor-l:60%;
+    --brandSecondColor-hsl: hsl( var(--brandSecondColor-h) var(--brandSecondColor-s)  var(--brandSecondColor-l));
+
+/*accent color - /* #6ebe44; /*lime /* ---oooor: 82DE50 even brighter */
+    --accentColorRGB: #6ebe44;
+    --accentColor: hsl(99, 48%, 51%);
+    --accentColor-h: 99; 
+    --accentColor-s: 48%;
+    --accentColor-l: 51%;
+
+/*primary color - b8dba4 - light lime 8*/
+    --primeColorRGB: #b8dba4;
+    --primeColor: hsl(98, 43%, 75%);
+    --primeColor-h: 98;
+    --primeColor-s: 43%;
+    --primeColor-l: 75%;
+
+/*secondary color  /*41, 36%, 83% e3d9c4 /* light orangey yellow - saturated-mid-light: #ddb255*/ 
+    --secondColorRGB:#ede0c3;
+    --secondColor:hsl(41, 54%, 85%);
+    --secondColor-h:41;
+    --secondColor-s:54%;
+    --secondColor-l:85%;
+    --secondColor-hsl: hsl( var(--secondColor-h) var(--secondColor-s)  var(--secondColor-l));
+
+/*'neutral' (background) colors*/
+    --neutralRiseWarmColor:  #f4f3f2; /* warm white - #f4f3f2*/
+    --neutralRiseWarm-hslNums: 30, 8%, 95%; /* warm white - #f4f3f2*/
+
+    --neutralPlainColor: #121212; /*near black*/
+    --neutralPlainColor-h:0;
+    --neutralPlainColor-s:0%;
+    --neutralPlainColor-l:7%;
+
+    --neutralRiseColor:  #ffffff; /* white */
+    --neutralRiseColor-h:0;
+    --neutralRiseColor-s:0%;
+    --neutralRiseColor-l:100%;
+
+/*brand neutral calc (darkmode)*/
+    --brandOverlayPercent: 6;
+    --satBoost: 5%;
+    --neutralBrandColor-h: var(--brandColor-h);
+    --neutralBrandColor-s: calc( ( var(--brandColor-s) * var(--brandOverlayPercent) + var(--neutralPlainColor-s) * (100 - var(--brandOverlayPercent)) ) / 100 + var(--satBoost) );
+    --neutralBrandColor-l: calc( ( var(--brandColor-l) * var(--brandOverlayPercent) + var(--neutralPlainColor-l) * (100 - var(--brandOverlayPercent)) ) / 100 );
+    --neutralBrandColor-hsl: hsl( var(--neutralBrandColor-h) var(--neutralBrandColor-s)  var(--neutralBrandColor-l));
+
+/*neutral second calc (darkmode)*/
+    --secondOverlayPercent: 10;
+    --secondSatBoost: 5%;
+    --neutralSecondColor-h: var(--brandSecondColor-h);
+    --neutralSecondColor-s: calc( ( var(--brandSecondColor-s) * var(--secondOverlayPercent) + var(--neutralPlainColor-s) * (100 - var(--secondOverlayPercent)) ) / 100 + var(--secondSatBoost) );
+    --neutralSecondColor-l: calc( ( var(--brandSecondColor-l) * var(--secondOverlayPercent) + var(--neutralPlainColor-l) * (100 - var(--secondOverlayPercent)) ) / 100 );
+    --neutralSecondColor-hsl: hsl( var(--neutralSecondColor-h) var(--neutralSecondColor-s)  var(--neutralSecondColor-l));
+
+/*misc colors*/
+    --sage: #7f986f; /*sage*/
+    --xxxxxlightGreen: #f4fced; /*liiiiiiight green*/
+    --buff: #f6edd9; /*buff*/
+    --aubergine: #6A4A6A;  /*aubergine*/
+    --oxblood: #4A0404;
+
+    --other1Color: #7f986f;
+    --other1Color: hsl(97, 17%, 52%);
+    --other1Color-h:97;
+    --other1Color-s:17%;
+    --other1Color-l:52%;
+
+    --other2Color: #6A4A6A;
+    --other2Color: hsl(300, 18%, 35%);
+    --other2Color-h:300;
+    --other2Color-s:18%;
+    --other2Color-l:35%;
+
+    --other3Color: #4A0404;
+    --other3Color: hsl(0, 90%, 15%);
+    --other3Color-h:0;
+    --other3Color-s:90%;
+    --other3Color-l:15%;
+
+    
 }
 
-:root:has(#natural-theme:checked) {
-    /*color palette 2 */
-    --color-main: #6ebe44; /*lime*/
-    --color-subtleLight: #f5f1de; /*light cream*/
-    --color-subtleDark: #8b8550; /*green ochre*/
+:root:has(#light-theme:checked){
+/*accent color - /* #35af05; /*darker lime /* - for now will use std accent and see if works */
+    /* --accentColor: #35af05; 
+    --accentColor: hsl(103, 94%, 35%); 
+    --accentColor-h: 103; 
+    --accentColor-s: 94%;
+    --accentColor-l: 35%; */
+
+/*primary color - 237403 - dark sat lime 8*/
+    --primeColor: #237403;
+    --primeColor: hsl(103, 95%, 23%);
+    --primeColor-h: 103;
+    --primeColor-s: 95%;
+    --primeColor-l: 23%;
+
+/*secondary color  /*41, 36%, 83% e3d9c4 - darker ver of, try brand for now /* darker orangey yellow - saturated-mid-light: #ddb255*/ 
+    /* --secondColor:#bb8c26; /* darker  */
+    --secondColor: var(--brandSecondColor);
+    --secondColor-h: var(--brandSecondColor-h);
+    --secondColor-s: var(--brandSecondColor-s);
+    --secondColor-l: var(--brandSecondColor-l);
+    --secondColor-hsl: hsl( var(--secondColor-h) var(--secondColor-s)  var(--secondColor-l));
+
+/*neutral color /* hsl(100, 12%, 85%);  d7ddd4 /* light olivine*/
+    --neutralBrandColor: #d7ddd4;
+    --neutralBrandColor: hsl(100, 12%, 85%);
+    --neutralBrandColor-h:100;
+    --neutralBrandColor-s:12%;
+    --neutralBrandColor-l:85%;
+    --neutralBrandColor-hsl: hsl( var(--neutralBrandColor-h) var(--neutralBrandColor-s)  var(--neutralBrandColor-l));
+
+/*neutral secondary color /*41, 36%, 83% e3d9c4 /* light orangey yellow - or use dark secondary ede0c3*/
+    --neutralSecondColor:#e3d9c4;
+    --neutralSecondColor:hsl(41, 36%, 83%);
+    --neutralSecondColor-h:41;
+    --neutralSecondColor-s:36%;
+    --neutralSecondColor-l:85%;
+    --neutralSecondColor-hsl: hsl( var(--neutralSecondColor-h) var(--neutralSecondColor-s)  var(--neutralSecondColor-l));
 }
 
-div, section {
-    background-color: transparent !important;
+:root { /* theme color variants calculation; *-light, *-xlight, *-dark, *-xdark, *-bright, *-xbright, *-dull, *-xdull */
+/*brand neutral variations calc*/
+    --neutralBrandColor-slStepSize: 3%;
+    --neutralBrandColor-light: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) + var(--neutralBrandColor-slStepSize)*1 ) 
+                                calc(var(--neutralBrandColor-l) + var(--neutralBrandColor-slStepSize)*1 ));
+    --neutralBrandColor-xlight: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) + var(--neutralBrandColor-slStepSize)*2 ) 
+                                calc(var(--neutralBrandColor-l) + var(--neutralBrandColor-slStepSize)*2 ));
+    --neutralBrandColor-dark: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) - var(--neutralBrandColor-slStepSize)*1 ) 
+                                calc(var(--neutralBrandColor-l) - var(--neutralBrandColor-slStepSize)*1 ));
+    --neutralBrandColor-xdark: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) - var(--neutralBrandColor-slStepSize)*2 ) 
+                                calc(var(--neutralBrandColor-l) - var(--neutralBrandColor-slStepSize)*2 ));
+    --neutralBrandColor-bright: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) + var(--neutralBrandColor-slStepSize)*4 ) 
+                                calc(var(--neutralBrandColor-l) + var(--neutralBrandColor-slStepSize)*0 ));
+    --neutralBrandColor-xbright: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) + var(--neutralBrandColor-slStepSize)*8 ) 
+                                calc(var(--neutralBrandColor-l) + var(--neutralBrandColor-slStepSize)*0 ));
+    --neutralBrandColor-dull: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) - var(--neutralBrandColor-slStepSize)*2 ) 
+                                calc(var(--neutralBrandColor-l) + var(--neutralBrandColor-slStepSize)*0 ));
+    --neutralBrandColor-xdull: hsl(var(--neutralBrandColor-h) 
+                                calc( var(--neutralBrandColor-s) - var(--neutralBrandColor-slStepSize)*4 ) 
+                                calc(var(--neutralBrandColor-l) + var(--neutralBrandColor-slStepSize)*0 ));
+
+/* neutralSecondColor calculations */
+    --neutralSecondColor-light: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) + var(--neutralColor-slStepSize)*1 ) 
+                                calc(var(--neutralSecondColor-l) + var(--neutralColor-slStepSize)*1 ));
+    --neutralSecondColor-xlight: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) + var(--neutralColor-slStepSize)*2 ) 
+                                calc(var(--neutralSecondColor-l) + var(--neutralColor-slStepSize)*2 ));
+    --neutralSecondColor-dark: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) - var(--neutralColor-slStepSize)*1 ) 
+                                calc(var(--neutralSecondColor-l) - var(--neutralColor-slStepSize)*1 ));
+    --neutralSecondColor-xdark: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) - var(--neutralColor-slStepSize)*2 ) 
+                                calc(var(--neutralSecondColor-l) - var(--neutralColor-slStepSize)*2 ));
+    --neutralSecondColor-xbright: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) + var(--neutralColor-slStepSize)*6 ) 
+                                calc(var(--neutralSecondColor-l) + var(--neutralColor-slStepSize)*0 ));
+    --neutralSecondColor-bright: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) + var(--neutralColor-slStepSize)*3 ) 
+                                calc(var(--neutralSecondColor-l) + var(--neutralColor-slStepSize)*0 ));
+    --neutralSecondColor-dull: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) - var(--neutralColor-slStepSize)*2 ) 
+                                calc(var(--neutralSecondColor-l) + var(--neutralColor-slStepSize)*0 ));
+    --neutralSecondColor-xdull: hsl(var(--neutralSecondColor-h) 
+                                calc( var(--neutralSecondColor-s) - var(--neutralColor-slStepSize)*4 ) 
+                                calc(var(--neutralSecondColor-l) + var(--neutralColor-slStepSize)*0 ));
+
+    /*accent color calculations*/
+    --accentColor-hslNums: var(--accentColor-h) var(--accentColor-s) var(--accentColor-l);
+    --accentColor-hsl: hsl( var(--accentColor-hslNums) );
+
+    --accentColor-light: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*1 ));
+    --accentColor-xlight: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*2 ));
+    --accentColor-dark: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--accentColor-l) - var(--color-slStepSize)*1 ));
+    --accentColor-xdark: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--accentColor-l) - var(--color-slStepSize)*2 ));
+    --accentColor-bright: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+    --accentColor-xbright: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+    --accentColor-dull: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+    --accentColor-xdull: hsl(var(--accentColor-h) 
+                                calc( var(--accentColor-s) - var(--color-slStepSize)*4 ) 
+                                calc(var(--accentColor-l) + var(--color-slStepSize)*0 ));
+
+/*primary calculations*/ 
+    --primeColor-hsl: hsl( var(--primeColor-h) var(--primeColor-s) var(--primeColor-l) );
+
+    --primeColor-light: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--primeColor-l) + var(--color-slStepSize)*1 ));
+    --primeColor-xlight: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--primeColor-l) + var(--color-slStepSize)*2 ));
+    --primeColor-dark: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--primeColor-l) - var(--color-slStepSize)*1 ));
+    --primeColor-xdark: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--primeColor-l) - var(--color-slStepSize)*2 ));
+    --primeColor-xbright: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--primeColor-l) + var(--color-slStepSize)*0 ));
+    --primeColor-bright: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--primeColor-l) + var(--color-slStepSize)*0 ));
+    --primeColor-dull: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--primeColor-l) + var(--color-slStepSize)*0 ));
+    --primeColor-xdull: hsl(var(--primeColor-h) 
+                                calc( var(--primeColor-s) - var(--color-slStepSize)*4 ) 
+                                calc(var(--primeColor-l) + var(--color-slStepSize)*0 ));
+
+/*secondary calculations*/ 
+    --secondColor-hsl: hsl( var(--secondColor-h) var(--secondColor-s) var(--secondColor-l) );
+
+    --secondColor-light: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--secondColor-l) + var(--color-slStepSize)*1 ));
+    --secondColor-xlight: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--secondColor-l) + var(--color-slStepSize)*2 ));
+    --secondColor-dark: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--secondColor-l) - var(--color-slStepSize)*1 ));
+    --secondColor-xdark: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--secondColor-l) - var(--color-slStepSize)*2 ));
+    --secondColor-xbright: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--secondColor-l) + var(--color-slStepSize)*0 ));
+    --secondColor-bright: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--secondColor-l) + var(--color-slStepSize)*0 ));
+    --secondColor-dull: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--secondColor-l) + var(--color-slStepSize)*0 ));
+    --secondColor-xdull: hsl(var(--secondColor-h) 
+                                calc( var(--secondColor-s) - var(--color-slStepSize)*4 ) 
+                                calc(var(--secondColor-l) + var(--color-slStepSize)*0 ));
 }
 
-* {
-    /* border: 1px, solid, blue; */
-    text-align: center;
+:root { /* "other" color calculations */
+    /*theme other color 1 */
+    --other1Color-hsl: hsl( var(--other1Color-h) var(--other1Color-s) var(--other1Color-l) );
+
+    --other1Color-light: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*1 ));
+    --other1Color-xlight: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*2 ));
+    --other1Color-dark: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--other1Color-l) - var(--color-slStepSize)*1 ));
+    --other1Color-xdark: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--other1Color-l) - var(--color-slStepSize)*2 ));
+    --other1Color-xbright: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+    --other1Color-bright: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+    --other1Color-dull: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+    --other1Color-xdull: hsl(var(--other1Color-h) 
+                                calc( var(--other1Color-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--other1Color-l) + var(--color-slStepSize)*0 ));
+
+/*theme other color 2 */
+    --other2Color-hsl: hsl( var(--other2Color-h) var(--other2Color-s) var(--other2Color-l) );
+
+    --other2Color-light: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*1 ));
+    --other2Color-xlight: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*2 ));
+    --other2Color-dark: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--other2Color-l) - var(--color-slStepSize)*1 ));
+    --other2Color-xdark: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--other2Color-l) - var(--color-slStepSize)*2 ));
+    --other2Color-xbright: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+    --other2Color-bright: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+    --other2Color-dull: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+    --other2Color-xdull: hsl(var(--other2Color-h) 
+                                calc( var(--other2Color-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--other2Color-l) + var(--color-slStepSize)*0 ));
+
+/*theme other color 3 */
+    --other3Color-hsl: hsl( var(--other3Color-h) var(--other3Color-s) var(--other3Color-l) );
+
+    --other3Color-light: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*1 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*1 ));
+    --other3Color-xlight: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*2 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*2 ));
+    --other3Color-dark: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*1 ) 
+                                calc(var(--other3Color-l) - var(--color-slStepSize)*1 ));
+    --other3Color-xdark: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*2 ) 
+                                calc(var(--other3Color-l) - var(--color-slStepSize)*2 ));
+    --other3Color-xbright: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*6 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
+    --other3Color-bright: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) + var(--color-slStepSize)*3 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
+    --other3Color-dull: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*1.5 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
+    --other3Color-xdull: hsl(var(--other3Color-h) 
+                                calc( var(--other3Color-s) - var(--color-slStepSize)*3 ) 
+                                calc(var(--other3Color-l) + var(--color-slStepSize)*0 ));
 }
 
-.belleza-regular {
-  font-family: "Belleza", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+:root { /* assigning values */
+--mainTextColor: var(--neutralRiseWarmColor);
+--contraTextColor: var(--neutralPlainColor);
+--mainBackground: var(--neutralBrandColor-hsl);
+--mainBackgroundAlt: var(--neutralSecondColor-hsl);
+--cardBackground: var(--neutralBrandColor-light);
+--borderColor: var(--neutralBrandColor-dark);
+
+/*dark*/
+--formBCG: var(--primeColor-xlight);
+--formBorderC: var(--primeColor-light);
+--formHoverBGC:var(--primeColor);
+--formHoverBorderC:var(--accentColor-xbright);
+--formFocusBCG: var(--primeColor);
+--formFocusBorderC: var(--primeColor-dark);
+--cardBG: none;
+--cornerType: bevel;
+--cornerCutEnlarger: 1.5;
+--pillPaddingX: 1.5rem;
+
+
+--themeTogglerSVG: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23121212' class='bi bi-toggle-on' viewBox='0 0 16 16'%3E%3Cpath d='M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8'/%3E%3C/svg%3E");
+}
+:root:has(#light-theme:checked) { /* assigning colors - light theme */
+--mainTextColor: var(--neutralPlainColor);
+--contraTextColor: var(--neutralRiseWarmColor);
+--themeTogglerSVG: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23f4f3f2' class='bi bi-toggle-off' viewBox='0 0 16 16'%3E%3Cpath d='M11 4a4 4 0 0 1 0 8H8a5 5 0 0 0 2-4 5 5 0 0 0-2-4zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8M0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5'/%3E%3C/svg%3E");
+
+/*light*/
+--formBCG: var(--neutralBrandColor-hsl);
+--formBorderC: var(--accentColor-dull);
+--formHoverBGC:var(--neutralBrandColor-xbright);
+--formHoverBorderC:var(--accentColor-xbright);
+--formFocusBCG: var(--neutralBrandColor-xbright);
+--formFocusBorderC: var(--accentColor);
+--cardBG: url("../images/leaf.png");
+--cornerType: round;
+--cornerCutEnlarger: 1;
+--cornerPill: 99px;
+--pillPaddingX: 0.75rem;
+/* I FIGURED OUT WHY border-radius: 999px IS A THING
+        --ITS NOT AN AI ARTIFACT (in this case)*/
+/* IF you set radius = 50% you get an OVAL. 
+If you set it to a stupid large nubmer, eg 99 you get a pill shape instead! 
+... it doesnt actually make sense, but thats what it does.
+I'd just set it to a specific number, but the buttons vary in size.
+*/
+
+/* --glassBlurr: 5px; */
+--glassOpacity: 30%;
+--glassBorderOpacity: 70%;
+--glassIntDarkk:30, 8%, 85;
+--glassIntBright:30, 15%, 95;
+--glassColor-hslNums: var(--neutralRiseWarm-hslNums);
+--glassGradient: linear-gradient(-20deg, hsl(30, 100%, 93%, 15%)2px, transparent 20%, transparent 80%,  hsl(31, 71%, 90%, 15%) 100%);
 }
 
-.gafata-regular {
-  font-family: "Gafata", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/*font family & weight*/
+    h1, h2, h3, h4, h5, .logo-text { font-family: "Belleza", sans-serif; font-weight: 600; }
+    h6, p, button {font-family: "Gafata", sans-serif; font-weight: 400;}
+   
+    .belleza {
+    font-family: "Belleza", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    .gafata {
+    font-family: "Gafata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+/*set a background color and size for images that don't load*/
+img {background-color: var(--neutralBrandColor-dull);}
+
+/*font sizes*/
+    h1, h2 {font-size: 2.5rem;}
+    h6 {font-size: 1.15rem;}
+    p {font-size: 1.15rem; line-height: 1.5rem;}
+    p.about { line-height: 2rem;}
+    p.small { line-height: 1rem;}
+
+/*font colors*/
+    body {color: var(--mainTextColor)}
+    h1, h2, h3, h4, h5, h6 .logo-text, button{ color: var(--primeColor);}
+
+/*text margins*/
+    h2.projects, h2.resume { margin-bottom: 3rem !important;}
+    h3.highlights, h3.skills + p, h2.contact, h2.about { margin-bottom: 1.5rem !important;}
+    h3.skills { margin-top: 1.5rem !important;}
+    /* h4 {margin-bottom: 1rem;} */
+    h6 {margin-bottom: 0.25rem;}
+    h3.skills + p {margin-top: -1rem; color: var(--primeColor-xdark)}
+
+/*test alignment*/
+    section#resume ul li, .contactForm div {text-align: left;}
+    * { text-align: center; }
+
+/*backgrounds*/
+    div, section {
+        background-color: transparent;
+    }
+
+    #fullBackground {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        z-index: -999;
+
+        height: 100vh;
+        width: 100vw;
+    }
+
+/*glass backdrops & related*/
+    .glass, #navbar.glass, #projects {
+        background-color: hsl(var(--glassColor-hslNums), var(--glassOpacity))!important;
+        background-image: var(--glassGradient) ;
+        border-radius: calc(16px * var(--cornerCutEnlarger));
+        corner-shape: var(--cornerType);
+        box-shadow: inset 0 0 10px 2px hsl( var(--glassIntBright) / 5%), inset 0 0 30px 5px hsl( var(--glassIntDark) / 8%), 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur( var(--glassBlurr) );
+        -webkit-backdrop-filter: blur( var(--glassBlurr) );
+        border: 1px solid hsl(var(--glassColor-hslNums), var(--glassBorderOpacity) );
+    }
+
+    #about, #projects, #resume, #contact {
+        margin-top: 6rem !important;
+        margin-bottom: 3rem !important;
+    }
+
+    #navbar.glass {
+        border-top-right-radius: 0px !important;
+        border-top-left-radius: 0px !important;
+    }
+
+    #footerBar.glass {
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+
+    .navbar-toggler 
+
+    .navbar-toggler-icon
+
+/*layout*/
+    #heroContainer {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #heroContent {
+        width: 100%;
+        overflow-x: hidden;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .contactTypes {
+        display: flex;
+        flex-direction: column;
+        justify-content: contactTypes;
+    }
+
+    .rSHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* SVG related */
+    SVG { transform-style: preserve-3d; transition: all .15s ease-in-out; }
+
+/*svg icons*/
+    .social, .social path {
+        fill: var(--primeColor);
+        height: var(--link-iconSize);
+        width: var(--link-iconSize);
+        margin: calc( var(--link-iconSize) / 4);
+        transition: all .15s ease-in-out;
+    }
+
+.social:hover {
+    fill: var(--accentColor-dark);
+    stroke: 1px solid var(--accentColor-bright);
 }
 
-h1, h2, h3, h4, h5, h6, .logo-text {font-family: "Belleza", sans-serif; font-weight: 600;}
-
-p, button {font-family: "Gafata", sans-serif;}
+a {
+    text-decoration: none;
+}
 
 button {border-width: 0;}
 
-#fullBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: block;
-    z-index: -999;
-
-    height: 100vh;
-    width: 100vw;
+.exp {
+    height: 100% !important;
 }
+
+.expInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*footer styling & layout*/
+.empty.spacer {
+    width: 5.5rem;
+    flex: none;
+}
+
+p.foot {
+    display: inline-block;
+    width: fit-content;
+}
+
+.footNote p {
+    text-align: right;
+}
+
+/* progress bar*/
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.skillContainer {
+    width: 100%;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--contraTextColor);
+    text-align: center;
+    white-space: nowrap;
+    /* background-color: var(--accentColor); */
+    width: 0; /*moved here from inline styling in the demo. Set to 0 to allow hover growth*/
+    background-image: linear-gradient(-45deg, var(--accentColor) 40%, var(--accentColor-dull), var(--accentColor-bright), var(--accentColor) 60%) !important;
+    background-size: 500% 500%;
+    background-position: right;
+    transition: all .15s ease-in-out;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress, .progress-stacked { /*override bootstrap variables & attributes*/
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+    --bs-progress-bar-transition: width 0.6s ease;
+    display: flex;
+    height: 1.5rem;
+    overflow: hidden;
+    font-size: var(--bs-progress-font-size);
+    background-color: var(--bs-progress-bg);
+    border-radius: 0.75rem;
+    corner-shape: var(--cornerType);
+    margin-bottom: 1rem;
+    border: 1px solid var(--accentColor-xdark);
+    width: 75%; /*amount of space the entire bar takes up width-wise per column*/
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+    transition: all .15s ease-in-out;
+}
+
+/*set bar growth animation final width values based on bar value*/
+#skillContainerRow:hover div div .progress .progress-bar.bar5 { width: 50%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar6 { width: 60%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar7 { width: 70%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar8 { width: 80%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar9 { width: 90%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar10 { width: 100%; }
+
+.progress:hover .progress-bar { /*add a hover glow to the outer progress bar 
+    & set animation of the inner bar */
+    animation: bgToRight 3s infinite;
+    box-shadow: 0 0 5px 0 var(--accentColor);
+}
+.progress:hover { /*add a hover glow to the progress bar*/
+    box-shadow: 0 0 5px 0 var(--accentColor);
+}
+
+@keyframes grow { /*animation effect for the skill bar growth*/ 
+    from { width: 0px; } to { width: 100% }
+}
+
+/*vertical line styling*/
+.vr { 
+    height: 100%;
+    background-color: var(--primeColor);
+    opacity: 1;
+ }
+
+ /*buttons styling*/
+.btn {
+    display: inline-block;
+    font-size: 1.15rem;
+/* I FIGURED OUT WHY border-radius: 999px IS A THING--ITS NOT AN AI ARTIFACT (in this case)*/
+    border-radius: 99rem;
+    corner-shape: var(--cornerType);
+/* IF you set radius = 50% you get an OVAL. 
+If you set it to a stupid large nubmer, eg 99 you get a pill shape instead! 
+... it doesnt actually make sense, but thats what it does.
+I'd just set it to a specific number, but the buttons vary in size.
+*/
+    transition: all .2s ease-in-out; 
+}
+.btn:hover { /*add drop-glow on hover*/
+    box-shadow: 0 0 5px 0 var(--accentColor-bright);
+}
+
+.btn-group:hover .btn { /*add drop-glow on hover*/
+    box-shadow: 0 0 5px 0 var(--accentColor-bright);
+}
+
+.p-p {
+  padding-left: var(--pillPaddingX);
+  padding-right: var(--pillPaddingX);
+} /*pad the sides of pill shaped buttons when using bevel*/
+
+.btn-primary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--mainTextColor);
+    --bs-btn-bg:var(--accentColor-dark);
+    --bs-btn-border-color: var(--accentColor-xdark);
+    --bs-btn-hover-color: var(--mainTextColor);
+    --bs-btn-hover-bg: var(--accentColor);
+    --bs-btn-hover-border-color:var(--accentColor-bright);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--mainTextColor);
+    --bs-btn-active-bg: var(--accentColor-bright);
+    --bs-btn-active-border-color: var(--accentColor-dull);
+    background-image: linear-gradient(-45deg, var(--accentColor-dark) 40%, var(--accentColor), var(--accentColor-bright), var(--accentColor-dark) 60%) !important;
+    background-size: 500% 500%;
+    background-position: right;
+    transition: all .15s ease-in-out;
+}
+
+.btn-secondary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--contraTextColor);
+    --bs-btn-bg: var(--primeColor-dull);
+    --bs-btn-border-color: var(--primeColor-xdark);
+    --bs-btn-hover-color:var(--contraTextColor);
+    --bs-btn-hover-bg: var(--primeColor);
+    --bs-btn-hover-border-color: var(--primeColor-dull);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--contraTextColor);
+    --bs-btn-active-bg: var(--primeColor);
+    --bs-btn-active-border-color:var(--primeColor-dark);
+    transition: all .15s ease-in-out;
+}
+
+.btn-outline-primary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--accentColor-dark);
+    --bs-btn-border-color: var(--accentColor-dark);
+    --bs-btn-hover-color: var(--neutralPlainColor);
+    --bs-btn-hover-bg:var(--accentColor-bright);
+    --bs-btn-hover-border-color:var(--accentColor-bright);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color: var(--mainTextColor);
+    --bs-btn-active-bg: var(--accentColor-bright);
+    --bs-btn-active-border-color: var(--accentColor-dull);
+    transition: all .15s ease-in-out;
+}
+
+.btn-outline-secondary { /*override bootstrap variables & attributes*/
+    --bs-btn-color: var(--primeColor-dull);
+    --bs-btn-border-color: var(--primeColor-dull);
+    --bs-btn-hover-color: var(--contraTextColor);
+    --bs-btn-hover-bg: var(--primeColor);
+    --bs-btn-hover-border-color: var(--primeColor-dark);
+    --bs-btn-focus-shadow-rgb: 110,190,68;
+    --bs-btn-active-color:var(--contraTextColor);
+    --bs-btn-active-bg:var(--primeColor);
+    --bs-btn-active-border-color: var(--primeColor-dark);
+    transition: all .15s ease-in-out;
+}
+
+.btn-group { display:flex; width: 100%; }
+
+.btn-group .btn {
+  flex:1; /*fill the button group; makes the two buttons even size*/
+  position: relative; /* fix for button-group 100% breaking hover effects*/
+  z-index:2; 
+}
+
+.btn-group-sm>.btn, .btn-sm { /*override bootstrap variables & attributes*/
+    --bs-btn-font-size: 0.85rem;
+}
+
+a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap variables & attributes*/
+    animation: bump 700ms ease-in;
+}
+
+.btn-primary:hover, .btn-outline-primary:hover {/*override bootstrap variables & attributes*/
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+}
+
+.btn-sm:hover { /*override bootstrap variables & attributes*/
+    animation: smBump 700ms ease-in;
+}
+
+.btn-primary.btn-sm:hover { /*override bootstrap variables & attributes*/
+    animation: smBump 700ms ease-in, bgToRight 3s infinite;
+}
+
+/*create movement animation*/
+@keyframes bump {
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-20%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-10%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-5%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes smBump { /*same movement, less amplitude*/
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-10%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-5%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-2%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes bgToRight { /*create the gradient push wave effect*/
+    to {background-position: left;}
+}
+
+/*card styling*/
+.card { /*override bootstrap variables & attributes*/
+    color: var(--mainTextColor);
+    background-color: var(--cardBackground);
+    border: 1px solid var(--borderColor) !important;
+    transition: all .5s ease-in-out;
+    border-radius: calc( 1rem * var(--cornerCutEnlarger) );
+    corner-shape: var(--cornerType);
+}
+
+.card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: var(--cardBG);
+  background-size: auto 50%;
+  background-position: bottom 0px right -30px;
+  background-repeat: no-repeat;
+  opacity: 20%;
+  filter: hue-rotate(110deg);
+  mix-blend-mode: multiply;
+}
+
+.card:hover { /*add effects to cards on hover*/
+    animation: smBump 700ms ease-in;
+    border: 1px solid var(--accentColor-bright) !important;
+    box-shadow: 0 0 12px 1px var(--accentColor) !important;
+}
+
+/*form fields styling*/
+.form-control { /*override bootstrap variables & attributes*/
+    font-size: 1.2rem;
+    color: var(--neutralPlainColor);
+    background-color: var(--formBCG);
+    border: 1px solid var(--formBorderC);
+    transition: all .15s ease-in-out;
+    border-radius: calc( 1rem * var(--cornerCutEnlarger) );
+    corner-shape: var(--cornerType);
+}
+
+button, input, optgroup, select, textarea { /*override bootstrap variables & attributes*/
+    transition: all 0.2s ease-in-out !important;
+}
+
+input:hover, optgroup:hover, select:hover, textarea:hover { /*create hover fx on form items*/
+    background-color: var(--formHoverBGC);
+    box-shadow: 0 0 5px 0 var(--accentColor);
+    border: 1px solid var(--formHoverBorderC);
+}
+
+.form-control:focus { /*override bootstrap variables & attributes*/
+    color: var(--neutralPlainColor);
+    background-color: var(--formFocusBCG);
+    border-color: var(--formFocusBorderC);
+    box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
+}
+
+.form-check-input:checked { /*override bootstrap variables & attributes*/
+    background-color: var(--formFocusBCG);
+    border-color: var(--formFocusBorderC);
+    color: var(--neutralPlainColor);
+}
+
+.form-check-input:checked[type=checkbox] { /*override bootstrap checkmark image - minor edit of fill color*/
+    --bs-form-check-bg-image: url('../images/check.svg');
+}
+
+.form-check-input { /*override bootstrap variables & attributes*/
+    width: 1.2em;
+    height: 1.2em;
+
+    background-color: var(--formBCG);
+    background-image: var(--bs-form-check-bg-image); /*overridden image ver abv*/
+    border: 1px solid var(--formBorderC);
+}
+
+.form-check-input:focus { /*override bootstrap variables & attributes*/
+    border-color: var(--formFocusBorderC);
+    box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
+}
+
+p a:link { color: var(--accentColor); }
+p a:visited { color: var(--accentColor-dull); }
+p a:active { color: var(--accentColor-bright); }
+p a:hover { color: var(--accentColor-xbright); }
