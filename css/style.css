@@ -456,6 +456,7 @@ img {background-color: var(--neutralBrandColor-dull);}
     h6 {font-size: 1.15rem;}
     p {font-size: 1.15rem; line-height: 1.5rem;}
     p.about { line-height: 2rem;}
+    p.small { line-height: 1rem;}
 
 /*font colors*/
     body {color: var(--mainTextColor)}
