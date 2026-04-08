@@ -17,13 +17,19 @@
         gap: calc(var(--standard-padding)/2); 
     }
 
+    .navbar-toggler {
+        height: 100%;
+        aspect-ratio: 1;
+    }
+
     .navbar-toggler:focus {
         text-decoration: none;
         /* box-shadow: 0 0 0px 0.1rem; */
         border: 0.5rem dotted var(--accentColor);
         /* stroke-dasharray: 1,6;
         stroke-linecap: round; */
-        border-radius: 50%;
+        border-radius: calc(50% * var(--cornerMultiplier));
+        corner-shape: var(--cornerType);
         aspect-ratio: 1;
     }
 

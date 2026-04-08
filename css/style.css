@@ -382,12 +382,46 @@
 --mainBackgroundAlt: var(--neutralSecondColor-hsl);
 --cardBackground: var(--neutralBrandColor-light);
 --borderColor: var(--neutralBrandColor-dark);
+
+/*dark*/
+--formBCG: var(--primeColor-xlight);
+--formBorderC: var(--primeColor-light);
+--formHoverBGC:var(--primeColor);
+--formHoverBorderC:var(--accentColor-xbright);
+--formFocusBCG: var(--primeColor);
+--formFocusBorderC: var(--primeColor-dark);
+--cardBG: none;
+--cornerType: bevel;
+--cornerCutEnlarger: 1.5;
+--pillPaddingX: 1.5rem;
+
+
 --themeTogglerSVG: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23121212' class='bi bi-toggle-on' viewBox='0 0 16 16'%3E%3Cpath d='M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8'/%3E%3C/svg%3E");
 }
 :root:has(#light-theme:checked) { /* assigning colors - light theme */
 --mainTextColor: var(--neutralPlainColor);
 --contraTextColor: var(--neutralRiseWarmColor);
 --themeTogglerSVG: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23f4f3f2' class='bi bi-toggle-off' viewBox='0 0 16 16'%3E%3Cpath d='M11 4a4 4 0 0 1 0 8H8a5 5 0 0 0 2-4 5 5 0 0 0-2-4zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8M0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5'/%3E%3C/svg%3E");
+
+/*light*/
+--formBCG: var(--neutralBrandColor-hsl);
+--formBorderC: var(--accentColor-dull);
+--formHoverBGC:var(--neutralBrandColor-xbright);
+--formHoverBorderC:var(--accentColor-xbright);
+--formFocusBCG: var(--neutralBrandColor-xbright);
+--formFocusBorderC: var(--accentColor);
+--cardBG: url("../images/leaf.png");
+--cornerType: round;
+--cornerCutEnlarger: 1;
+--cornerPill: 99px;
+--pillPaddingX: 0.75rem;
+/* I FIGURED OUT WHY border-radius: 999px IS A THING
+        --ITS NOT AN AI ARTIFACT (in this case)*/
+/* IF you set radius = 50% you get an OVAL. 
+If you set it to a stupid large nubmer, eg 99 you get a pill shape instead! 
+... it doesnt actually make sense, but thats what it does.
+I'd just set it to a specific number, but the buttons vary in size.
+*/
 
 /* --glassBlurr: 5px; */
 --glassOpacity: 30%;
@@ -459,7 +493,8 @@ img {background-color: var(--neutralBrandColor-dull);}
     .glass, #navbar.glass, #projects {
         background-color: hsl(var(--glassColor-hslNums), var(--glassOpacity))!important;
         background-image: var(--glassGradient) ;
-        border-radius: 16px;
+        border-radius: calc(16px * var(--cornerCutEnlarger));
+        corner-shape: var(--cornerType);
         box-shadow: inset 0 0 10px 2px hsl( var(--glassIntBright) / 5%), inset 0 0 30px 5px hsl( var(--glassIntDark) / 8%), 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur( var(--glassBlurr) );
         -webkit-backdrop-filter: blur( var(--glassBlurr) );
@@ -602,6 +637,7 @@ p.foot {
     font-size: var(--bs-progress-font-size);
     background-color: var(--bs-progress-bg);
     border-radius: 0.75rem;
+    corner-shape: var(--cornerType);
     margin-bottom: 1rem;
     border: 1px solid var(--accentColor-xdark);
     width: 75%; /*amount of space the entire bar takes up width-wise per column*/
@@ -642,7 +678,8 @@ p.foot {
     display: inline-block;
     font-size: 1.15rem;
 /* I FIGURED OUT WHY border-radius: 999px IS A THING--ITS NOT AN AI ARTIFACT (in this case)*/
-    border-radius: 99px;
+    border-radius: 99rem;
+    corner-shape: var(--cornerType);
 /* IF you set radius = 50% you get an OVAL. 
 If you set it to a stupid large nubmer, eg 99 you get a pill shape instead! 
 ... it doesnt actually make sense, but thats what it does.
@@ -653,6 +690,15 @@ I'd just set it to a specific number, but the buttons vary in size.
 .btn:hover { /*add drop-glow on hover*/
     box-shadow: 0 0 5px 0 var(--accentColor-bright);
 }
+
+.btn-group:hover .btn { /*add drop-glow on hover*/
+    box-shadow: 0 0 5px 0 var(--accentColor-bright);
+}
+
+.p-p {
+  padding-left: var(--pillPaddingX);
+  padding-right: var(--pillPaddingX);
+} /*pad the sides of pill shaped buttons when using bevel*/
 
 .btn-primary { /*override bootstrap variables & attributes*/
     --bs-btn-color: var(--mainTextColor);
@@ -711,6 +757,14 @@ I'd just set it to a specific number, but the buttons vary in size.
     transition: all .15s ease-in-out;
 }
 
+.btn-group { display:flex; width: 100%; }
+
+.btn-group .btn {
+  flex:1; /*fill the button group; makes the two buttons even size*/
+  position: relative; /* fix for button-group 100% breaking hover effects*/
+  z-index:2; 
+}
+
 .btn-group-sm>.btn, .btn-sm { /*override bootstrap variables & attributes*/
     --bs-btn-font-size: 0.85rem;
 }
@@ -764,6 +818,23 @@ a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap
     transition: all .5s ease-in-out;
 }
 
+.card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: var(--cardBG);
+  background-size: auto 50%;
+  background-position: bottom 0px right -30px;
+  background-repeat: no-repeat;
+  opacity: 20%;
+  filter: hue-rotate(110deg);
+  mix-blend-mode: multiply;
+}
+
 .card:hover { /*add effects to cards on hover*/
     animation: smBump 700ms ease-in;
     border: 1px solid var(--accentColor-bright) !important;
@@ -773,9 +844,9 @@ a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap
 /*form fields styling*/
 .form-control { /*override bootstrap variables & attributes*/
     font-size: 1.2rem;
-    color: var(--contraTextColor);
-    background-color: var(--neutralBrandColor-hsl);
-    border: 1px solid var(--accentColor-dull);
+    color: var(--neutralPlainColor);
+    background-color: var(--formBCG);
+    border: 1px solid var(--formBorderC);
     transition: all .15s ease-in-out;
 }
 
@@ -784,20 +855,22 @@ button, input, optgroup, select, textarea { /*override bootstrap variables & att
 }
 
 input:hover, optgroup:hover, select:hover, textarea:hover { /*create hover fx on form items*/
-    background-color: var(--accentColor-dull);
+    background-color: var(--formHoverBGC);
+    box-shadow: 0 0 5px 0 var(--accentColor);
+    border: 1px solid var(--formHoverBorderC);
 }
 
 .form-control:focus { /*override bootstrap variables & attributes*/
     color: var(--neutralPlainColor);
-    background-color: var(--neutralBrandColor-dark);
-    border-color: var(--primeColor-dark);
+    background-color: var(--formFocusBCG);
+    border-color: var(--formFocusBorderC);
     box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
 }
 
 .form-check-input:checked { /*override bootstrap variables & attributes*/
-    background-color: var(--primeColor);
-    border-color: var(--primeColor-dark);
-    color: var(--contraTextColor);
+    background-color: var(--formFocusBCG);
+    border-color: var(--formFocusBorderC);
+    color: var(--neutralPlainColor);
 }
 
 .form-check-input:checked[type=checkbox] { /*override bootstrap checkmark image - minor edit of fill color*/
@@ -808,44 +881,12 @@ input:hover, optgroup:hover, select:hover, textarea:hover { /*create hover fx on
     width: 1.2em;
     height: 1.2em;
 
-    background-color: var(--primeColor-xlight);
+    background-color: var(--formBCG);
     background-image: var(--bs-form-check-bg-image); /*overridden image ver abv*/
-    border: 1px solid var(--primeColor-light);
+    border: 1px solid var(--formBorderC);
 }
 
 .form-check-input:focus { /*override bootstrap variables & attributes*/
-    border-color: var(--accentColor);
+    border-color: var(--formFocusBorderC);
     box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
 }
-
-/* 
-:root:has(#light-theme:NOT CHECKED){
-   form-control background-color: var(--primeColor-xlight);
-   form-control border: 1px solid var(--primeColor-light);
-    formHoverBGC   background-color: var(--accentColor);
-
-    .form-control:focus { /*override bootstrap variables & attributes*/
-    /* color: var(--contraTextColor);
-    background-color: var(--primeColor);
-    border-color: var(--primeColor-dark);
-    box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
-} */
-/* :root:has(#light-theme:checked){
---form
-
-    formBGC: var(--neutralBrandColor-hsl);
-    formBorderColor: 1px solid var(--accentColor-dull);
-    formHoverBGC: primeColor
-    formFocusBGC; var(--neutralBrandColor-xbright) */
-    /* focusBorder var(--accentColor) */
-
---formBCG: var(--neutralBrandColor-hsl);
---formBorderC: var(--accentColor-dull);
---formHoverBGC:var(--primeColor);
---formHoverBorderC:;
---formFocusBCG:;
---formFocusBorderC:;
-
-}
-
---accentColorDark */
