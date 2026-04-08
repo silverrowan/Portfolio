@@ -24,43 +24,6 @@
 <div id="fullBackground" class="m-0 p-0">
 <svg id="backgroundSVG" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
     viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice">
-    <filter id='noiseFilter'>
-	<!-- makes random noise (grainy effect) -->
-        <feTurbulence 
-            type='turbulence' 
-            baseFrequency='0.3' 
-            numOctaves='1' 
-            stitchTiles='stitch'
-            result="NOISE" />
-
-		<!--High Pass Effect (Sub-filter Set)-->
-	    <!-- Make a blurred copy of the source -->
-    	<feGaussianBlur in="NOISE" stdDeviation="2" result="BLURNOISE" />
-    	<!--Calculate original - blurred -->
-
-        <!-- Strengthen (slope >1) or Soften (slope <1) the upcoming blend effect by reducing opacity of input -->
-        <feComponentTransfer 
-            in="BLURNOISE" 
-            result="TRANSL">
-            <feFuncA type="linear" slope="0.15"/>
-        </feComponentTransfer>
-        <!-- Clip noise to opacity of path called on -->
-        <feComposite
-            in2="SourceAlpha"
-            in="TRANSL"
-            operator="in"
-            result="CLIPNOISE" />
-        /*below combines noise with parent path(s); its also the last step in the high-pass-sharpen effect*/ 
-        /* poss values for mode=""  normal; darken; multiply; color-burn; lighten; 
-                    screen; color-dodge; overlay ; soft-light; hard-light; 
-                    difference; exclusion; hue; saturation; color; luminosity */
-        <feBlend
-            in="SourceGraphic"
-            in2="CLIPNOISE"
-            mode="overlay"
-            result="BLEND" />
-    </filter>
-
     <!-- define the shape to pattern -->
 	<symbol  id="circle" viewBox="-120 -120 240 240" >
 		<g id="circleStack"> 
@@ -71,7 +34,7 @@
 			<circle class="behindDotsRingOuter ring" cx="0" cy="0" r="50" pathlength="360"/>
             <circle class="dotRing ring" cx="0" cy="0" r="50" pathlength="360"/>
 
-            <circle class="middleThickRing ring" cx="0" cy="0" r="91" pathlength="360"filter="url(#noiseFilter)" />
+            <circle class="middleThickRing ring" cx="0" cy="0" r="91" pathlength="360" />
             <circle class="thinOnMiddleThickRing ring" cx="0" cy="0" r="97" pathlength="360"/>
             <circle class="medDividerRing ring" cx="0" cy="0" r="104" pathlength="360"/>
 
@@ -1496,10 +1459,15 @@
     <div class="row d-flex flex-column-reverse flex-md-row justify-content-between align-items-end">
         <div class="empty spacer"></div>
         <p class="copyr foot small">&copy; Mariah Malczewska, 2026</p>
-        <p class="phoneCont foot"><em>Phone:</em> (555) 555-5555</p>
-        <p class="emailCont foot"><em>Email:</em> fakeemail@notreal.com</p>
+        <p class="phoneCont foot">(555) 555-5555</p>
+        <p class="emailCont foot">fakeemail@notreal.com</p>
     </div>
     <div class="row footNote"><p class="small">Portfolio Demo site using Bootstrap, HTML, & CSS without custom scripts.</p></div>
+    <div class="row footNote"><p class="small">
+        icons from Bootstrap icons
+        <br>leaf watermark from freepick: <a href="https://www.flaticon.com/free-icons/branch" title="branch icons">Branch icons created by Freepik - Flaticon</a>
+        <br>Screenshots may have images from various location, credits will be on the relevant linked pages
+        <br>all other images are mine</p></div>
 </footer>
 </div>
 </body>

@@ -890,3 +890,8 @@ input:hover, optgroup:hover, select:hover, textarea:hover { /*create hover fx on
     border-color: var(--formFocusBorderC);
     box-shadow: 0 0 0 .25rem hsl( var(--accentColor-hslNums) / .25);
 }
+
+p a:link { color: var(--accentColor); }
+p a:visited { color: var(--accentColor-dull); }
+p a:active { color: var(--accentColor-bright); }
+p a:hover { color: var(--accentColor-xbright); }
