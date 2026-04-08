@@ -817,6 +817,8 @@ a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap
     background-color: var(--cardBackground);
     border: 1px solid var(--borderColor) !important;
     transition: all .5s ease-in-out;
+    border-radius: calc( 1rem * var(--cornerCutEnlarger) );
+    corner-shape: var(--cornerType);
 }
 
 .card::after {
@@ -849,6 +851,8 @@ a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap
     background-color: var(--formBCG);
     border: 1px solid var(--formBorderC);
     transition: all .15s ease-in-out;
+    border-radius: calc( 1rem * var(--cornerCutEnlarger) );
+    corner-shape: var(--cornerType);
 }
 
 button, input, optgroup, select, textarea { /*override bootstrap variables & attributes*/
