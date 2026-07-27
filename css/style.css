@@ -445,7 +445,7 @@ I'd just set it to a specific number, but the buttons vary in size.
 
 
 
-.btn-sm:hover { /*override bootstrap variables & attributes*/
+.btn-sm:hover, .btn-sm:active { /*override bootstrap variables & attributes*/
     animation: var(--bumpSmAnimation);
 }
 
@@ -577,7 +577,7 @@ img {background-color: var(--neutralBrandColor-dull);}
         transition: all .15s ease-in-out;
     }
 
-.social:hover {
+.social:hover, .social:active {
     fill: var(--accentColor-dark);
     stroke: 1px solid var(--accentColor-bright);
 }
@@ -664,19 +664,25 @@ p.foot {
 }
 
 /*set bar growth animation final width values based on bar value*/
-#skillContainerRow:hover div div .progress .progress-bar.bar5 { width: 50%; }
-#skillContainerRow:hover div div .progress .progress-bar.bar6 { width: 60%; }
-#skillContainerRow:hover div div .progress .progress-bar.bar7 { width: 70%; }
-#skillContainerRow:hover div div .progress .progress-bar.bar8 { width: 80%; }
-#skillContainerRow:hover div div .progress .progress-bar.bar9 { width: 90%; }
-#skillContainerRow:hover div div .progress .progress-bar.bar10 { width: 100%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar5, 
+    #skillContainerRow:active div div .progress .progress-bar.bar5 { width: 50%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar6, 
+    #skillContainerRow:active div div .progress .progress-bar.bar6 { width: 60%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar7, 
+    #skillContainerRow:active div div .progress .progress-bar.bar7 { width: 70%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar8, 
+    #skillContainerRow:active div div .progress .progress-bar.bar8 { width: 80%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar9, 
+    #skillContainerRow:active div div .progress .progress-bar.bar9 { width: 90%; }
+#skillContainerRow:hover div div .progress .progress-bar.bar10, 
+    #skillContainerRow:active div div .progress .progress-bar.bar10 { width: 100%; }
 
-.progress:hover .progress-bar { /*add a hover glow to the outer progress bar 
+.progress:hover .progress-bar, .progress:active .progress-bar { /*add a hover glow to the outer progress bar 
     & set animation of the inner bar */
     animation: bgToRight 3s infinite;
     box-shadow: 0 0 5px 0 var(--accentColor);
 }
-.progress:hover { /*add a hover glow to the progress bar*/
+.progress:hover, .progress:active { /*add a hover glow to the progress bar*/
     box-shadow: 0 0 5px 0 var(--accentColor);
 }
 
@@ -705,11 +711,11 @@ I'd just set it to a specific number, but the buttons vary in size.
 */
     transition: all .2s ease-in-out; 
 }
-.btn:hover { /*add drop-glow on hover*/
+.btn:hover, .btn:active { /*add drop-glow on hover*/
     box-shadow: 0 0 5px 0 var(--accentColor-bright);
 }
 
-.btn-group:hover .btn { /*add drop-glow on hover*/
+.btn-group:hover .btn, .btn-group:active .btn { /*add drop-glow on hover*/
     box-shadow: 0 0 5px 0 var(--accentColor-bright);
 }
 
@@ -788,19 +794,21 @@ I'd just set it to a specific number, but the buttons vary in size.
     --bs-btn-font-size: 0.85rem;
 }
 
-a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap variables & attributes*/
+a svg:hover, button svg:hover .iconLink:hover, .btn:hover,
+    a svg:active, button svg:active .iconLink:active, .btn:active { /*override bootstrap variables & attributes*/
     animation: var(--bumpAnimation);
 }
 
-.btn-primary:hover, .btn-outline-primary:hover {/*override bootstrap variables & attributes*/
+.btn-primary:hover, .btn-outline-primary:hover, 
+    .btn-primary:active, .btn-outline-primary:active { /*override bootstrap variables & attributes*/
     animation: var(--bumpAnimation), bgToRight 3s infinite;
 }
 
-.btn-sm:hover { /*override bootstrap variables & attributes*/
+.btn-sm:hover, .btn-sm:active { /*override bootstrap variables & attributes*/
     animation: var(--bumpSmAnimation);
 }
 
-.btn-primary.btn-sm:hover { /*override bootstrap variables & attributes*/
+.btn-primary.btn-sm:hover, .btn-primary.btn-sm:active { /*override bootstrap variables & attributes*/
     animation: var(--bumpSmAnimation), bgToRight 3s infinite;
 }
 
@@ -825,7 +833,7 @@ a svg:hover, button svg:hover .iconLink:hover, .btn:hover { /*override bootstrap
     74% { transform: translateY(2px); }
     86% { transform: translateY(-1px); }
     94% { transform: translateY(-0.4px); }
-    98% { transform: translateY(0.1px); }
+    /* 98% { transform: translateY(0.1px); } */
     100% { transform: translateY(0); }
 }
     /* 0% { transform: translateY(0); }
@@ -857,7 +865,7 @@ div .img-ison {
         transition: all .5s ease-in-out;
 }
 
-.img-isol:hover { /*add effects to cards on hover*/
+.img-isol:hover, .img-isol:active { /*add effects to cards on hover*/
     border: 1px solid var(--accentColor-bright) ;
     box-shadow: 0 0 12px 1px var(--accentColor) ;
 }
@@ -895,7 +903,7 @@ div .img-ison {
   mix-blend-mode: multiply;
 }
 
-.card:hover { /*add effects to cards on hover*/
+.card:hover, .card:active { /*add effects to cards on hover*/
     animation: var(--bumpSmAnimation);
     border: 1px solid var(--accentColor-bright) !important;
     box-shadow: 0 0 12px 1px var(--accentColor) !important;
@@ -916,7 +924,8 @@ button, input, optgroup, select, textarea { /*override bootstrap variables & att
     transition: all 0.2s ease-in-out !important;
 }
 
-input:hover, optgroup:hover, select:hover, textarea:hover { /*create hover fx on form items*/
+input:hover, optgroup:hover, select:hover, textarea:hover,
+input:active, optgroup:active, select:active, textarea:active { /*create hover fx on form items*/
     background-color: var(--formHoverBGC);
     box-shadow: 0 0 5px 0 var(--accentColor);
     border: 1px solid var(--formHoverBorderC);
